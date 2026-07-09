@@ -1,0 +1,52 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build rBank APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repozitáře
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalace NPM závislostí
+        run: npm install
+
+      - name: Sestavení produkčního Vite buildu
+        run: npm run build
+
+      - name: Synchronizace Capacitor platformy
+        run: npx cap sync android
+
+      - name: Nastavení Java 17 JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Nastavení Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Oprávnění ke spuštění Gradle wrapperu
+        working-directory: ./android
+        run: chmod +x gradlew
+
+      - name: Nativní sestavení APK přes Gradle
+        working-directory: ./android
+        run: ./gradlew assembleDebug
+
+      - name: Publikace APK jako artefaktu
+        uses: actions/upload-artifact@v4
+        with:
+          name: rBank-Minimal-APK
+          path: android/app/build/outputs/apk/debug/app-debug.apk
