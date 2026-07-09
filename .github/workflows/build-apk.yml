@@ -28,6 +28,15 @@ jobs:
       - name: Synchronizace Capacitor platformy
         run: npx cap sync android
 
+      - name: Generování nativních Android ikon
+        run: |
+          sudo apt-get update && sudo apt-get install -y webp
+          mkdir -p assets
+          # Nástroj capacitor-assets vyžaduje icon.png ve složce assets
+          dwebp public/logo.webp -o assets/icon.png
+          npm install -g @capacitor/assets
+          npx capacitor-assets generate --android
+
       - name: Nastavení Java 17 JDK
         uses: actions/setup-java@v4
         with:
@@ -48,5 +57,5 @@ jobs:
       - name: Publikace APK jako artefaktu
         uses: actions/upload-artifact@v4
         with:
-          name: rBank-Minimal-APK
+          name: rBank-APK
           path: android/app/build/outputs/apk/debug/app-debug.apk

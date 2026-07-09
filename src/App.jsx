@@ -3,12 +3,14 @@ import React from 'react';
 export default function App() {
   return (
     <div className="min-h-screen bg-[#22252e] text-white pb-20 font-sans">
-      {/* Hlavička */}
+      {/* Hlavička s novým logem */}
       <header className="flex items-center justify-between p-4 pt-8 mb-6">
         <div className="flex items-center gap-4">
-          <div className="w-12 h-12 bg-[#fcd535] rounded-full flex items-center justify-center text-black font-extrabold text-2xl">
-            X
-          </div>
+          <img 
+            src="/logo.webp" 
+            alt="rBank Logo" 
+            className="w-12 h-12 rounded-full object-cover shadow-lg"
+          />
           <div>
             <h1 className="text-[17px] font-semibold leading-tight">Zbyněk Kocián</h1>
             <p className="text-[13px] text-gray-400 mt-0.5">Osobní bankovnictví</p>
@@ -84,10 +86,8 @@ export default function App() {
         </div>
       </main>
 
-      {/* Spodní navigace s vektorovými SVG ikonami */}
+      {/* Spodní navigace */}
       <nav className="fixed bottom-0 w-full bg-[#22252e] flex justify-between px-2 pb-2 pt-3 border-t border-[#2c2f38]">
-        
-        {/* Přehled (Aktivní) */}
         <button className="flex flex-col items-center gap-1 text-white w-16">
           <div className="bg-[#3e424c] px-4 py-1.5 rounded-full flex items-center justify-center mb-0.5">
             <svg className="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
@@ -96,24 +96,18 @@ export default function App() {
           </div>
           <span className="text-[10px] font-medium">Přehled</span>
         </button>
-
-        {/* Platba */}
         <button className="flex flex-col items-center gap-1 text-gray-400 w-16 mt-1.5">
           <svg className="w-[22px] h-[22px] mb-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
             <path d="M14 7h5v5M19 7l-7 7M10 17H5v-5M5 17l7-7" />
           </svg>
           <span className="text-[10px]">Platba</span>
         </button>
-
-        {/* Nabídky */}
         <button className="flex flex-col items-center gap-1 text-gray-400 w-16 mt-1.5">
           <svg className="w-[22px] h-[22px] mb-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
             <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
           </svg>
           <span className="text-[10px]">Nabídky</span>
         </button>
-
-        {/* InfoZóna */}
         <button className="flex flex-col items-center gap-1 text-gray-400 w-16 mt-1.5">
           <svg className="w-[22px] h-[22px] mb-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -121,8 +115,6 @@ export default function App() {
           </svg>
           <span className="text-[10px]">InfoZóna</span>
         </button>
-
-        {/* Menu */}
         <button className="flex flex-col items-center gap-1 text-gray-400 w-16 mt-1.5">
           <svg className="w-[22px] h-[22px] mb-1" fill="currentColor" viewBox="0 0 24 24">
             <circle cx="5" cy="12" r="1.5" />
@@ -131,7 +123,6 @@ export default function App() {
           </svg>
           <span className="text-[10px]">Menu</span>
         </button>
-
       </nav>
     </div>
   );
