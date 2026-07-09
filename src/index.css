@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Základní reset a barva pozadí pro eliminaci bílých okrajů */
+body {
+  background-color: #22252e;
+  color: white;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
