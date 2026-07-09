@@ -81,34 +81,57 @@ export default function App() {
               ZBYNĚK KOCIÁN
             </span>
           </div>
-          {/* Prázdný prostor pod hlavičkou dle předlohy */}
         </div>
       </main>
 
-      {/* Spodní navigace */}
-      <nav className="fixed bottom-0 w-full bg-[#22252e] flex justify-between px-2 pb-2 pt-3">
+      {/* Spodní navigace s vektorovými SVG ikonami */}
+      <nav className="fixed bottom-0 w-full bg-[#22252e] flex justify-between px-2 pb-2 pt-3 border-t border-[#2c2f38]">
+        
+        {/* Přehled (Aktivní) */}
         <button className="flex flex-col items-center gap-1 text-white w-16">
-          <div className="bg-[#3e424c] w-14 h-8 rounded-full flex items-center justify-center mb-0.5">
-            <span className="text-xl">🏠</span>
+          <div className="bg-[#3e424c] px-4 py-1.5 rounded-full flex items-center justify-center mb-0.5">
+            <svg className="w-[20px] h-[20px]" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 3L4 9v12h5v-7h6v7h5V9z" />
+            </svg>
           </div>
           <span className="text-[10px] font-medium">Přehled</span>
         </button>
-        <button className="flex flex-col items-center gap-1 text-gray-400 w-16 mt-1">
-          <span className="text-xl mb-1">⇆</span>
+
+        {/* Platba */}
+        <button className="flex flex-col items-center gap-1 text-gray-400 w-16 mt-1.5">
+          <svg className="w-[22px] h-[22px] mb-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+            <path d="M14 7h5v5M19 7l-7 7M10 17H5v-5M5 17l7-7" />
+          </svg>
           <span className="text-[10px]">Platba</span>
         </button>
-        <button className="flex flex-col items-center gap-1 text-gray-400 w-16 mt-1">
-          <span className="text-xl mb-1">🛒</span>
+
+        {/* Nabídky */}
+        <button className="flex flex-col items-center gap-1 text-gray-400 w-16 mt-1.5">
+          <svg className="w-[22px] h-[22px] mb-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+            <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
           <span className="text-[10px]">Nabídky</span>
         </button>
-        <button className="flex flex-col items-center gap-1 text-gray-400 w-16 mt-1">
-          <span className="text-xl mb-1">💬</span>
+
+        {/* InfoZóna */}
+        <button className="flex flex-col items-center gap-1 text-gray-400 w-16 mt-1.5">
+          <svg className="w-[22px] h-[22px] mb-1" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            <path d="M9 9l6 6M15 9l-6 6" />
+          </svg>
           <span className="text-[10px]">InfoZóna</span>
         </button>
-        <button className="flex flex-col items-center gap-1 text-gray-400 w-16 mt-1">
-          <span className="text-xl mb-1">•••</span>
+
+        {/* Menu */}
+        <button className="flex flex-col items-center gap-1 text-gray-400 w-16 mt-1.5">
+          <svg className="w-[22px] h-[22px] mb-1" fill="currentColor" viewBox="0 0 24 24">
+            <circle cx="5" cy="12" r="1.5" />
+            <circle cx="12" cy="12" r="1.5" />
+            <circle cx="19" cy="12" r="1.5" />
+          </svg>
           <span className="text-[10px]">Menu</span>
         </button>
+
       </nav>
     </div>
   );
