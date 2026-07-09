@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchMockTransactions } from '../data/mockDb';
+import BottomNav from '../components/BottomNav';
 
 export default function History() {
   const navigate = useNavigate();
@@ -32,14 +33,14 @@ export default function History() {
   };
 
   return (
-    <div className="h-screen bg-[#22252e] text-white font-sans flex flex-col">
+    <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
       {/* Horní hlavička */}
       <header className="flex items-center justify-between p-4 pt-8">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] p-2">
+        <button onClick={() => navigate(-1)} className="text-[#3b82f6] p-2 active:bg-[#2c2f38] rounded-full transition-colors">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
         </button>
         <h1 className="text-[17px] font-semibold">Běžný účet</h1>
-        <button className="text-[#3b82f6] p-2">
+        <button className="text-[#3b82f6] p-2 active:bg-[#2c2f38] rounded-full transition-colors">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83M22 12A10 10 0 0 0 12 2v10z"/></svg>
         </button>
       </header>
@@ -56,11 +57,11 @@ export default function History() {
       <div 
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex-1 bg-[#2c2f38] rounded-t-[32px] overflow-y-auto px-5 pt-6 pb-20 shadow-inner"
+        className="flex-1 bg-[#2c2f38] rounded-t-[32px] overflow-y-auto px-5 pt-6 pb-24 shadow-inner"
       >
         <div className="flex justify-between items-center mb-5">
           <h2 className="text-[19px] font-bold">Poslední pohyby</h2>
-          <button className="text-[#3b82f6] text-[15px] font-medium">Filtrovat</button>
+          <button className="text-[#3b82f6] text-[15px] font-medium active:opacity-70">Filtrovat</button>
         </div>
 
         {/* Vyhledávací pole */}
@@ -79,7 +80,7 @@ export default function History() {
 
         {/* Seznam transakcí */}
         <div className="space-y-5">
-          {transactions.map((tx, index) => (
+          {transactions.map((tx) => (
             <div key={tx.id} className="flex justify-between items-center border-b border-gray-700 pb-5 last:border-0">
               <div className="flex items-center gap-4">
                 <div className="relative">
@@ -104,6 +105,9 @@ export default function History() {
           {loading && <div className="text-center text-gray-400 text-sm py-4">Načítám další pohyby...</div>}
         </div>
       </div>
+
+      {/* Přidaná sdílená spodní navigace */}
+      <BottomNav />
     </div>
   );
 }
