@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@capacitor/android": "^6.0.0",
+    "@capacitor/clipboard": "^6.0.3",
     "@capacitor/core": "^6.0.0",
+    "@capacitor/toast": "^6.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.18.1"
