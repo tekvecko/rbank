@@ -46,9 +46,15 @@ jobs:
         working-directory: ./android
         run: chmod +x gradlew
 
-      - name: Aktualizace Gradle na v8.7 (Oprava bugu s bcprov jar)
+      - name: Vypnutí Android Jetifieru (Oprava chyby bcprov jar)
         working-directory: ./android
-        run: ./gradlew wrapper --gradle-version 8.7
+        run: |
+          # Capacitor 6 Jetifier nepotřebuje. Jeho deaktivací zabráníme pádu transformace kryptografických knihoven.
+          sed -i 's/android.enableJetifier=true/android.enableJetifier=false/g' gradle.properties
+          # Pojistka pro případ, že tam klíč vůbec není
+          if ! grep -q "android.enableJetifier=false" gradle.properties; then
+            echo "android.enableJetifier=false" >> gradle.properties
+          fi
 
       - name: Nativní sestavení APK přes Gradle
         working-directory: ./android
