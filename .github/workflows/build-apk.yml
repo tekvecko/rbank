@@ -6,10 +6,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build:                                                       
     name: Build rBank APK
     runs-on: ubuntu-latest
-
+                                                               
     steps:
       - name: Checkout repozitáře
         uses: actions/checkout@v4
@@ -17,8 +17,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-
+          node-version: '22'
+                                                               
       - name: Instalace NPM závislostí
         run: npm install
 
