@@ -1,5 +1,8 @@
 {
   "appId": "com.zbynekkocian.rbank",
   "appName": "rBank",
-  "webDir": "dist"
+  "webDir": "dist",
+  "server": {
+    "cleartext": true
+  }
 }
