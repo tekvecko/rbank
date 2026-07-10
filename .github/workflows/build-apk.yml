@@ -39,11 +39,11 @@ jobs:
       - name: Amputace Cordova kompatibility (Bypass bcprov bugu)
         run: node clean-cordova.js
 
-      - name: Nastavení Java 17 JDK
+      - name: Nastavení Java 21 JDK
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: '17'
+          java-version: '21'
 
       - name: Oprávnění ke spuštění Gradle wrapperu
         working-directory: ./android
