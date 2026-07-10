@@ -9,7 +9,8 @@ export default function Dashboard() {
   const [balance, setBalance] = useState(null);
 
   useEffect(() => {
-    fetch('http://192.168.1.5:3000/api/balance')
+    // Upraveno na lokální smyčku zařízení pro maximální spolehlivost
+    fetch('http://127.0.0.1:3000/api/balance')
       .then(res => res.json())
       .then(data => setBalance(data.balance))
       .catch(err => console.error("Chyba načítání zůstatku:", err));
@@ -24,7 +25,7 @@ export default function Dashboard() {
     }
   };
 
-  const formattedBalance = balance !== null 
+  const formattedBalance = balance !== null
     ? new Intl.NumberFormat('cs-CZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance)
     : '...';
 

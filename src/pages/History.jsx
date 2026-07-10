@@ -14,9 +14,10 @@ export default function History() {
     if (loading || !hasMore) return;
     setLoading(true);
     try {
-      const res = await fetch(`http://192.168.1.5:3000/api/transactions?page=${page}`);
+      // Upraveno na lokální smyčku zařízení
+      const res = await fetch(`http://127.0.0.1:3000/api/transactions?page=${page}`);
       const newTx = await res.json();
-      
+
       if (newTx.length === 0) {
         setHasMore(false);
       } else {
@@ -42,7 +43,7 @@ export default function History() {
 
   const groupedTransactions = transactions.reduce((groups, tx) => {
     const dateObj = new Date(tx.created_at);
-    const dateKey = dateObj.toLocaleDateString('en-CA'); 
+    const dateKey = dateObj.toLocaleDateString('en-CA');
     if (!groups[dateKey]) {
       groups[dateKey] = { dateObj, items: [] };
     }
