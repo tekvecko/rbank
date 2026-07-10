@@ -46,9 +46,12 @@ jobs:
         working-directory: ./android
         run: chmod +x gradlew
 
-      - name: Nativní sestavení APK přes Gradle (Robustní režim)
+      - name: Smazání poškozené Gradle cache na serveru
+        run: rm -rf ~/.gradle/caches/
+
+      - name: Nativní sestavení APK přes Gradle (Robustní režim + Stacktrace)
         working-directory: ./android
-        run: ./gradlew clean assembleDebug --no-daemon --no-parallel
+        run: ./gradlew clean assembleDebug --no-daemon --no-parallel --stacktrace
 
       - name: Publikace APK jako artefaktu
         uses: actions/upload-artifact@v4
