@@ -32,7 +32,6 @@ jobs:
         run: |
           sudo apt-get update && sudo apt-get install -y webp
           mkdir -p assets
-          # Nástroj capacitor-assets vyžaduje icon.png ve složce assets
           dwebp public/logo.webp -o assets/icon.png
           npm install -g @capacitor/assets
           npx capacitor-assets generate --android
@@ -43,16 +42,13 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Nastavení Android SDK
-        uses: android-actions/setup-android@v3
-
       - name: Oprávnění ke spuštění Gradle wrapperu
         working-directory: ./android
         run: chmod +x gradlew
 
-      - name: Nativní sestavení APK přes Gradle
+      - name: Nativní sestavení APK přes Gradle (Robustní režim)
         working-directory: ./android
-        run: ./gradlew assembleDebug
+        run: ./gradlew clean assembleDebug --no-daemon --no-parallel
 
       - name: Publikace APK jako artefaktu
         uses: actions/upload-artifact@v4
