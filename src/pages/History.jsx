@@ -5,28 +5,35 @@ import BottomNav from '../components/BottomNav';
 export default function History() {
   const navigate = useNavigate();
   const [transactions, setTransactions] = useState([]);
-  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const scrollRef = useRef(null);
 
+  const pageRef = useRef(1);
+  const loadingRef = useRef(false);
+
   const loadMore = async () => {
-    if (loading || !hasMore) return;
+    if (loadingRef.current || !hasMore) return;
+    loadingRef.current = true;
     setLoading(true);
     try {
-      // Upraveno na lokální smyčku zařízení
-      const res = await fetch(`http://127.0.0.1:3000/api/transactions?page=${page}`);
+      const res = await fetch(`http://127.0.0.1:3000/api/transactions?page=${pageRef.current}&limit=15`);
       const newTx = await res.json();
 
       if (newTx.length === 0) {
         setHasMore(false);
       } else {
-        setTransactions(prev => [...prev, ...newTx]);
-        setPage(p => p + 1);
+        setTransactions(prev => {
+          const existingIds = new Set(prev.map(t => t.id));
+          const filtered = newTx.filter(t => !existingIds.has(t.id));
+          return [...prev, ...filtered];
+        });
+        pageRef.current += 1;
       }
     } catch (err) {
       console.error("Chyba připojení k DB:", err);
     }
+    loadingRef.current = false;
     setLoading(false);
   };
 
