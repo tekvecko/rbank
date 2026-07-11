@@ -27,7 +27,7 @@ export function Payment() {
     };
 
     try {
-      const res = await fetch('http://192.168.1.5:3000/api/transactions', {
+      const res = await fetch('http://13.49.77.58:3000/api/transactions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -51,7 +51,7 @@ export function Payment() {
         <div className="bg-[#2c2f38] rounded-[24px] p-5 shadow-lg">
           <label className="text-[13px] text-gray-400 font-medium">Příjemce / Číslo účtu</label>
           <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Předčíslí-Číslo/Kód banky" className="w-full bg-transparent border-b border-gray-600 text-white text-[17px] py-3 focus:outline-none focus:border-[#3b82f6] mb-6" />
-          
+
           <label className="text-[13px] text-gray-400 font-medium">Částka</label>
           <div className="flex items-end border-b border-gray-600 focus-within:border-[#3b82f6] mb-6 pb-2">
             <input value={amount} onChange={(e) => setAmount(e.target.value)} type="number" placeholder="0" className="w-full bg-transparent text-white text-[32px] font-bold focus:outline-none" />

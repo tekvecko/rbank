@@ -9,8 +9,8 @@ export default function Dashboard() {
   const [balance, setBalance] = useState(null);
 
   useEffect(() => {
-    // Upraveno na lokální smyčku zařízení pro maximální spolehlivost
-    fetch('http://127.0.0.1:3000/api/balance')
+    // Adresa přesměrována na AWS server
+    fetch('http://13.49.77.58:3000/api/balance')
       .then(res => res.json())
       .then(data => setBalance(data.balance))
       .catch(err => console.error("Chyba načítání zůstatku:", err));

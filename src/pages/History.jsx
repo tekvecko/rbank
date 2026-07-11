@@ -17,7 +17,7 @@ export default function History() {
     loadingRef.current = true;
     setLoading(true);
     try {
-      const res = await fetch(`http://127.0.0.1:3000/api/transactions?page=${pageRef.current}&limit=15`);
+      const res = await fetch(`http://13.49.77.58:3000/api/transactions?page=${pageRef.current}&limit=15`);
       const newTx = await res.json();
 
       if (newTx.length === 0) {
