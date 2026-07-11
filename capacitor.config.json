@@ -3,6 +3,7 @@
   "appName": "rBank",
   "webDir": "dist",
   "server": {
-    "cleartext": true
+    "cleartext": true,
+    "androidScheme": "http"
   }
 }
