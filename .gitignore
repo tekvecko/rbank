@@ -1,0 +1,39 @@
+# Systémové soubory
+.DS_Store
+*.log
+Thumbs.db
+
+# Závislosti
+node_modules/
+.gradle/
+build/
+app/build/
+
+# Lokální konfigurace
+local.properties
+*.keystore
+keystore.properties
+
+# TVÉ OSOBNÍ/DEBUG SOUBORY (zachováváme to, co jsi tam měl)
+backend/database_backup_*.json
+backend/debug_*.cjs
+backend/debug_*.txt
+backend/debug_*.svg
+backend/get_index.sh
+backend/public/
+collect_apk_builder_info.sh
+deploy_to_aws.sh
+docs/
+find_api_calls.sh
+find_history.sh
+found_files.txt
+gather_history.sh
+get_history_code.sh
+get_index.sh
+history_code.txt
+history_dump.txt
+install_zrok.sh
+map_all_src.sh
+map_src.sh
+project_files*.txt
+rbank-backend.tar.gz

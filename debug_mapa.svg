@@ -1,0 +1,282 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 75" style="background-color: #f8f9fa; font-family: monospace;">
+  <!-- Sloupec: Datum -->
+  <rect x="2" y="0" width="5" height="75" fill="rgba(255, 99, 132, 0.15)" stroke="black" stroke-width="0.05" stroke-dasharray="0.5, 0.5" />
+  <text x="2.2" y="2" font-size="0.6" fill="black" font-weight="bold">Datum</text>
+  <!-- Sloupec: Kategorie / Protiúčet -->
+  <rect x="7" y="0" width="10" height="75" fill="rgba(54, 162, 235, 0.15)" stroke="black" stroke-width="0.05" stroke-dasharray="0.5, 0.5" />
+  <text x="7.2" y="2" font-size="0.6" fill="black" font-weight="bold">Kategorie / Protiúčet</text>
+  <!-- Sloupec: Typ transakce -->
+  <rect x="17" y="0" width="8" height="75" fill="rgba(255, 206, 86, 0.15)" stroke="black" stroke-width="0.05" stroke-dasharray="0.5, 0.5" />
+  <text x="17.2" y="2" font-size="0.6" fill="black" font-weight="bold">Typ transakce</text>
+  <!-- Sloupec: VS / KS / SS -->
+  <rect x="25" y="0" width="7" height="75" fill="rgba(75, 192, 192, 0.15)" stroke="black" stroke-width="0.05" stroke-dasharray="0.5, 0.5" />
+  <text x="25.2" y="2" font-size="0.6" fill="black" font-weight="bold">VS / KS / SS</text>
+  <!-- Sloupec: Poplatek -->
+  <rect x="32" y="0" width="5" height="75" fill="rgba(153, 102, 255, 0.15)" stroke="black" stroke-width="0.05" stroke-dasharray="0.5, 0.5" />
+  <text x="32.2" y="2" font-size="0.6" fill="black" font-weight="bold">Poplatek</text>
+  <!-- Sloupec: Částka -->
+  <rect x="37" y="0" width="8" height="75" fill="rgba(255, 159, 64, 0.15)" stroke="black" stroke-width="0.05" stroke-dasharray="0.5, 0.5" />
+  <text x="37.2" y="2" font-size="0.6" fill="black" font-weight="bold">Částka</text>
+  <rect x="19.248" y="7.53" width="15.632" height="0.249" fill="blue" />
+  <rect x="19.239" y="14.02" width="15.632" height="0.249" fill="blue" />
+  <rect x="19.248" y="7.53" width="15.632" height="0.249" fill="blue" />
+  <rect x="19.239" y="14.02" width="15.632" height="0.249" fill="blue" />
+  <rect x="2.173" y="6.305" width="14.883" height="0.047" fill="blue" />
+  <rect x="2.173" y="10.842" width="14.883" height="0.047" fill="blue" />
+  <rect x="2.173" y="17.271" width="14.883" height="0.047" fill="blue" />
+  <rect x="2.173" y="23.452" width="14.883" height="0.047" fill="blue" />
+  <text x="14.539" y="1.58" font-size="0.85" fill="#1f2937">Výpis z běžného účtu č. 1036437823 CZK</text>
+  <circle cx="14.539" cy="1.58" r="0.1" fill="red" />
+  <text x="19.597" y="2.573" font-size="0.51" fill="#1f2937">Pořadové č. výpisu: </text>
+  <circle cx="19.597" cy="2.573" r="0.1" fill="red" />
+  <text x="25.384" y="2.573" font-size="0.51" fill="#1f2937"> za období: </text>
+  <circle cx="25.384" cy="2.573" r="0.1" fill="red" />
+  <text x="24.875" y="2.573" font-size="0.55" fill="#1f2937">11</text>
+  <circle cx="24.875" cy="2.573" r="0.1" fill="red" />
+  <text x="28.473" y="2.573" font-size="0.55" fill="#1f2937">1. 11. 2025 - 30. 11. 2025</text>
+  <circle cx="28.473" cy="2.573" r="0.1" fill="red" />
+  <text x="22.114" y="9.016" font-size="0.61" fill="#1f2937">Zbyněk Kocián</text>
+  <circle cx="22.114" cy="9.016" r="0.1" fill="red" />
+  <text x="22.114" y="9.93" font-size="0.57" fill="#1f2937">Slovanská 1071</text>
+  <circle cx="22.114" cy="9.93" r="0.1" fill="red" />
+  <text x="22.114" y="10.845" font-size="0.57" fill="#1f2937">Slavkov u Brna</text>
+  <circle cx="22.114" cy="10.845" r="0.1" fill="red" />
+  <text x="22.114" y="11.759" font-size="0.57" fill="#1f2937">68401</text>
+  <circle cx="22.114" cy="11.759" r="0.1" fill="red" />
+  <text x="17.131" y="49.345" font-size="0.45" fill="#1f2937">Strana </text>
+  <circle cx="17.131" cy="49.345" r="0.1" fill="red" />
+  <text x="19.065" y="49.345" font-size="0.45" fill="#1f2937">/</text>
+  <circle cx="19.065" cy="49.345" r="0.1" fill="red" />
+  <text x="18.859" y="49.345" font-size="0.45" fill="#1f2937">1</text>
+  <circle cx="18.859" cy="49.345" r="0.1" fill="red" />
+  <text x="19.29" y="49.345" font-size="0.45" fill="#1f2937">8</text>
+  <circle cx="19.29" cy="49.345" r="0.1" fill="red" />
+  <text x="2.724" y="50.501" font-size="0.42" fill="#1f2937">Raiffeisenbank a.s., Hvězdova 1716/2b, 140 78 Praha 4, IČO 49240901, zapsaná v obchodním rejstříku vedeném Městským soudem v Praze, sp. zn. B 2051.</text>
+  <circle cx="2.724" cy="50.501" r="0.1" fill="red" />
+  <text x="36.144" y="49.174" font-size="0.42" fill="#1f2937">K0000810 v7.0 • 95603955 • 01.12.2025 09:47:13</text>
+  <circle cx="36.144" cy="49.174" r="0.1" fill="red" />
+  <text x="1.923" y="4.884" font-size="0.7" fill="#1f2937">Přehled</text>
+  <circle cx="1.923" cy="4.884" r="0.1" fill="red" />
+  <text x="1.923" y="6.659" font-size="0.516" fill="#1f2937">Číslo účtu:</text>
+  <circle cx="1.923" cy="6.659" r="0.1" fill="red" />
+  <text x="10.508" y="6.659" font-size="0.556" fill="#1f2937">1036437823/5500 CZK</text>
+  <circle cx="10.508" cy="6.659" r="0.1" fill="red" />
+  <text x="1.923" y="7.641" font-size="0.516" fill="#1f2937">Název účtu:</text>
+  <circle cx="1.923" cy="7.641" r="0.1" fill="red" />
+  <text x="12.481" y="7.641" font-size="0.556" fill="#1f2937">Zbyněk Kocián</text>
+  <circle cx="12.481" cy="7.641" r="0.1" fill="red" />
+  <text x="1.923" y="8.564" font-size="0.48" fill="#1f2937">IBAN:</text>
+  <circle cx="1.923" cy="8.564" r="0.1" fill="red" />
+  <text x="8.961" y="8.564" font-size="0.48" fill="#1f2937">CZ98 5500 0000 0010 3643 7823</text>
+  <circle cx="8.961" cy="8.564" r="0.1" fill="red" />
+  <text x="1.923" y="9.473" font-size="0.48" fill="#1f2937">BIC:</text>
+  <circle cx="1.923" cy="9.473" r="0.1" fill="red" />
+  <text x="14.281" y="9.473" font-size="0.48" fill="#1f2937">RZBCCZPP</text>
+  <circle cx="14.281" cy="9.473" r="0.1" fill="red" />
+  <text x="1.923" y="11.196" font-size="0.516" fill="#1f2937">Počáteční zůstatek:</text>
+  <circle cx="1.923" cy="11.196" r="0.1" fill="red" />
+  <text x="13.932" y="11.196" font-size="0.556" fill="#1f2937">-34 127.80</text>
+  <circle cx="13.932" cy="11.196" r="0.1" fill="red" />
+  <text x="1.923" y="12.12" font-size="0.48" fill="#1f2937">Příjmy celkem:</text>
+  <circle cx="1.923" cy="12.12" r="0.1" fill="red" />
+  <text x="14.443" y="12.12" font-size="0.48" fill="#1f2937">96 893.00</text>
+  <circle cx="14.443" cy="12.12" r="0.1" fill="red" />
+  <text x="1.923" y="13.029" font-size="0.48" fill="#1f2937">Výdaje celkem:</text>
+  <circle cx="1.923" cy="13.029" r="0.1" fill="red" />
+  <text x="14.565" y="13.029" font-size="0.48" fill="#1f2937">96 703.31</text>
+  <circle cx="14.565" cy="13.029" r="0.1" fill="red" />
+  <text x="1.923" y="13.997" font-size="0.516" fill="#1f2937">Konečný zůstatek:</text>
+  <circle cx="1.923" cy="13.997" r="0.1" fill="red" />
+  <text x="14.009" y="13.997" font-size="0.556" fill="#1f2937">-33 938.11</text>
+  <circle cx="14.009" cy="13.997" r="0.1" fill="red" />
+  <text x="1.923" y="14.979" font-size="0.516" fill="#1f2937">Pohledávky po splatnosti:</text>
+  <circle cx="1.923" cy="14.979" r="0.1" fill="red" />
+  <text x="15.659" y="14.979" font-size="0.516" fill="#1f2937">0.00</text>
+  <circle cx="15.659" cy="14.979" r="0.1" fill="red" />
+  <text x="1.923" y="15.902000000000001" font-size="0.48" fill="#1f2937">Poplatky celkem:</text>
+  <circle cx="1.923" cy="15.902000000000001" r="0.1" fill="red" />
+  <text x="15.481" y="15.902000000000001" font-size="0.48" fill="#1f2937">65.00</text>
+  <circle cx="15.481" cy="15.902000000000001" r="0.1" fill="red" />
+  <text x="1.923" y="17.569" font-size="0.48" fill="#1f2937">Povolený debet</text>
+  <circle cx="1.923" cy="17.569" r="0.1" fill="red" />
+  <text x="1.923" y="18.476" font-size="0.48" fill="#1f2937">Limit čerpání:</text>
+  <circle cx="1.923" cy="18.476" r="0.1" fill="red" />
+  <text x="14.427" y="18.476" font-size="0.48" fill="#1f2937">35 000.00</text>
+  <circle cx="14.427" cy="18.476" r="0.1" fill="red" />
+  <text x="1.923" y="19.385" font-size="0.48" fill="#1f2937">Úroková sazba v % p.a.:</text>
+  <circle cx="1.923" cy="19.385" r="0.1" fill="red" />
+  <text x="15.566" y="19.385" font-size="0.48" fill="#1f2937">16.90</text>
+  <circle cx="15.566" cy="19.385" r="0.1" fill="red" />
+  <text x="1.923" y="20.295" font-size="0.48" fill="#1f2937">Bezúročná rezerva:</text>
+  <circle cx="1.923" cy="20.295" r="0.1" fill="red" />
+  <text x="16.145" y="20.295" font-size="0.48" fill="#1f2937">NE</text>
+  <circle cx="16.145" cy="20.295" r="0.1" fill="red" />
+  <text x="1.923" y="21.117" font-size="0.41850000000000004" fill="#1f2937">*</text>
+  <circle cx="1.923" cy="21.117" r="0.1" fill="red" />
+  <text x="2.136" y="21.352" font-size="0.48" fill="#1f2937">Parametry jsou platné ke konci období, za které je výpis </text>
+  <circle cx="2.136" cy="21.352" r="0.1" fill="red" />
+  <text x="1.923" y="22.083" font-size="0.48" fill="#1f2937">generován.</text>
+  <circle cx="1.923" cy="22.083" r="0.1" fill="red" />
+  <text x="1.923" y="24.703" font-size="0.7" fill="#1f2937">Výpis pohybů</text>
+  <circle cx="1.923" cy="24.703" r="0.1" fill="red" />
+  <text x="2.101" y="26.227" font-size="0.48" fill="#1f2937">Datum</text>
+  <circle cx="2.101" cy="26.227" r="0.1" fill="red" />
+  <text x="6.001" y="26.227" font-size="0.48" fill="#1f2937">Kategorie transakce</text>
+  <circle cx="6.001" cy="26.227" r="0.1" fill="red" />
+  <text x="12.734" y="26.227" font-size="0.48" fill="#1f2937">Typ transakce</text>
+  <circle cx="12.734" cy="26.227" r="0.1" fill="red" />
+  <text x="22.377" y="26.227" font-size="0.48" fill="#1f2937">VS</text>
+  <circle cx="22.377" cy="26.227" r="0.1" fill="red" />
+  <text x="27.233" y="26.227" font-size="0.48" fill="#1f2937">Poplatek</text>
+  <circle cx="27.233" cy="26.227" r="0.1" fill="red" />
+  <text x="32.698" y="26.227" font-size="0.48" fill="#1f2937">Částka</text>
+  <circle cx="32.698" cy="26.227" r="0.1" fill="red" />
+  <text x="2.101" y="27.075" font-size="0.48" fill="#1f2937">Valuta</text>
+  <circle cx="2.101" cy="27.075" r="0.1" fill="red" />
+  <text x="6.001" y="27.075" font-size="0.48" fill="#1f2937">Číslo protiúčtu</text>
+  <circle cx="6.001" cy="27.075" r="0.1" fill="red" />
+  <text x="12.734" y="27.075" font-size="0.48" fill="#1f2937">Zpráva</text>
+  <circle cx="12.734" cy="27.075" r="0.1" fill="red" />
+  <text x="22.377" y="27.075" font-size="0.48" fill="#1f2937">KS</text>
+  <circle cx="22.377" cy="27.075" r="0.1" fill="red" />
+  <text x="30.964" y="27.075" font-size="0.48" fill="#1f2937">Původní částka</text>
+  <circle cx="30.964" cy="27.075" r="0.1" fill="red" />
+  <text x="2.101" y="27.923" font-size="0.48" fill="#1f2937">Kód transakce</text>
+  <circle cx="2.101" cy="27.923" r="0.1" fill="red" />
+  <text x="6.001" y="27.923" font-size="0.48" fill="#1f2937">Název protiúčtu</text>
+  <circle cx="6.001" cy="27.923" r="0.1" fill="red" />
+  <text x="12.734" y="27.923" font-size="0.48" fill="#1f2937">Poznámka</text>
+  <circle cx="12.734" cy="27.923" r="0.1" fill="red" />
+  <text x="22.377" y="27.923" font-size="0.48" fill="#1f2937">SS</text>
+  <circle cx="22.377" cy="27.923" r="0.1" fill="red" />
+  <text x="33.38" y="27.923" font-size="0.48" fill="#1f2937">Kurz</text>
+  <circle cx="33.38" cy="27.923" r="0.1" fill="red" />
+  <text x="2.101" y="29.046" font-size="0.48" fill="#1f2937">2. 11. 2025</text>
+  <circle cx="2.101" cy="29.046" r="0.1" fill="red" />
+  <text x="2.101" y="29.745" font-size="0.48" fill="#1f2937">31. 10. 2025</text>
+  <circle cx="2.101" cy="29.745" r="0.1" fill="red" />
+  <text x="2.101" y="30.443" font-size="0.48" fill="#1f2937">8197311806</text>
+  <circle cx="2.101" cy="30.443" r="0.1" fill="red" />
+  <text x="6.001" y="29.046" font-size="0.48" fill="#1f2937">Platba kartou</text>
+  <circle cx="6.001" cy="29.046" r="0.1" fill="red" />
+  <text x="6.001" y="30.443" font-size="0.48" fill="#1f2937">ZBYNĚK KOCIÁN</text>
+  <circle cx="6.001" cy="30.443" r="0.1" fill="red" />
+  <text x="12.734" y="29.046" font-size="0.48" fill="#1f2937">Platba kartou Google Pay</text>
+  <circle cx="12.734" cy="29.046" r="0.1" fill="red" />
+  <text x="12.734" y="29.745" font-size="0.48" fill="#1f2937">KS:1178</text>
+  <circle cx="12.734" cy="29.745" r="0.1" fill="red" />
+  <text x="12.734" y="30.394" font-size="0.444" fill="#1f2937">PK: 408359XXXXXX2194 </text>
+  <circle cx="12.734" cy="30.394" r="0.1" fill="red" />
+  <text x="12.734" y="30.905" font-size="0.444" fill="#1f2937">D-Oil s.r.o.; Podoli u Brna; CZE</text>
+  <circle cx="12.734" cy="30.905" r="0.1" fill="red" />
+  <text x="22.377" y="29.745" font-size="0.48" fill="#1f2937">1178</text>
+  <circle cx="22.377" cy="29.745" r="0.1" fill="red" />
+  <text x="31.641" y="29.046" font-size="0.48" fill="#1f2937">-500.00 CZK</text>
+  <circle cx="31.641" cy="29.046" r="0.1" fill="red" />
+  <text x="2.101" y="31.820999999999998" font-size="0.48" fill="#1f2937">3. 11. 2025</text>
+  <circle cx="2.101" cy="31.820999999999998" r="0.1" fill="red" />
+  <text x="2.101" y="32.52" font-size="0.48" fill="#1f2937">3. 11. 2025</text>
+  <circle cx="2.101" cy="32.52" r="0.1" fill="red" />
+  <text x="2.101" y="33.218" font-size="0.48" fill="#1f2937">8200350766</text>
+  <circle cx="2.101" cy="33.218" r="0.1" fill="red" />
+  <text x="6.001" y="31.820999999999998" font-size="0.48" fill="#1f2937">Platba</text>
+  <circle cx="6.001" cy="31.820999999999998" r="0.1" fill="red" />
+  <text x="6.001" y="32.52" font-size="0.48" fill="#1f2937">5200016309/5500</text>
+  <circle cx="6.001" cy="32.52" r="0.1" fill="red" />
+  <text x="6.001" y="33.218" font-size="0.48" fill="#1f2937">ThePay, a.s.</text>
+  <circle cx="6.001" cy="33.218" r="0.1" fill="red" />
+  <text x="12.734" y="31.820999999999998" font-size="0.48" fill="#1f2937">Příchozí úhrada</text>
+  <circle cx="12.734" cy="31.820999999999998" r="0.1" fill="red" />
+  <text x="12.734" y="32.52" font-size="0.48" fill="#1f2937">VS:8806154247</text>
+  <circle cx="12.734" cy="32.52" r="0.1" fill="red" />
+  <text x="12.734" y="33.169" font-size="0.444" fill="#1f2937">PŮJČKA DLE SMLOUVY CEWERESO OD A VAFIN </text>
+  <circle cx="12.734" cy="33.169" r="0.1" fill="red" />
+  <text x="12.734" y="33.68" font-size="0.444" fill="#1f2937">CZECH S. R. O.</text>
+  <circle cx="12.734" cy="33.68" r="0.1" fill="red" />
+  <text x="22.377" y="31.820999999999998" font-size="0.48" fill="#1f2937">8806154247</text>
+  <circle cx="22.377" cy="31.820999999999998" r="0.1" fill="red" />
+  <text x="22.377" y="32.52" font-size="0.48" fill="#1f2937">0</text>
+  <circle cx="22.377" cy="32.52" r="0.1" fill="red" />
+  <text x="22.377" y="33.218" font-size="0.48" fill="#1f2937">0000000000</text>
+  <circle cx="22.377" cy="33.218" r="0.1" fill="red" />
+  <text x="31.421" y="31.820999999999998" font-size="0.48" fill="#1f2937">8 000.00 CZK</text>
+  <circle cx="31.421" cy="31.820999999999998" r="0.1" fill="red" />
+  <text x="2.101" y="34.596" font-size="0.48" fill="#1f2937">3. 11. 2025</text>
+  <circle cx="2.101" cy="34.596" r="0.1" fill="red" />
+  <text x="2.101" y="35.295" font-size="0.48" fill="#1f2937">3. 11. 2025</text>
+  <circle cx="2.101" cy="35.295" r="0.1" fill="red" />
+  <text x="2.101" y="35.993" font-size="0.48" fill="#1f2937">8200375266</text>
+  <circle cx="2.101" cy="35.993" r="0.1" fill="red" />
+  <text x="6.001" y="34.596" font-size="0.48" fill="#1f2937">Platba</text>
+  <circle cx="6.001" cy="34.596" r="0.1" fill="red" />
+  <text x="6.001" y="35.295" font-size="0.48" fill="#1f2937">123-3634590237/0100</text>
+  <circle cx="6.001" cy="35.295" r="0.1" fill="red" />
+  <text x="12.734" y="34.596" font-size="0.48" fill="#1f2937">Odchozí okamžitá úhrada</text>
+  <circle cx="12.734" cy="34.596" r="0.1" fill="red" />
+  <text x="31.283" y="34.596" font-size="0.48" fill="#1f2937">-1 800.00 CZK</text>
+  <circle cx="31.283" cy="34.596" r="0.1" fill="red" />
+  <text x="2.101" y="36.916" font-size="0.48" fill="#1f2937">3. 11. 2025</text>
+  <circle cx="2.101" cy="36.916" r="0.1" fill="red" />
+  <text x="2.101" y="37.615" font-size="0.48" fill="#1f2937">3. 11. 2025</text>
+  <circle cx="2.101" cy="37.615" r="0.1" fill="red" />
+  <text x="2.101" y="38.313" font-size="0.48" fill="#1f2937">8200589005</text>
+  <circle cx="2.101" cy="38.313" r="0.1" fill="red" />
+  <text x="6.001" y="36.916" font-size="0.48" fill="#1f2937">Platba</text>
+  <circle cx="6.001" cy="36.916" r="0.1" fill="red" />
+  <text x="6.001" y="37.615" font-size="0.48" fill="#1f2937">1101083110/5500</text>
+  <circle cx="6.001" cy="37.615" r="0.1" fill="red" />
+  <text x="12.734" y="36.916" font-size="0.48" fill="#1f2937">Jednorázová úhrada</text>
+  <circle cx="12.734" cy="36.916" r="0.1" fill="red" />
+  <text x="12.734" y="37.615" font-size="0.48" fill="#1f2937">VS:4039241101</text>
+  <circle cx="12.734" cy="37.615" r="0.1" fill="red" />
+  <text x="22.377" y="36.916" font-size="0.48" fill="#1f2937">4039241101</text>
+  <circle cx="22.377" cy="36.916" r="0.1" fill="red" />
+  <text x="31.304" y="36.916" font-size="0.48" fill="#1f2937">-2 254.22 CZK</text>
+  <circle cx="31.304" cy="36.916" r="0.1" fill="red" />
+  <text x="2.101" y="39.237" font-size="0.48" fill="#1f2937">4. 11. 2025</text>
+  <circle cx="2.101" cy="39.237" r="0.1" fill="red" />
+  <text x="2.101" y="39.935" font-size="0.48" fill="#1f2937">2. 11. 2025</text>
+  <circle cx="2.101" cy="39.935" r="0.1" fill="red" />
+  <text x="2.101" y="40.634" font-size="0.48" fill="#1f2937">8204017884</text>
+  <circle cx="2.101" cy="40.634" r="0.1" fill="red" />
+  <text x="6.001" y="39.237" font-size="0.48" fill="#1f2937">Platba kartou</text>
+  <circle cx="6.001" cy="39.237" r="0.1" fill="red" />
+  <text x="6.001" y="40.634" font-size="0.48" fill="#1f2937">ZBYNĚK KOCIÁN</text>
+  <circle cx="6.001" cy="40.634" r="0.1" fill="red" />
+  <text x="12.734" y="39.237" font-size="0.48" fill="#1f2937">Platba kartou Google Pay</text>
+  <circle cx="12.734" cy="39.237" r="0.1" fill="red" />
+  <text x="12.734" y="39.935" font-size="0.48" fill="#1f2937">KS:1178</text>
+  <circle cx="12.734" cy="39.935" r="0.1" fill="red" />
+  <text x="12.734" y="40.584" font-size="0.444" fill="#1f2937">PK: 408359XXXXXX2194 </text>
+  <circle cx="12.734" cy="40.584" r="0.1" fill="red" />
+  <text x="12.734" y="41.095" font-size="0.444" fill="#1f2937">Potraviny Hruska; Slavkov u Brn; CZE</text>
+  <circle cx="12.734" cy="41.095" r="0.1" fill="red" />
+  <text x="22.377" y="39.935" font-size="0.48" fill="#1f2937">1178</text>
+  <circle cx="22.377" cy="39.935" r="0.1" fill="red" />
+  <text x="31.770000000000003" y="39.237" font-size="0.48" fill="#1f2937">-185.74 CZK</text>
+  <circle cx="31.770000000000003" cy="39.237" r="0.1" fill="red" />
+  <text x="2.101" y="42.012" font-size="0.48" fill="#1f2937">5. 11. 2025</text>
+  <circle cx="2.101" cy="42.012" r="0.1" fill="red" />
+  <text x="2.101" y="42.71" font-size="0.48" fill="#1f2937">3. 11. 2025</text>
+  <circle cx="2.101" cy="42.71" r="0.1" fill="red" />
+  <text x="2.101" y="43.409" font-size="0.48" fill="#1f2937">8209906374</text>
+  <circle cx="2.101" cy="43.409" r="0.1" fill="red" />
+  <text x="6.001" y="42.012" font-size="0.48" fill="#1f2937">Vklad/Výběr z bankomatu</text>
+  <circle cx="6.001" cy="42.012" r="0.1" fill="red" />
+  <text x="6.001" y="43.409" font-size="0.48" fill="#1f2937">ZBYNĚK KOCIÁN</text>
+  <circle cx="6.001" cy="43.409" r="0.1" fill="red" />
+  <text x="12.734" y="42.033" font-size="0.462" fill="#1f2937">Výběr hotovosti z bankomatu Google </text>
+  <circle cx="12.734" cy="42.033" r="0.1" fill="red" />
+  <text x="12.734" y="42.602" font-size="0.462" fill="#1f2937">Pay</text>
+  <circle cx="12.734" cy="42.602" r="0.1" fill="red" />
+  <text x="12.734" y="43.301" font-size="0.48" fill="#1f2937">KS:1178</text>
+  <circle cx="12.734" cy="43.301" r="0.1" fill="red" />
+  <text x="12.734" y="43.95" font-size="0.444" fill="#1f2937">PK: 408359XXXXXX2194 </text>
+  <circle cx="12.734" cy="43.95" r="0.1" fill="red" />
+  <text x="12.734" y="44.461" font-size="0.444" fill="#1f2937">CSAS, Zlinska 1329/12; Brno; CZE</text>
+  <circle cx="12.734" cy="44.461" r="0.1" fill="red" />
+  <text x="22.377" y="42.71" font-size="0.48" fill="#1f2937">1178</text>
+  <circle cx="22.377" cy="42.71" r="0.1" fill="red" />
+  <text x="31.276" y="42.012" font-size="0.48" fill="#1f2937">-1 000.00 CZK</text>
+  <circle cx="31.276" cy="42.012" r="0.1" fill="red" />
+</svg>
