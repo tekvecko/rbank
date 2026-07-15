@@ -23,7 +23,6 @@ backend/get_index.sh
 backend/public/
 collect_apk_builder_info.sh
 deploy_to_aws.sh
-docs/
 find_api_calls.sh
 find_history.sh
 found_files.txt
