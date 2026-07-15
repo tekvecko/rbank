@@ -49,7 +49,7 @@ export default function History() {
   };
 
   const groupedTransactions = transactions.reduce((groups, tx) => {
-    const dateObj = new Date(tx.created_at);
+    const dateObj = tx.created_at ? new Date(tx.created_at) : new Date();
     const dateKey = dateObj.toLocaleDateString('en-CA');
     if (!groups[dateKey]) {
       groups[dateKey] = { dateObj, items: [] };
@@ -63,6 +63,23 @@ export default function History() {
     if (dateObj.toDateString() === today.toDateString()) return 'DNES';
     const options = { day: 'numeric', month: 'long', weekday: 'long' };
     return dateObj.toLocaleDateString('cs-CZ', options).toUpperCase();
+  };
+
+  // Dynamický generátor UI vlastností pro transakce z backendu
+  const enhanceTransaction = (tx) => {
+    const amountNum = parseFloat(tx.amount) || 0;
+    const isIncome = amountNum > 0;
+    const initial = (tx.name && tx.name.length > 0) ? tx.name.charAt(0).toUpperCase() : '?';
+    
+    return {
+      ...tx,
+      uiAmount: new Intl.NumberFormat('cs-CZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(Math.abs(amountNum)),
+      color: isIncome ? 'text-green-400' : 'text-white',
+      sign: isIncome ? '+' : '-',
+      iconBg: isIncome ? 'bg-[#3e424c]' : 'bg-gray-700',
+      iconText: isIncome ? 'text-[#fcd535]' : 'text-white',
+      icon: initial
+    };
   };
 
   return (
@@ -79,20 +96,12 @@ export default function History() {
 
       <div className="px-4 mb-4 flex gap-2 overflow-x-auto no-scrollbar">
         <button className="bg-[#fcd535] text-black px-5 py-2 rounded-full text-[14px] font-semibold whitespace-nowrap">Historie</button>
-        <button className="bg-transparent text-gray-400 px-5 py-2 rounded-full text-[14px] font-medium whitespace-nowrap">Platby</button>
-        <button className="bg-transparent text-gray-400 px-5 py-2 rounded-full text-[14px] font-medium whitespace-nowrap">Produkty</button>
-        <button className="bg-transparent text-gray-400 px-5 py-2 rounded-full text-[14px] font-medium whitespace-nowrap">Detail</button>
+        <button className="bg-transparent text-gray-400 px-5 py-2 rounded-full text-[14px] font-medium whitespace-nowrap border border-gray-600">Platby</button>
       </div>
 
       <div ref={scrollRef} onScroll={handleScroll} className="flex-1 bg-[#2c2f38] rounded-t-[32px] overflow-y-auto px-5 pt-6 pb-24 shadow-inner">
         <div className="flex justify-between items-center mb-5">
           <h2 className="text-[19px] font-bold">Poslední pohyby</h2>
-          <button className="text-[#3b82f6] text-[15px] font-medium active:opacity-70">Filtrovat</button>
-        </div>
-
-        <div className="bg-[#22252e] rounded-xl flex items-center px-4 py-3 mb-6 border border-gray-700">
-          <svg className="w-5 h-5 text-gray-400 mr-3" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-          <input type="text" placeholder="Číslo účtu, příjemce nebo částka" className="bg-transparent flex-1 text-[15px] text-white outline-none placeholder-gray-500" disabled />
         </div>
 
         {Object.entries(groupedTransactions).map(([dateKey, group]) => (
@@ -101,33 +110,31 @@ export default function History() {
               {formatDateHeader(group.dateObj)}
             </h3>
             <div className="space-y-5">
-              {group.items.map((tx) => (
-                <div key={tx.id} className="flex justify-between items-center border-b border-gray-700 pb-5 last:border-0">
-                  <div className="flex items-center gap-4">
-                    <div className="relative">
-                      <div className={`w-11 h-11 rounded-full ${tx.iconBg} flex items-center justify-center text-lg font-bold ${tx.iconBg === 'bg-white' || tx.iconBg === 'bg-[#fcd535]' ? 'text-black' : 'text-white'}`}>
+              {group.items.map((rawTx) => {
+                const tx = enhanceTransaction(rawTx);
+                return (
+                  <div key={tx.id || Math.random()} className="flex justify-between items-center border-b border-gray-700 pb-5 last:border-0">
+                    <div className="flex items-center gap-4">
+                      <div className={`w-11 h-11 rounded-full ${tx.iconBg} flex items-center justify-center text-lg font-bold ${tx.iconText}`}>
                         {tx.icon}
                       </div>
-                      <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#fcd535] rounded-full border-2 border-[#2c2f38] flex items-center justify-center text-[8px] text-black">
-                        {tx.badge}
+                      <div>
+                        <p className="text-[15px] font-medium text-gray-100">{tx.name || 'Neznámá platba'}</p>
+                        <p className="text-[13px] text-gray-400">{tx.type || 'Převod'}</p>
                       </div>
                     </div>
-                    <div>
-                      <p className="text-[15px] font-medium text-gray-100">{tx.name}</p>
-                      <p className="text-[13px] text-gray-400">{tx.type}</p>
+                    <div className="text-right">
+                      <p className={`text-[15px] font-bold ${tx.color}`}>{tx.sign} {tx.uiAmount} CZK</p>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <p className={`text-[15px] font-bold ${tx.color}`}>{tx.amount} CZK</p>
-                    {tx.subAmount && <p className="text-[11px] text-gray-400">{tx.subAmount}</p>}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         ))}
 
         {loading && <div className="text-center text-gray-400 text-sm py-4">Načítám transakce...</div>}
+        {!hasMore && transactions.length > 0 && <div className="text-center text-gray-500 text-sm py-4">Konec historie</div>}
       </div>
       <BottomNav />
     </div>
