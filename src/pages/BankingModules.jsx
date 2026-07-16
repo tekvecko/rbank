@@ -27,9 +27,12 @@ export function Payment() {
     };
 
     try {
-      const res = await fetch('http://13.49.77.58:3000/api/transactions', {
+      const res = await fetch('https://opravyslavkov.shop/api/transactions', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Authorization': 'Basic ' + btoa('rbank:TajneHeslo2026')
+        },
         body: JSON.stringify(payload)
       });
       if (res.ok) {
@@ -44,7 +47,9 @@ export function Payment() {
   return (
     <div className="min-h-screen bg-[#22252e] text-white pb-24 font-sans flex flex-col">
       <header className="flex items-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full"><svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
         <h1 className="text-[17px] font-semibold">Nová platba</h1>
       </header>
       <main className="flex-1 px-4 mt-6">
@@ -76,7 +81,9 @@ export function CardDetail() {
   return (
     <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
       <header className="flex items-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full"><svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
         <h1 className="text-[17px] font-semibold">Debetní karta</h1>
       </header>
       <main className="flex-1 px-4 mt-6">
@@ -117,7 +124,9 @@ export function SavingsGoals() {
   return (
     <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
       <header className="flex items-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full"><svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
         <h1 className="text-[17px] font-semibold">Spořicí cíle</h1>
       </header>
       <main className="flex-1 px-4 mt-6">
@@ -145,7 +154,9 @@ export function BuildingSavings() {
   return (
     <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
       <header className="flex items-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full"><svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
         <h1 className="text-[17px] font-semibold">Stavební spoření</h1>
       </header>
       <main className="flex-1 px-4 mt-6">
