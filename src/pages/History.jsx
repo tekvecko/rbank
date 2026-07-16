@@ -8,7 +8,7 @@ export default function History() {
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const scrollRef = useRef(null);
-
+  
   const pageRef = useRef(1);
   const loadingRef = useRef(false);
 
@@ -17,7 +17,19 @@ export default function History() {
     loadingRef.current = true;
     setLoading(true);
     try {
-      const res = await fetch(`http://13.49.77.58:3000/api/transactions?page=${pageRef.current}&limit=15`);
+      // Změna na zabezpečenou HTTPS doménu a přidání Basic Auth hlavičky
+      const res = await fetch(`https://opravyslavkov.shop/api/transactions?page=${pageRef.current}&limit=15`, {
+        method: 'GET',
+        headers: {
+          'Authorization': 'Basic ' + btoa('rbank:TajneHeslo2026'),
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      
       const newTx = await res.json();
 
       if (newTx.length === 0) {
@@ -65,12 +77,11 @@ export default function History() {
     return dateObj.toLocaleDateString('cs-CZ', options).toUpperCase();
   };
 
-  // Dynamický generátor UI vlastností pro transakce z backendu
   const enhanceTransaction = (tx) => {
     const amountNum = parseFloat(tx.amount) || 0;
     const isIncome = amountNum > 0;
     const initial = (tx.name && tx.name.length > 0) ? tx.name.charAt(0).toUpperCase() : '?';
-    
+
     return {
       ...tx,
       uiAmount: new Intl.NumberFormat('cs-CZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(Math.abs(amountNum)),
