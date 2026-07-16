@@ -6,14 +6,15 @@ import { Toast } from '@capacitor/toast';
 import Dashboard from './pages/Dashboard';
 import History from './pages/History';
 import { Payment, CardDetail, SavingsGoals, BuildingSavings } from './pages/BankingModules';
-import { Offers, InfoZone, Menu, Profile } from './pages/UserModules';
+import { 
+  Offers, InfoZone, Menu, Profile,
+  TravelInsurance, MinuteLoan, SystemOutage,
+  ExchangeRates, BranchesATMs, AppSettings, Support
+} from './pages/UserModules';
 
-// Komponenta pro zpracování hardwarového tlačítka Zpět
 function BackButtonHandler() {
   const navigate = useNavigate();
   const location = useLocation();
-  
-  // Držíme si aktuální cestu v referenci, aby se nemusel neustále re-vytvářet event listener
   const currentPath = useRef(location.pathname);
   const lastBackPress = useRef(0);
 
@@ -23,10 +24,8 @@ function BackButtonHandler() {
 
   useEffect(() => {
     const handleBackButton = async () => {
-      // Jsme na hlavní obrazovce?
       if (currentPath.current === '/') {
         const now = new Date().getTime();
-        // Pokud bylo Zpět stisknuto znovu do 2 vteřin, ukončíme aplikaci
         if (now - lastBackPress.current < 2000) {
           await CapacitorApp.exitApp();
         } else {
@@ -38,28 +37,23 @@ function BackButtonHandler() {
           });
         }
       } else {
-        // Nejsme na domovské obrazovce, jdeme prostě o krok zpět v historii
         navigate(-1);
       }
     };
 
-    // Zaregistrování listeneru v nativním API Capacitoru
     const listenerPromise = CapacitorApp.addListener('backButton', handleBackButton);
 
-    // Cleanup při odpojení (i když App.jsx se typicky neodpojuje)
     return () => {
       listenerPromise.then(listener => listener.remove());
     };
   }, [navigate]);
 
-  // Tato komponenta nic nevykresluje, je to pouze logický wrapper
   return null;
 }
 
 export default function App() {
   return (
     <BrowserRouter>
-      {/* Náš nový neviditelný handler musí být uvnitř BrowserRouteru */}
       <BackButtonHandler />
       <Routes>
         <Route path="/" element={<Dashboard />} />
@@ -72,6 +66,15 @@ export default function App() {
         <Route path="/savings-goals" element={<SavingsGoals />} />
         <Route path="/building-savings" element={<BuildingSavings />} />
         <Route path="/card" element={<CardDetail />} />
+        
+        {/* Nové mock routy */}
+        <Route path="/travel-insurance" element={<TravelInsurance />} />
+        <Route path="/minute-loan" element={<MinuteLoan />} />
+        <Route path="/system-outage" element={<SystemOutage />} />
+        <Route path="/exchange-rates" element={<ExchangeRates />} />
+        <Route path="/branches" element={<BranchesATMs />} />
+        <Route path="/settings" element={<AppSettings />} />
+        <Route path="/support" element={<Support />} />
       </Routes>
     </BrowserRouter>
   );
