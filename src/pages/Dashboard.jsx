@@ -9,9 +9,18 @@ export default function Dashboard() {
   const [balance, setBalance] = useState(null);
 
   useEffect(() => {
-    // Adresa přesměrována na AWS server
-    fetch('http://13.49.77.58:3000/api/balance')
-      .then(res => res.json())
+    // Bezpečné volání HTTPS API s Basic Auth hlavičkou
+    fetch('https://opravyslavkov.shop/api/balance', {
+      method: 'GET',
+      headers: {
+        'Authorization': 'Basic ' + btoa('rbank:TajneHeslo2026'),
+        'Accept': 'application/json'
+      }
+    })
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP chyba: ${res.status}`);
+        return res.json();
+      })
       .then(data => setBalance(data.balance))
       .catch(err => console.error("Chyba načítání zůstatku:", err));
   }, []);
