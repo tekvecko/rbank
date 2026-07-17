@@ -1,24 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Preferences } from '@capacitor/preferences';
-import { registerPlugin } from '@capacitor/core';
-
-// Propojení s naším nativním Java můstkem
-const BiometricPlugin = registerPlugin('BiometricPlugin');
 
 export default function PinScreen({ onAuthenticated }) {
   const [pin, setPin] = useState('');
   
-  const handleAuth = async () => {
-    try {
-      const result = await BiometricPlugin.authenticate();
-      if (result.success) onAuthenticated();
-    } catch (e) {
-      console.log('Biometrie zrušena nebo selhala. Detail:', e);
-    }
+  const handleAuth = () => {
+    console.log('Biometrie kliknuta - momentálně deaktivována kvůli stabilitě.');
+    // Zde bude v budoucnu bezpečnější AndroidX implementace
   };
-
-  // Automatické vyvolání senzoru při startu
-  useEffect(() => { handleAuth(); }, []);
 
   const handleDigit = (digit) => {
     if (pin.length < 4) setPin(prev => prev + digit);
@@ -28,8 +17,7 @@ export default function PinScreen({ onAuthenticated }) {
 
   const checkPin = async () => {
     const { value } = await Preferences.get({ key: 'user_pin' });
-    // Pokud PIN ještě není nastaven, pro účely vývoje pustíme dál s jakýmkoliv 4místným PINem, 
-    // nebo zkontrolujeme proti uloženému
+    
     if (!value && pin.length === 4) {
       await Preferences.set({ key: 'user_pin', value: pin });
       onAuthenticated();

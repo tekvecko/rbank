@@ -1,0 +1,10 @@
+/* Vynucení RBank Navy Blue identity do VitePress šablony */
+:root {
+  --vp-c-brand-1: #3b82f6; /* Klientská modrá */
+  --vp-c-brand-2: #fcd535; /* Klientská žlutá */
+  
+  /* Tmavé pozadí pro dokumentaci (shodné s tvojí aplikací) */
+  --vp-c-bg: #22252e;
+  --vp-c-bg-alt: #2c2f38;
+  --vp-c-bg-elv: #3e424c;
+}
