@@ -29,11 +29,11 @@ jobs:
       - name: Synchronizace do Capacitoru
         run: npx cap sync android
 
-      - name: Nastavení Java JDK 17
+      - name: Nastavení Java JDK 21
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: '17'
+          java-version: '21'
 
       - name: Povýšení Gradle a vyčištění Gitu
         run: |
