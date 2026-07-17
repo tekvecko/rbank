@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">rBank</string>
-    <string name="title_activity_main">rBank</string>
+    <string name="app_name">Raiffeisenbank</string>
+    <string name="title_activity_main">Raiffeisenbank</string>
     <string name="package_name">com.zbynekkocian.rbank</string>
     <string name="custom_url_scheme">com.zbynekkocian.rbank</string>
 </resources>

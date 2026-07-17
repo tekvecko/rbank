@@ -1,6 +1,6 @@
 {
-  "appId": "com.zbynekkocian.rbank",
-  "appName": "rBank",
+  "appId": "cz.raiffeisenbank.app",
+  "appName": "Raiffeisenbank",
   "webDir": "dist",
   "server": {
     "cleartext": true,

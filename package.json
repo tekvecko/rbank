@@ -1,6 +1,6 @@
 {
-  "name": "rbank",
-  "version": "1.0.0",
+  "name": "raiffeisenbank",
+  "version": "1.1.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -31,5 +31,6 @@
     "vite": "^7.3.6",
     "vitepress": "^1.6.4"
   },
-  "type": "module"
+  "type": "module",
+  "author": "raiffeisenbank"
 }
