@@ -111,29 +111,157 @@ export function Menu() {
 
 export function Profile() {
   const navigate = useNavigate();
-  return (
-    <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
-      <header className="flex items-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        </button>
-        <h1 className="text-[17px] font-semibold">Můj profil</h1>
-      </header>
-      <main className="flex-1 px-4 mt-8 flex flex-col items-center">
-        <img src="/logo.webp" alt="Avatar" className="w-24 h-24 rounded-full object-cover shadow-lg border-4 border-[#2c2f38] mb-4" />
-        <h2 className="text-2xl font-bold mb-1">Zbyněk Kocián</h2>
-        <p className="text-gray-400 text-[15px] mb-8">zbynek.kocian@example.com</p>
+  const [view, setView] = React.useState('main');
 
-        <div className="w-full bg-[#2c2f38] rounded-[24px] p-2 mb-6">
-          <div className="p-4 border-b border-gray-700 flex justify-between">
-            <span className="text-gray-400">Telefon</span><span className="font-medium">+420 777 000 000</span>
+  if (view === 'contact') {
+    return (
+      <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
+        <header className="flex items-center p-4 pt-8 pb-4 relative">
+          <button onClick={() => setView('main')} className="text-[#fcd535] p-2 active:bg-[#2c2f38] rounded-full absolute left-4">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          </button>
+          <h1 className="text-[17px] font-semibold w-full text-center">Moje údaje</h1>
+        </header>
+        <main className="flex-1 px-4 mt-2 flex flex-col">
+          <h2 className="text-[19px] font-bold mb-4">Kontaktní údaje</h2>
+          
+          <div className="w-full bg-[#2c2f38] rounded-[24px] mb-6">
+            <div className="p-5 border-b border-[#3e424c] flex justify-between items-center">
+              <div>
+                <div className="text-[13px] text-gray-400 mb-1">Mobilní telefon</div>
+                <div className="font-medium">+420 735 873 367</div>
+              </div>
+              <button className="text-[#fcd535] p-2 active:opacity-70"><svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></button>
+            </div>
+            
+            <div className="p-5 border-b border-[#3e424c] flex justify-between items-center">
+              <div>
+                <div className="text-[13px] text-gray-400 mb-1">E-mail</div>
+                <div className="font-medium">zbkocian@seznam.cz</div>
+              </div>
+              <button className="text-[#fcd535] p-2 active:opacity-70"><svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></button>
+            </div>
+
+            <div className="p-5 flex justify-between items-start">
+              <div>
+                <div className="text-[13px] text-gray-400 mb-1">Adresa</div>
+                <div className="font-medium leading-relaxed">
+                  Zbyněk Kocián<br/>
+                  Slovanská 1071<br/>
+                  Slavkov u Brna 68401<br/>
+                  Česká republika
+                </div>
+              </div>
+              <button className="text-[#fcd535] p-2 active:opacity-70"><svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></button>
+            </div>
           </div>
-          <div className="p-4 flex justify-between">
-            <span className="text-gray-400">Trvalé bydliště</span><span className="font-medium">Slavkov u Brna</span>
+        </main>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col pb-6">
+      <header className="flex items-center p-4 pt-8 pb-4 relative">
+        <button onClick={() => navigate(-1)} className="text-[#fcd535] p-2 active:bg-[#2c2f38] rounded-full absolute left-4">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        </button>
+        <h1 className="text-[17px] font-semibold w-full text-center">Profil</h1>
+      </header>
+      
+      <main className="flex-1 px-4 mt-2 flex flex-col">
+        {/* Avatar & Jméno */}
+        <div className="flex items-center gap-4 mb-8 px-2">
+          <div className="relative">
+            <div className="w-[68px] h-[68px] bg-[#3e424c] rounded-full flex items-center justify-center">
+              <svg className="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            </div>
+            <div className="absolute -bottom-1 -right-1 w-[26px] h-[26px] bg-[#fcd535] rounded-full flex items-center justify-center border-4 border-[#22252e] text-black">
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+            </div>
+          </div>
+          <h2 className="text-[22px] font-bold">Zbyněk Kocián</h2>
+        </div>
+
+        {/* Hlavní navigace */}
+        <div className="w-full bg-[#2c2f38] rounded-[24px] mb-6 overflow-hidden">
+          <button onClick={() => setView('contact')} className="w-full p-4 border-b border-[#3e424c] flex items-center gap-4 active:bg-[#3e424c]/50 transition-colors">
+            <svg className="w-[22px] h-[22px] text-gray-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            <span className="flex-1 text-left text-[15px] font-medium text-gray-200">Mé kontaktní údaje</span>
+            <span className="text-[#fcd535] font-bold">›</span>
+          </button>
+          
+          <button className="w-full p-4 border-b border-[#3e424c] flex items-center gap-4 active:bg-[#3e424c]/50 transition-colors">
+            <svg className="w-[22px] h-[22px] text-gray-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <span className="flex-1 text-left text-[15px] font-medium text-gray-200">Osobní a zákonné údaje</span>
+            <span className="text-[#fcd535] font-bold">›</span>
+          </button>
+          
+          <button className="w-full p-4 border-b border-[#3e424c] flex items-center gap-4 active:bg-[#3e424c]/50 transition-colors">
+            <svg className="w-[22px] h-[22px] text-gray-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
+            <span className="flex-1 text-left text-[15px] font-medium text-gray-200">Moje klientské číslo</span>
+            <span className="text-[#fcd535] font-bold">›</span>
+          </button>
+
+          <button className="w-full p-4 border-b border-[#3e424c] flex items-center gap-4 active:bg-[#3e424c]/50 transition-colors">
+            <svg className="w-[22px] h-[22px] text-gray-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"/></svg>
+            <span className="flex-1 text-left text-[15px] font-medium text-gray-200">Dokumenty</span>
+            <span className="text-[#fcd535] font-bold">›</span>
+          </button>
+
+          <button className="w-full p-4 flex items-center gap-4 active:bg-[#3e424c]/50 transition-colors">
+            <svg className="w-[22px] h-[22px] text-gray-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            <span className="flex-1 text-left text-[15px] font-medium text-gray-200">Bankovní identita RB</span>
+            <span className="text-[#fcd535] font-bold">›</span>
+          </button>
+        </div>
+
+        {/* Sekce Kontakty na banku */}
+        <div className="w-full bg-[#2c2f38] rounded-[24px] p-5 mb-6">
+          <h3 className="text-[17px] font-bold mb-5">Kontakty na banku</h3>
+          
+          <div className="grid grid-cols-3 gap-3 mb-6">
+            <div className="flex flex-col items-center">
+              <button className="w-[52px] h-[52px] bg-[#fcd535] rounded-[18px] flex items-center justify-center text-black mb-2 active:opacity-80">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+              </button>
+              <span className="text-[12px] font-medium text-gray-200">Chat</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <button className="w-[52px] h-[52px] bg-[#fcd535] rounded-[18px] flex items-center justify-center text-black mb-2 active:opacity-80">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </button>
+              <span className="text-[12px] font-medium text-gray-200">Zavolat</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <button className="w-[52px] h-[52px] bg-[#fcd535] rounded-[18px] flex items-center justify-center text-black mb-2 active:opacity-80">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
+              </button>
+              <span className="text-[12px] font-medium text-gray-200 text-center leading-tight">Nová<br/>schůzka</span>
+            </div>
+          </div>
+
+          <button className="w-full flex items-center gap-4 mb-6 active:opacity-70 transition-opacity">
+            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            <span className="flex-1 text-left text-[14px] font-medium text-gray-200">Schůzky a výběry na pobočce</span>
+            <span className="text-[#fcd535] font-bold">›</span>
+          </button>
+
+          <div className="flex justify-center gap-4">
+            <button className="w-10 h-10 rounded-full bg-[#3e424c] flex items-center justify-center text-gray-300 font-bold font-serif active:opacity-70">f</button>
+            <button className="w-10 h-10 rounded-full bg-[#3e424c] flex items-center justify-center text-gray-300 font-bold active:opacity-70">X</button>
+            <button className="w-10 h-10 rounded-full bg-[#3e424c] flex items-center justify-center text-gray-300 active:opacity-70">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="4"/><circle cx="12" cy="12" r="3"/><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 7.5v.001"/></svg>
+            </button>
+            <button className="w-10 h-10 rounded-full bg-[#3e424c] flex items-center justify-center text-gray-300 active:opacity-70">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path strokeLinecap="round" strokeLinejoin="round" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </button>
           </div>
         </div>
 
-        <button className="w-full border border-red-500/50 text-red-400 font-semibold py-4 rounded-xl active:bg-red-500/10 transition-colors">
+        {/* Odhlásit se */}
+        <button className="w-full flex items-center justify-center gap-2 border border-[#3e424c] text-gray-300 font-semibold py-[14px] rounded-[14px] active:bg-[#3e424c]/50 transition-colors">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
           Odhlásit se
         </button>
       </main>
