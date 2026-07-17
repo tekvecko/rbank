@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { App as CapacitorApp } from '@capacitor/app';
+import PinScreen from './components/PinScreen';
 import { Toast } from '@capacitor/toast';
 
 import Dashboard from './pages/Dashboard';
@@ -52,6 +53,12 @@ function BackButtonHandler() {
 }
 
 export default function App() {
+  const [authenticated, setAuthenticated] = React.useState(false);
+
+  if (!authenticated) {
+    return <PinScreen onAuthenticated={() => setAuthenticated(true)} />;
+  }
+
   return (
     <BrowserRouter>
       <BackButtonHandler />
