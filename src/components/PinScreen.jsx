@@ -1,19 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { Preferences } from '@capacitor/preferences';
-import { BiometricAuth } from '@capacitor-community/biometric-auth';
+import { registerPlugin } from '@capacitor/core';
+
+// Propojení s naším nativním Java můstkem
+const BiometricPlugin = registerPlugin('BiometricPlugin');
 
 export default function PinScreen({ onAuthenticated }) {
   const [pin, setPin] = useState('');
   
   const handleAuth = async () => {
     try {
-      const result = await BiometricAuth.authenticate({ title: 'Přihlášení k rBank' });
+      const result = await BiometricPlugin.authenticate();
       if (result.success) onAuthenticated();
     } catch (e) {
-      console.log('Biometrie nedostupná nebo zrušena, použij PIN.');
+      console.log('Biometrie zrušena nebo selhala. Detail:', e);
     }
   };
 
+  // Automatické vyvolání senzoru při startu
   useEffect(() => { handleAuth(); }, []);
 
   const handleDigit = (digit) => {
@@ -24,8 +28,17 @@ export default function PinScreen({ onAuthenticated }) {
 
   const checkPin = async () => {
     const { value } = await Preferences.get({ key: 'user_pin' });
-    if (pin === value) onAuthenticated();
-    else { setPin(''); alert('Špatný PIN'); }
+    // Pokud PIN ještě není nastaven, pro účely vývoje pustíme dál s jakýmkoliv 4místným PINem, 
+    // nebo zkontrolujeme proti uloženému
+    if (!value && pin.length === 4) {
+      await Preferences.set({ key: 'user_pin', value: pin });
+      onAuthenticated();
+    } else if (pin === value) {
+      onAuthenticated();
+    } else { 
+      setPin(''); 
+      alert('Špatný PIN'); 
+    }
   };
 
   return (
