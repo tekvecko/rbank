@@ -35,13 +35,17 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Povolení spouštění Gradle
-        run: chmod +x android/gradlew
+      - name: Čištění Gitu a povolení Gradle
+        run: |
+          chmod +x android/gradlew
+          rm -rf android/.gradle
+          rm -rf android/app/build
+          rm -rf android/capacitor-cordova-android-plugins/build
 
       - name: Sestavení APK (Debug)
         run: |
           cd android
-          ./gradlew assembleDebug
+          ./gradlew clean assembleDebug --no-daemon --stacktrace
 
       - name: Nahrání hotového APK
         uses: actions/upload-artifact@v4
