@@ -2,59 +2,51 @@ name: Build Android APK
 
 on:
   push:
-    branches: [ "main", "master" ]
-  workflow_dispatch:
+    branches: [ main ]
+  # Umožňuje spustit build i manuálně z webu GitHubu
+  workflow_dispatch: 
 
 jobs:
-  build:                                                       
-    name: Build rBank APK
+  build:
+    name: Build APK
     runs-on: ubuntu-latest
-                                                               
+
     steps:
-      - name: Checkout repozitáře
+      - name: Získání zdrojových kódů
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Nastavení Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
-                                                               
+          node-version: '20'
+          cache: 'npm'
+
       - name: Instalace NPM závislostí
         run: npm install
 
-      - name: Sestavení produkčního Vite buildu
+      - name: Build webové aplikace (Vite)
         run: npm run build
 
-      - name: Synchronizace Capacitor platformy
+      - name: Synchronizace do Capacitoru
         run: npx cap sync android
 
-      - name: Generování nativních Android ikon
-        run: |
-          sudo apt-get update && sudo apt-get install -y webp
-          mkdir -p assets
-          dwebp public/logo.webp -o assets/icon.png
-          npm install -g @capacitor/assets
-          npx capacitor-assets generate --android
-
-      - name: Amputace Cordova kompatibility (Bypass bcprov bugu)
-        run: node clean-cordova.js
-
-      - name: Nastavení Java 21 JDK
+      - name: Nastavení Java JDK 17
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
-          java-version: '21'
+          java-version: '17'
 
-      - name: Oprávnění ke spuštění Gradle wrapperu
-        working-directory: ./android
-        run: chmod +x gradlew
+      - name: Povolení spouštění Gradle
+        run: chmod +x android/gradlew
 
-      - name: Nativní sestavení APK přes Gradle
-        working-directory: ./android
-        run: ./gradlew clean assembleDebug --no-daemon --stacktrace
+      - name: Sestavení APK (Debug)
+        run: |
+          cd android
+          ./gradlew assembleDebug
 
-      - name: Publikace APK jako artefaktu
+      - name: Nahrání hotového APK
         uses: actions/upload-artifact@v4
         with:
-          name: rBank-APK
+          name: rBank-app-debug
           path: android/app/build/outputs/apk/debug/app-debug.apk
+          retention-days: 14
