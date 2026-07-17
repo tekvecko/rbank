@@ -385,6 +385,41 @@ export function ExchangeRates() {
   );
 }
 
+
+export function Settings() {
+  const navigate = useNavigate();
+  const [settings, setSettings] = React.useState({
+    push: true,
+    biometric: true,
+    darkMode: true
+  });
+
+  const toggle = (key) => setSettings(prev => ({ ...prev, [key]: !prev[key] }));
+
+  return (
+    <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
+      <header className="flex items-center p-4 pt-8 pb-4 relative border-b border-[#2c2f38]">
+        <button onClick={() => navigate(-1)} className="text-[#fcd535] p-2 absolute left-4"><svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></button>
+        <h1 className="text-[17px] font-semibold w-full text-center">Nastavení</h1>
+      </header>
+      <main className="p-4 space-y-4">
+        {[
+          { id: 'push', label: 'Push notifikace' },
+          { id: 'biometric', label: 'Přihlášení otiskem prstu' },
+          { id: 'darkMode', label: 'Tmavý režim (Vynucený)' }
+        ].map(s => (
+          <div key={s.id} className="bg-[#2c2f38] p-5 rounded-[20px] flex justify-between items-center">
+            <span className="font-medium">{s.label}</span>
+            <button onClick={() => toggle(s.id)} className={`w-12 h-7 rounded-full transition-colors relative ${settings[s.id] ? 'bg-[#3b82f6]' : 'bg-gray-600'}`}>
+              <div className={`w-5 h-5 bg-white rounded-full absolute top-1 transition-all ${settings[s.id] ? 'left-6' : 'left-1'}`}></div>
+            </button>
+          </div>
+        ))}
+      </main>
+    </div>
+  );
+}
+
 export function BranchesATMs() {
   const navigate = useNavigate();
   return (
