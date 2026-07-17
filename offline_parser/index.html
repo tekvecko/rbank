@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>rBank Offline Revize</title>
+    <style>
+        /* Skrytí posuvníku pro horizontální menu na mobilu, ale zachování scrollování */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-[#22252e] text-white p-5 font-sans pb-24">
+    <header class="flex items-center justify-between mb-4 border-b border-[#2c2f38] pb-4">
+        <div>
+            <h1 class="text-[19px] font-bold">Offline revize výpisu</h1>
+            <p class="text-[13px] text-gray-400">Lokální Termux prostředí</p>
+        </div>
+        <div class="w-10 h-10 bg-[#3b82f6] rounded-full flex items-center justify-center font-bold text-white shadow-lg">rB</div>
+    </header>
+
+    <!-- Ovládací panel -->
+    <div class="mb-5 space-y-3 sticky top-0 bg-[#22252e] pt-2 z-10">
+        <div class="flex justify-between items-center">
+            <h2 class="text-[15px] font-semibold text-slate-200">Filtrovat měsíc</h2>
+            <button id="sort-btn" class="text-[13px] text-[#3b82f6] font-medium px-4 py-2 bg-[#3b82f6]/10 rounded-xl active:bg-[#3b82f6]/20 transition-colors">
+                ▼ Nejnovější
+            </button>
+        </div>
+        <!-- Měsíce (horizontální dotykový scroll) -->
+        <div id="month-tabs" class="flex overflow-x-auto gap-2 pb-2 hide-scrollbar"></div>
+    </div>
+
+    <div id="container" class="space-y-4">
+        <p class="text-gray-400 text-sm text-center">Načítám vyparsovaná data...</p>
+    </div>
+
+    <script>
+        let allTx = [];
+        let currentSort = 'desc'; // 'desc' = nejnovější první, 'asc' = nejstarší první
+        let selectedMonth = 'all'; // 'all' nebo číslo 1-12
+
+        const months = ["Vše", "Leden", "Únor", "Březen", "Duben", "Květen", "Červen", "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec"];
+
+        // Převod stringu "6. 7. 2025" na milisekundy pro matematické řazení
+        const parseDate = (dStr) => {
+            if (!dStr) return 0;
+            const parts = dStr.split('.').map(x => parseInt(x.trim()));
+            if (parts.length === 3) {
+                // Rok, Měsíc (0-11), Den
+                return new Date(parts[2], parts[1] - 1, parts[0]).getTime();
+            }
+            return 0;
+        };
+
+        const renderTabs = () => {
+            const tabsHtml = months.map((m, idx) => {
+                const val = idx === 0 ? 'all' : idx;
+                const isActive = selectedMonth === val;
+                const bgClass = isActive 
+                    ? 'bg-[#3b82f6] text-white shadow-lg shadow-blue-500/20' 
+                    : 'bg-[#2c2f38] text-gray-400 border border-[#3e424c]';
+                
+                return `<button onclick="setMonth('${val}')" class="whitespace-nowrap px-5 py-2 rounded-xl text-[13px] font-medium transition-colors ${bgClass}">${m}</button>`;
+            }).join('');
+            document.getElementById('month-tabs').innerHTML = tabsHtml;
+        };
+
+        // Vystavení funkce do globálního scope pro onclick tlačítka
+        window.setMonth = (val) => {
+            selectedMonth = val === 'all' ? 'all' : parseInt(val);
+            renderTabs();
+            renderTransactions();
+        };
+
+        document.getElementById('sort-btn').addEventListener('click', () => {
+            currentSort = currentSort === 'desc' ? 'asc' : 'desc';
+            document.getElementById('sort-btn').innerHTML = currentSort === 'desc' ? '▼ Nejnovější' : '▲ Nejstarší';
+            renderTransactions();
+        });
+
+        const renderTransactions = () => {
+            const cont = document.getElementById('container');
+            
+            // 1. Filtrace podle měsíce
+            let filtered = allTx.filter(tx => {
+                if (selectedMonth === 'all') return true;
+                if (!tx.real_date) return false;
+                
+                const parts = tx.real_date.split('.').map(x => parseInt(x.trim()));
+                return parts.length === 3 && parts[1] === selectedMonth;
+            });
+
+            // 2. Řazení podle data
+            filtered.sort((a, b) => {
+                const timeA = parseDate(a.real_date);
+                const timeB = parseDate(b.real_date);
+                return currentSort === 'desc' ? timeB - timeA : timeA - timeB;
+            });
+
+            // 3. Vykreslení
+            if (filtered.length === 0) {
+                cont.innerHTML = '<p class="text-gray-400 text-[14px] text-center py-10">V tomto období nejsou žádné transakce.</p>';
+                return;
+            }
+            
+            cont.innerHTML = filtered.map(tx => `
+                <div class="bg-[#2c2f38] p-4 rounded-xl flex justify-between items-center shadow-lg border border-[#3e424c]">
+                    <div class="flex-1 pr-4">
+                        <p class="font-semibold text-[15px] leading-tight mb-1 text-slate-200">${tx.name}</p>
+                        <p class="text-[12px] text-gray-400 leading-tight">${tx.type}</p>
+                    </div>
+                    <div class="text-right shrink-0">
+                        <p class="font-bold text-[15px] ${tx.color}">${tx.amount} CZK</p>
+                        <p class="text-[11px] text-gray-500 mt-1">${tx.real_date}</p>
+                    </div>
+                </div>
+            `).join('');
+        };
+
+        // Načtení dat při startu
+        fetch('transactions.json')
+            .then(r => r.json())
+            .then(data => {
+                allTx = data;
+                renderTabs();
+                renderTransactions();
+            })
+            .catch(err => {
+                document.getElementById('container').innerHTML = '<p class="text-red-400 text-sm text-center">Chyba při načítání dat. Ujistěte se, že JSON existuje.</p>';
+            });
+    </script>
+</body>
+</html>

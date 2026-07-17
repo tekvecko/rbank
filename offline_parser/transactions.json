@@ -1,0 +1,5066 @@
+[
+  {
+    "id": "r5wu9ruwk",
+    "real_date": "2. 7. 2025",
+    "name": "GOPAY * O2 GOPAY * :; Praha; CZE",
+    "type": "Platba kartou",
+    "amount": "-398,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "vmxevpgjo",
+    "real_date": "2. 7. 2025",
+    "name": "GOPAY * O2 GOPAY * :; Praha; CZE",
+    "type": "Platba kartou",
+    "amount": "-300,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ppqv9q3v7",
+    "real_date": "2. 7. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-314,64",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qmplr74dh",
+    "real_date": "2. 7. 2025",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou",
+    "amount": "-151,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qjbns9fyi",
+    "real_date": "3. 7. 2025",
+    "name": "ORLEN CS 0548; ROUSINOV; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-698,30",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "oz3g79e7f",
+    "real_date": "3. 7. 2025",
+    "name": "KFC Rohlenka; Tvarozna; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-405,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "c36ct2olv",
+    "real_date": "3. 7. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-94,60",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ij2fumiot",
+    "real_date": "4. 7. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "y878w9lw5",
+    "real_date": "4. 7. 2025",
+    "name": "REZNICTVI A UZENARST; SLAVKOV U BRN; CZE",
+    "type": "Platba kartou",
+    "amount": "-671,52",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "r1m83h7ep",
+    "real_date": "4. 7. 2025",
+    "name": "www.reservio.cz; Brno - Stare; CZE",
+    "type": "Platba kartou",
+    "amount": "-200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "giti8dx2b",
+    "real_date": "5. 7. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-355,75",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "0kstrco8b",
+    "real_date": "5. 7. 2025",
+    "name": "5716803063/0800",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+1 417,20",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "4exczkw6m",
+    "real_date": "5. 7. 2025",
+    "name": "881506/0100",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "4g0ri7859",
+    "real_date": "6. 7. 2025",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou",
+    "amount": "-419,64",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "uysouwl6a",
+    "real_date": "6. 7. 2025",
+    "name": "195690557/0600",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+180,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "fb77n55dl",
+    "real_date": "8. 7. 2025",
+    "name": "22023/5500 - VIVO CONNECTION, spo | Internet VIVO Slavkov",
+    "type": "Trvalý příkaz (Trvalá platba)",
+    "amount": "-399,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "wrqaw2puz",
+    "real_date": "8. 7. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-153,83",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "fffs27dcb",
+    "real_date": "8. 7. 2025",
+    "name": "Pay | CSOB 1283 SLAVKOV U B; Slavkov u Brn; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-500,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ji8cvczvz",
+    "real_date": "8. 7. 2025",
+    "name": "0,10 EUR;SLEDOVANIETV S.R.O.; BRATISLAVA; | SVK",
+    "type": "Platba kartou",
+    "amount": "-2,56",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "tb6co71lb",
+    "real_date": "8. 7. 2025",
+    "name": "allegro.cz; Poznan; POL",
+    "type": "Platba kartou",
+    "amount": "-180,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ezyb20njq",
+    "real_date": "8. 7. 2025",
+    "name": "Lidl dekuje za nakup; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-250,95",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ufibe6x5z",
+    "real_date": "8. 7. 2025",
+    "name": "CSPH MAREFY; Bucovice; CZE",
+    "type": "Platba kartou",
+    "amount": "-158,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qdw74k09t",
+    "real_date": "9. 7. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-145,40",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "692o8h79n",
+    "real_date": "10. 7. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-94,70",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "uw7wnlad8",
+    "real_date": "11. 7. 2025",
+    "name": "1387864552/2700 - ANTREG,a.s.",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+28 145,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "70o0fgqqd",
+    "real_date": "13. 7. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-138,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "mz8e1utm2",
+    "real_date": "13. 7. 2025",
+    "name": "allegro.cz; Poznan; POL",
+    "type": "Platba kartou",
+    "amount": "-222,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "uoi6el266",
+    "real_date": "13. 7. 2025",
+    "name": "Temu.com; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-98,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "9c2r9fkaz",
+    "real_date": "13. 7. 2025",
+    "name": "GOOGLE *Google One; g.co/HelpPay#; IRL",
+    "type": "Platba kartou",
+    "amount": "-59,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zz6wp6kv5",
+    "real_date": "13. 7. 2025",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-20 200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "daj6rbyt4",
+    "real_date": "13. 7. 2025",
+    "name": "304991309/0300 - Skip pay s.r.o. | Zbyněk Kocián: Zbyněk Kocián QR | (AXUjkmAXNA)",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+20 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "zxjmjcdhu",
+    "real_date": "14. 7. 2025",
+    "name": "Splátka úvěru Minutová půjčka 2409408357",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-1 208,33",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6xl3ihh4a",
+    "real_date": "14. 7. 2025",
+    "name": "Splátka úvěru",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-794,89",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ylup8kh4c",
+    "real_date": "14. 7. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-238,67",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ww4bl9rwg",
+    "real_date": "14. 7. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-147,11",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "n6w10rxu8",
+    "real_date": "14. 7. 2025",
+    "name": "131-3100390257/0100",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-306,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "izoss6w14",
+    "real_date": "14. 7. 2025",
+    "name": "272049801/0600",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 685,68",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "xjrh1bwsi",
+    "real_date": "14. 7. 2025",
+    "name": "1135765013/0800 | najem cervenec 25",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-18 928,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "unh5h226a",
+    "real_date": "16. 7. 2025",
+    "name": "Splátka úvěru Minutová půjčka 2411614987",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-777,53",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "vhftz72ue",
+    "real_date": "16. 7. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-215,47",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "cgbt0nzv2",
+    "real_date": "16. 7. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-2 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dzcij8fze",
+    "real_date": "16. 7. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-141,20",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "48zh92nrz",
+    "real_date": "16. 7. 2025",
+    "name": "5716803063/0800",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+3 832,80",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "zbm6b1itc",
+    "real_date": "16. 7. 2025",
+    "name": "2107047617/2700",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 594,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "77fdxx7ji",
+    "real_date": "17. 7. 2025",
+    "name": "5160018624/5500",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+21 562,80",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "i7rj08epc",
+    "real_date": "22. 7. 2025",
+    "name": "Lidl dekuje za nakup; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-696,09",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dvphf6x6x",
+    "real_date": "23. 7. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-111,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "jbkouyvmj",
+    "real_date": "23. 7. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "g01mcpy6j",
+    "real_date": "24. 7. 2025",
+    "name": "Pay | CSOB 2221 BRNO; Brno; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-2 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6616wcn9y",
+    "real_date": "25. 7. 2025",
+    "name": "EUROBIT 44; HODEJICE; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-1 000,10",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2ax9bh8hb",
+    "real_date": "26. 7. 2025",
+    "name": "OMV 2630; St.Hrozenkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-500,20",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "rnfff5rek",
+    "real_date": "26. 7. 2025",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou",
+    "amount": "-952,22",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "290wd5b8d",
+    "real_date": "26. 7. 2025",
+    "name": "Makovec a.s. 032; Slavkov; CZE",
+    "type": "Platba kartou",
+    "amount": "-293,21",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "4pa4g8dys",
+    "real_date": "29. 7. 2025",
+    "name": "ALBERT VAM DEKUJE; Brno; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-486,40",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "jz2hxr8n1",
+    "real_date": "29. 7. 2025",
+    "name": "Lidl dekuje za nakup; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-228,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "j4fhvcbya",
+    "real_date": "29. 7. 2025",
+    "name": "Lidl dekuje za nakup; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-858,25",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "m89btzxbe",
+    "real_date": "30. 7. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-157,02",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "pyavmb63m",
+    "real_date": "30. 7. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 600,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "djg668bkj",
+    "real_date": "30. 7. 2025",
+    "name": "Billa Slavkov; Slavkov; CZE",
+    "type": "Platba kartou",
+    "amount": "-350,32",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "tgxclq5c7",
+    "real_date": "30. 7. 2025",
+    "name": "TETA DROGERIE 586; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-244,60",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "rswpw3km3",
+    "real_date": "30. 7. 2025",
+    "name": "5160018624/5500",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+14 608,69",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "pt71sd3zq",
+    "real_date": "2. 8. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "sxiuuph5y",
+    "real_date": "5. 8. 2025",
+    "name": "AMBULANCE; Brno; CZE",
+    "type": "Platba kartou",
+    "amount": "-90,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "1lffycdb1",
+    "real_date": "12. 8. 2025",
+    "name": "5160018624/5500",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+11 109,03",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "t6opj71xk",
+    "real_date": "16. 8. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-204,19",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "hxupfqnh3",
+    "real_date": "16. 8. 2025",
+    "name": "CINEMA CITY OLYMPIA; BRNO; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-160,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "xm02g0ke6",
+    "real_date": "16. 8. 2025",
+    "name": "Temu.com; Dublin; IRL",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-167,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "l6is56j43",
+    "real_date": "16. 8. 2025",
+    "name": "1135765013/0800 | najem srpen 25",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-18 928,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "9olcgyiem",
+    "real_date": "16. 8. 2025",
+    "name": "2107047617/2700",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 619,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "nej9ju712",
+    "real_date": "18. 8. 2025",
+    "name": "244654203/0600",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+60 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "pbjaqbbb8",
+    "real_date": "18. 8. 2025",
+    "name": "272049801/0600",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 685,68",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ais0be3zq",
+    "real_date": "19. 8. 2025",
+    "name": "1101083110/5500 - Splátka karty | CRED CARD REPAYMENT",
+    "type": "Inkaso",
+    "amount": "-4 837,01",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "eu7de8xaw",
+    "real_date": "20. 8. 2025",
+    "name": "2011000005/6000",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-950,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qroc5nycz",
+    "real_date": "21. 8. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-232,70",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "kdgwsbp9v",
+    "real_date": "21. 8. 2025",
+    "name": "Pay | KB ATM TURANKA 115; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-600,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "vfdhdelgu",
+    "real_date": "21. 8. 2025",
+    "name": "2300133015/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-364,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "mhs1k9337",
+    "real_date": "22. 8. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "u4jbxj8ts",
+    "real_date": "22. 8. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "9tibpyqmc",
+    "real_date": "26. 8. 2025",
+    "name": "tokyo.cz; Ostrava - Hra; CZE",
+    "type": "Platba kartou",
+    "amount": "-100,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2112bkybl",
+    "real_date": "26. 8. 2025",
+    "name": "allegro.cz; Poznan; POL",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-252,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "sfz9rwuzm",
+    "real_date": "27. 8. 2025",
+    "name": "Pivnice Bucanda; Slavkov U Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-156,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "vq3lslxt9",
+    "real_date": "27. 8. 2025",
+    "name": "246246/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-4 090,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8ubx4nz8k",
+    "real_date": "28. 8. 2025",
+    "name": "Pay | KB ATM TURANKA 115; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "w4fdviikt",
+    "real_date": "29. 8. 2025",
+    "name": "kingsbet CZ a.s; Prague; CZE",
+    "type": "Platba kartou",
+    "amount": "-200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "w2pr146zx",
+    "real_date": "29. 8. 2025",
+    "name": "GOPAY *MEGAGARAZ.CZ; OSTRAVA; CZE",
+    "type": "Platba kartou",
+    "amount": "-178,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ni3c6ucf0",
+    "real_date": "29. 8. 2025",
+    "name": "Pay | CSOB 2221 BRNO; Brno; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-6 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "cfumqfkem",
+    "real_date": "31. 8. 2025",
+    "name": "EUROBIT 31; BRNO PODOLI; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-462,70",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "y7cjyhxbl",
+    "real_date": "31. 8. 2025",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-1 214,82",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "shkocjje0",
+    "real_date": "31. 8. 2025",
+    "name": "GOPAY * O2 GOPAY * :; Praha; CZE",
+    "type": "Platba kartou",
+    "amount": "-349,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gybz0glg0",
+    "real_date": "31. 8. 2025",
+    "name": "Souhrnná položka k účtu 1036437823.",
+    "type": "Vedení účtu (Poplatek)",
+    "amount": "-65,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gq3axl3hi",
+    "real_date": "4. 9. 2025",
+    "name": "Lidl dekuje za nakup; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-1 174,01",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ys9ova0lj",
+    "real_date": "4. 9. 2025",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou",
+    "amount": "-151,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "m2uaszvtn",
+    "real_date": "4. 9. 2025",
+    "name": "5716803063/0800",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-17 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "og9v3owcr",
+    "real_date": "5. 9. 2025",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-154,80",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "pbszxvnm5",
+    "real_date": "5. 9. 2025",
+    "name": "Pay | KB ATM TURANKA 115; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-600,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "vfwb7gfxs",
+    "real_date": "6. 9. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-356,54",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "24ks3wd1p",
+    "real_date": "7. 9. 2025",
+    "name": "Ono-Brno Slatina; Brno 27; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-800,70",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "655r5rh12",
+    "real_date": "7. 9. 2025",
+    "name": "Pivnice Bucanda; Slavkov U Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-66,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "75bpypmy5",
+    "real_date": "7. 9. 2025",
+    "name": "Lidl dekuje za nakup; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-239,69",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "117as3e28",
+    "real_date": "7. 9. 2025",
+    "name": "bankomatu | CSOB 1283 SLAVKOV U B; Slavkov u Brn; CZE",
+    "type": "Bezkontaktní výběr hotovosti z (Vklad/Výběr z bankomatu)",
+    "amount": "-2 500,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6hwj2l8qs",
+    "real_date": "8. 9. 2025",
+    "name": "22023/5500 - VIVO CONNECTION, spo | Internet VIVO Slavkov",
+    "type": "Trvalý příkaz (Trvalá platba)",
+    "amount": "-399,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "sphnfiuje",
+    "real_date": "9. 9. 2025",
+    "name": "VSTUPENKOVY KIOSEK 2; VYSKOV; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-50,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "z036n4d32",
+    "real_date": "9. 9. 2025",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou",
+    "amount": "-649,47",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "0lglev1q8",
+    "real_date": "10. 9. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ao0nohat8",
+    "real_date": "10. 9. 2025",
+    "name": "CERP STAN BUCOVICE; BUCOVICE; CZE",
+    "type": "Platba kartou",
+    "amount": "-300,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "nobbz7x64",
+    "real_date": "10. 9. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-270,30",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gwf4jao0b",
+    "real_date": "11. 9. 2025",
+    "name": "Pay | CSOB 1283 SLAVKOV U B; Slavkov u Brn; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-700,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "4fanpkef1",
+    "real_date": "11. 9. 2025",
+    "name": "REZNICTVI A UZENARST; SLAVKOV U BRN; CZE",
+    "type": "Platba kartou",
+    "amount": "-543,27",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "j8tloxkq0",
+    "real_date": "11. 9. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-261,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "z8s7q8fur",
+    "real_date": "11. 9. 2025",
+    "name": "Potraviny Oldrich Svob; Slavkov U Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-125,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "7e5zhva1g",
+    "real_date": "11. 9. 2025",
+    "name": "Lekarna Na Poliklinice; Slavkov U Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-110,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "5uevs263f",
+    "real_date": "12. 9. 2025",
+    "name": "6995610217/0100 - FINAL TOOLS A.S. | Kocian Zbynek",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+38 017,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "9l2fnoj5p",
+    "real_date": "13. 9. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-73,70",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ao2nh3fw7",
+    "real_date": "13. 9. 2025",
+    "name": "Google One; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-59,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "e375tc0ln",
+    "real_date": "14. 9. 2025",
+    "name": "Splátka úvěru Minutová půjčka 2409408357",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-1 237,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "7mb1l76lx",
+    "real_date": "14. 9. 2025",
+    "name": "Splátka úvěru",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-810,86",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "14e63t17x",
+    "real_date": "14. 9. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-209,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "5pusrwjty",
+    "real_date": "14. 9. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-131,14",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "wtmif6x5a",
+    "real_date": "14. 9. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "pw80nezfn",
+    "real_date": "14. 9. 2025",
+    "name": "0,10 EUR;SLEDOVANIETV S.R.O.; BRATISLAVA; | SVK",
+    "type": "Platba kartou",
+    "amount": "-2,53",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "h7kqf1hjx",
+    "real_date": "15. 9. 2025",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-20 200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "fsuuzkv0h",
+    "real_date": "15. 9. 2025",
+    "name": "2107047617/2700",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-394,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zyo19p7r9",
+    "real_date": "15. 9. 2025",
+    "name": "304991309/0300 - Skip pay s.r.o. | Zbyněk Kocián: Zbyněk Kocián QR | (AXV5SVU0OA)",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+20 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "f9p4xpz91",
+    "real_date": "16. 9. 2025",
+    "name": "Splátka úvěru Minutová půjčka 2411614987",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-800,25",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "9uwenar1n",
+    "real_date": "16. 9. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-192,75",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "9t1g6llm1",
+    "real_date": "16. 9. 2025",
+    "name": "THERMEPARK; VELKE LOSINY; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-400,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2u1tfo793",
+    "real_date": "16. 9. 2025",
+    "name": "HOTEL ISTRIA; Velke Losiny; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-220,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zagf9q514",
+    "real_date": "16. 9. 2025",
+    "name": "KIK TEXTIL A NON-FOOD; SUMPERK; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-79,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "nbbx0n5no",
+    "real_date": "16. 9. 2025",
+    "name": "THERMEPARK; VELKE LOSINY; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-59,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "23hbp037s",
+    "real_date": "16. 9. 2025",
+    "name": "Restaurace Pod Sjezdov; Cenkovice; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-1 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "jrp7oommt",
+    "real_date": "16. 9. 2025",
+    "name": "SLEDOVANITV S.R.O; BRNO; CZE",
+    "type": "Platba kartou",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "la4cvfdef",
+    "real_date": "16. 9. 2025",
+    "name": "1135765013/0800 | najem září 25",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-18 928,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "g6v0x0g3w",
+    "real_date": "17. 9. 2025",
+    "name": "allegro.cz; Poznan; POL",
+    "type": "Platba kartou",
+    "amount": "-365,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "s5tyxjbd5",
+    "real_date": "17. 9. 2025",
+    "name": "allegro.cz; Poznan; POL",
+    "type": "Platba kartou",
+    "amount": "-155,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "k89vbvyqf",
+    "real_date": "17. 9. 2025",
+    "name": "18,15 USD;REPLIT, INC.; REPLIT.COM; USA",
+    "type": "Platba kartou",
+    "amount": "-387,42",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qrpbh9nch",
+    "real_date": "17. 9. 2025",
+    "name": "272049801/0600",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 685,68",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ynsmvqqs7",
+    "real_date": "18. 9. 2025",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-225,20",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "a0ho4kqw1",
+    "real_date": "18. 9. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ckcf9uk0d",
+    "real_date": "19. 9. 2025",
+    "name": "Temu.com; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-237,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "bx048muy4",
+    "real_date": "19. 9. 2025",
+    "name": "1101083110/5500 - Splátka karty | CRED CARD REPAYMENT",
+    "type": "Inkaso",
+    "amount": "-4 290,67",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "fba245wnt",
+    "real_date": "20. 9. 2025",
+    "name": "60,65 USD;REPLIT, INC.; REPLIT.COM; USA",
+    "type": "Platba kartou",
+    "amount": "-1 301,56",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6xwfnvmkn",
+    "real_date": "22. 9. 2025",
+    "name": "5716803063/0800",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+650,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "egdbezd9b",
+    "real_date": "22. 9. 2025",
+    "name": "2011000005/6000",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-950,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "piyxs9j2v",
+    "real_date": "23. 9. 2025",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-76,08",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "b91eh12zw",
+    "real_date": "24. 9. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "vpkuqxuv2",
+    "real_date": "27. 9. 2025",
+    "name": "5716803063/0800",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+3 176,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "xk0zog5nb",
+    "real_date": "27. 9. 2025",
+    "name": "246246/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-3 176,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "s8lqy95n4",
+    "real_date": "27. 9. 2025",
+    "name": "5716803063/0800",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+1 999,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "7sahxp8x5",
+    "real_date": "27. 9. 2025",
+    "name": "123-3634590237/0100",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "aqxyby3wd",
+    "real_date": "29. 9. 2025",
+    "name": "5160018624/5500",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+6 785,61",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "rrggh0uhj",
+    "real_date": "7. 10. 2025",
+    "name": "CERP STAN BUCOVICE; BUCOVICE; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-658,70",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "vwcpnnjps",
+    "real_date": "7. 10. 2025",
+    "name": "SLAVKOVSKY PIVOVAR 01; SLAVKOV U BRN; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-303,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "hjkyh4l9m",
+    "real_date": "7. 10. 2025",
+    "name": "BLACK BAKERY; BUCOVICE; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-299,25",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "br7bygeec",
+    "real_date": "7. 10. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-245,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "iz8neczxt",
+    "real_date": "7. 10. 2025",
+    "name": "Temu.com; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-336,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "lo2wsaplz",
+    "real_date": "9. 10. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-400,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "98izrx8e6",
+    "real_date": "9. 10. 2025",
+    "name": "103700114/2250 - FlexiFin s.r.o. | 20482072 Váš FlexiFin úvěr",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+31 300,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "ifn3si6ze",
+    "real_date": "9. 10. 2025",
+    "name": "22023/5500 - VIVO CONNECTION, spo | Internet VIVO Slavkov",
+    "type": "Trvalý příkaz (Trvalá platba)",
+    "amount": "-399,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "jjh17ung9",
+    "real_date": "9. 10. 2025",
+    "name": "5716803063/0800",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-26 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "tw9no5784",
+    "real_date": "9. 10. 2025",
+    "name": "308537875/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-5 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "56abh193v",
+    "real_date": "9. 10. 2025",
+    "name": "5716803063/0800",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+5 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "3eqiv46fp",
+    "real_date": "10. 10. 2025",
+    "name": "5716803063/0800",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-500,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "d2q6mp7ie",
+    "real_date": "11. 10. 2025",
+    "name": "luckybet.cz; Praha 8; CZE",
+    "type": "Platba kartou",
+    "amount": "-300,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "r4qimbz1u",
+    "real_date": "12. 10. 2025",
+    "name": "KAUFLAND CZ 1950; BRNO SLATINA; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-513,60",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dubw81gct",
+    "real_date": "12. 10. 2025",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-505,80",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "y1ifax8wl",
+    "real_date": "12. 10. 2025",
+    "name": "PRESSMEDIA SPOL.S.R.O.; BRNO; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-345,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "yimqo44to",
+    "real_date": "12. 10. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-2 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "me6xnmzzr",
+    "real_date": "13. 10. 2025",
+    "name": "6995610217/0100 - FINAL TOOLS A.S. | Kocian Zbynek",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+38 049,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "qe6hvrl3p",
+    "real_date": "14. 10. 2025",
+    "name": "Splátka úvěru Minutová půjčka 2409408357",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-1 252,35",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "l1ttn6whu",
+    "real_date": "14. 10. 2025",
+    "name": "Splátka úvěru",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-818,97",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "j6gjazz1d",
+    "real_date": "14. 10. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-194,65",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2yym4t139",
+    "real_date": "14. 10. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-123,03",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "n6enamfqm",
+    "real_date": "14. 10. 2025",
+    "name": "Google One; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-59,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "uummmddxb",
+    "real_date": "15. 10. 2025",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-20 200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "c5blvekkm",
+    "real_date": "15. 10. 2025",
+    "name": "304991309/0300 - Skip pay s.r.o. | Zbyněk Kocián: Zbyněk Kocián QR | (AXYFAwVHlA)",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+20 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "1tro83nom",
+    "real_date": "15. 10. 2025",
+    "name": "2107047617/2700",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-317,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ojw37avfh",
+    "real_date": "16. 10. 2025",
+    "name": "Splátka úvěru Minutová půjčka 2411614987",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-811,85",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "7bw4951rt",
+    "real_date": "16. 10. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-181,15",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "nc0b38686",
+    "real_date": "16. 10. 2025",
+    "name": "SLEDOVANITV S.R.O; BRNO; CZE",
+    "type": "Platba kartou",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "700sc5egi",
+    "real_date": "16. 10. 2025",
+    "name": "Temu.com; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-61,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "36ph6h5rw",
+    "real_date": "16. 10. 2025",
+    "name": "Temu.com; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-26,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gsz04it9v",
+    "real_date": "16. 10. 2025",
+    "name": "60,53 USD;REPLIT, INC.; REPLIT.COM; USA",
+    "type": "Platba kartou",
+    "amount": "-1 314,49",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "k085iddah",
+    "real_date": "16. 10. 2025",
+    "name": "1135765013/0800 | nájem říjen 2025",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-18 928,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "4cxtzvi5x",
+    "real_date": "17. 10. 2025",
+    "name": "1101083110/5500 - Splátka karty | CRED CARD REPAYMENT",
+    "type": "Inkaso",
+    "amount": "-4 442,93",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2yegts63l",
+    "real_date": "18. 10. 2025",
+    "name": "Ono-Brno Slatina; Brno 27; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-975,30",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "78eezcpnx",
+    "real_date": "18. 10. 2025",
+    "name": "Pay | CSOB 0107 BRNO; Brno; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "7tsvxn0ci",
+    "real_date": "18. 10. 2025",
+    "name": "1,27 USD;REPLIT, INC.; REPLIT.COM; USA",
+    "type": "Platba kartou",
+    "amount": "-27,49",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "iwm060x0k",
+    "real_date": "18. 10. 2025",
+    "name": "272049801/0600",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 685,68",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "3k1ee32nm",
+    "real_date": "19. 10. 2025",
+    "name": "dm drogerie markt 432; Brno; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-342,90",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "i03yxq69j",
+    "real_date": "19. 10. 2025",
+    "name": "BENU lekarna 164; BRNO; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-333,05",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "72qx0grds",
+    "real_date": "19. 10. 2025",
+    "name": "KAUFLAND CZ 1950; BRNO SLATINA; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-269,70",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6n8vm668s",
+    "real_date": "19. 10. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-126,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "pvqw907hp",
+    "real_date": "20. 10. 2025",
+    "name": "5200016309/5500 - ThePay, a.s. | POSKYTNUTÍ SPOTŘEBITELSKÉHO ÚVĚR U | MOVINERO",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+10 570,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "o2r7k0214",
+    "real_date": "21. 10. 2025",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-189,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ovv18qlx3",
+    "real_date": "21. 10. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-184,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6n59eqdll",
+    "real_date": "21. 10. 2025",
+    "name": "2011000005/6000",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-950,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "wcr9yd2re",
+    "real_date": "21. 10. 2025",
+    "name": "5716803063/0800",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+38 954,62",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "wr0fmu967",
+    "real_date": "22. 10. 2025",
+    "name": "2011050045/6000 - HOME CREDIT A.S.",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+1 537,76",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "almnb029k",
+    "real_date": "23. 10. 2025",
+    "name": "5160018624/5500",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+9 702,34",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "h4rvjgg6b",
+    "real_date": "30. 10. 2025",
+    "name": "MCDONALDS ROHLENKA; TVAROZNA; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-7,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zmqmuqoth",
+    "real_date": "31. 10. 2025",
+    "name": "Ono-Brno Slatina; Brno 27; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-829,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "pcm1cfwtj",
+    "real_date": "31. 10. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "jzj3j04q4",
+    "real_date": "31. 10. 2025",
+    "name": "Souhrnná položka k účtu 1036437823.",
+    "type": "Vedení účtu (Poplatek)",
+    "amount": "-65,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "c5bgqrn0y",
+    "real_date": "6. 11. 2025",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-189,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "89bpoiujf",
+    "real_date": "6. 11. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-82,95",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "5ifq45ask",
+    "real_date": "6. 11. 2025",
+    "name": "allegro.cz; Poznan; POL",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-327,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "nc9izpxqj",
+    "real_date": "7. 11. 2025",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-500,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "3bcac7ael",
+    "real_date": "7. 11. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-396,06",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "psw5johew",
+    "real_date": "7. 11. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-115,40",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "v9gy30nn0",
+    "real_date": "7. 11. 2025",
+    "name": "Lekarna Na Poliklinice; Slavkov U Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-111,44",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zar58bdlq",
+    "real_date": "7. 11. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-84,90",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "swlpqoefk",
+    "real_date": "7. 11. 2025",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-270,20",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "nkxm0ymqe",
+    "real_date": "8. 11. 2025",
+    "name": "LKQ CZ - BRNO-SLATINA; Brno - Slatin; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-285,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "q3lc7cao3",
+    "real_date": "8. 11. 2025",
+    "name": "Josef Bajko; Slavkov U Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-330,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "wup5jjt5w",
+    "real_date": "8. 11. 2025",
+    "name": "Potraviny Oldrich Svob; Slavkov U Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-180,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "kenefn3p3",
+    "real_date": "8. 11. 2025",
+    "name": "Potraviny Oldrich Svob; Slavkov U Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-129,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "q35y5yerr",
+    "real_date": "10. 11. 2025",
+    "name": "5200016309/5500 - ThePay, a.s. | PŮJČKA DLE SMLOUVY CEWERESO OD A VAFIN | CZECH S. R. O.",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+6 400,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "idljb63vp",
+    "real_date": "10. 11. 2025",
+    "name": "22023/5500 - VIVO CONNECTION, spo | Internet VIVO Slavkov",
+    "type": "Trvalý příkaz (Trvalá platba)",
+    "amount": "-399,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "eya1ak9rs",
+    "real_date": "10. 11. 2025",
+    "name": "123-3634590237/0100",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "jhk17xbqf",
+    "real_date": "10. 11. 2025",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-810,60",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "3vddxelkj",
+    "real_date": "11. 11. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-76,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "u0b4dduwj",
+    "real_date": "12. 11. 2025",
+    "name": "allegro.cz; Poznan; POL",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-353,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "rkp62blga",
+    "real_date": "13. 11. 2025",
+    "name": "6995610217/0100 - FINAL TOOLS A.S. | Kocian Zbynek",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+39 027,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "909uxhzxw",
+    "real_date": "13. 11. 2025",
+    "name": "KAUFLAND CZ 1950; BRNO SLATINA; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-194,80",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ztob93mtw",
+    "real_date": "13. 11. 2025",
+    "name": "Google One; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-59,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8bvxggxcc",
+    "real_date": "13. 11. 2025",
+    "name": "2401749409/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-540,40",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "z2214w1d",
+    "real_date": "13. 11. 2025",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-20 200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "isebyrzt9",
+    "real_date": "13. 11. 2025",
+    "name": "304991309/0300 - Skip pay s.r.o. | Zbyněk Kocián: Zbyněk Kocián QR | (AXYwQxSIGQ)",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+20 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "c5qaoyta1",
+    "real_date": "14. 11. 2025",
+    "name": "Splátka úvěru Minutová půjčka 2409408357",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-1 267,38",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6tn6aek7a",
+    "real_date": "14. 11. 2025",
+    "name": "Splátka úvěru",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-827,16",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "mrfm8dpr3",
+    "real_date": "14. 11. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-179,62",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zq2ze60ip",
+    "real_date": "14. 11. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-114,84",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "w1c8rynba",
+    "real_date": "14. 11. 2025",
+    "name": "Ono-Brno Slatina; Brno 27; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-600,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "cmj84cq22",
+    "real_date": "14. 11. 2025",
+    "name": "Ono-Brno Slatina; Brno 27; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-179,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "d8hl9zugc",
+    "real_date": "14. 11. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-101,80",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ozub4uuuc",
+    "real_date": "14. 11. 2025",
+    "name": "GOPAY *IDSJMK.CZ; BRNO; CZE",
+    "type": "Platba kartou",
+    "amount": "-49,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "mb40l61sx",
+    "real_date": "14. 11. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "z5ju9zwm0",
+    "real_date": "14. 11. 2025",
+    "name": "www.cd.cz/eshop/; Praha 1; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-41,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "4o1mow3xo",
+    "real_date": "15. 11. 2025",
+    "name": "IDSJMK.CZ*258s017943; Brno; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-25,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "q0bvhygp6",
+    "real_date": "15. 11. 2025",
+    "name": "GOPAY *IDSJMK.CZ; BRNO; CZE",
+    "type": "Platba kartou",
+    "amount": "-41,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "iove39wd7",
+    "real_date": "15. 11. 2025",
+    "name": "www.cd.cz/eshop/; Praha 1; CZE",
+    "type": "Platba kartou",
+    "amount": "-41,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "xfe87gvwi",
+    "real_date": "15. 11. 2025",
+    "name": "1135765013/0800 | nájem listopad 2025",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-18 928,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8i1jb7epa",
+    "real_date": "15. 11. 2025",
+    "name": "2107047617/2700",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-744,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "1bvl4ojfc",
+    "real_date": "16. 11. 2025",
+    "name": "Splátka úvěru Minutová půjčka 2411614987",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-823,62",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "tawidmdgq",
+    "real_date": "16. 11. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-169,38",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "vhvdqsu3c",
+    "real_date": "16. 11. 2025",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-189,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "bskob3ycx",
+    "real_date": "16. 11. 2025",
+    "name": "CSAD SVT Praha,s.r.o.; Praha 8; CZE",
+    "type": "Platba kartou",
+    "amount": "-51,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "742gcpswe",
+    "real_date": "16. 11. 2025",
+    "name": "www.cd.cz/eshop/; Praha 1; CZE",
+    "type": "Platba kartou",
+    "amount": "-41,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qwecym8mb",
+    "real_date": "16. 11. 2025",
+    "name": "One by Allegro; Praha - Holes; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-695,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "840rti3u1",
+    "real_date": "16. 11. 2025",
+    "name": "SledovaniTV s.r.o; Brno; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "9wy64mhzi",
+    "real_date": "18. 11. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-146,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qaaq0l35h",
+    "real_date": "18. 11. 2025",
+    "name": "Josef Bajko; Slavkov U Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-70,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zpnvlhzbq",
+    "real_date": "18. 11. 2025",
+    "name": "BONVERCASINO; Praha-N.Mes.; CZE",
+    "type": "Platba kartou",
+    "amount": "-100,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "co6ufxh4q",
+    "real_date": "18. 11. 2025",
+    "name": "movinero.cz; Praha; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-2 642,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "7xaaz5jda",
+    "real_date": "18. 11. 2025",
+    "name": "SledovaniTV s.r.o; Brno; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "itae8s4pj",
+    "real_date": "18. 11. 2025",
+    "name": "allegro.cz; Poznan; POL",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-274,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "tt51hlz9v",
+    "real_date": "19. 11. 2025",
+    "name": "Fortuna; ifortuna.cz; CZE",
+    "type": "Platba kartou",
+    "amount": "-100,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "na9f94r4y",
+    "real_date": "19. 11. 2025",
+    "name": "www.cd.cz/eshop/; Praha 1; CZE",
+    "type": "Platba kartou",
+    "amount": "-49,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "l1jedabdk",
+    "real_date": "19. 11. 2025",
+    "name": "www.cd.cz/eshop/; Praha 1; CZE",
+    "type": "Platba kartou",
+    "amount": "-49,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gacgdqxkg",
+    "real_date": "19. 11. 2025",
+    "name": "1101083110/5500 - Splátka karty | CRED CARD REPAYMENT",
+    "type": "Inkaso",
+    "amount": "-2 894,45",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "74z8zyr9u",
+    "real_date": "20. 11. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ulzifs2ay",
+    "real_date": "20. 11. 2025",
+    "name": "2100204456/2010",
+    "type": "Jednorázová úhrada (Platba)",
+    "amount": "-1 901,08",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "t5o0uxpib",
+    "real_date": "20. 11. 2025",
+    "name": "5200016309/5500 - ThePay, a.s. | PŮJČKA DLE SMLOUVY CEWERESO OD A VAFIN | CZECH S. R. O.",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+7 500,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "q06jw44ij",
+    "real_date": "20. 11. 2025",
+    "name": "272049801/0600",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 687,22",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "j0x75anol",
+    "real_date": "20. 11. 2025",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 621,20",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "l15rmhavx",
+    "real_date": "20. 11. 2025",
+    "name": "2011000005/6000",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-950,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "mlaao5iu5",
+    "real_date": "21. 11. 2025",
+    "name": "KAUFLAND CZ 1950; BRNO SLATINA; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-297,70",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2ulnkhgii",
+    "real_date": "21. 11. 2025",
+    "name": "Pay | CSOB 1283 SLAVKOV U B; Slavkov u Brn; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-2 700,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "d4pdfn73y",
+    "real_date": "21. 11. 2025",
+    "name": "Pay | CSOB 1283 SLAVKOV U B; Slavkov u Brn; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-500,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "80psm2b4s",
+    "real_date": "23. 11. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-254,90",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2a5cwxgjq",
+    "real_date": "24. 11. 2025",
+    "name": "5200016309/5500 - ThePay, a.s. | PŮJČKA DLE SMLOUVY CEWERESO OD A VAFIN | CZECH S. R. O.",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+6 800,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "17k1i8snx",
+    "real_date": "24. 11. 2025",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 828,18",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "k29yoyznz",
+    "real_date": "24. 11. 2025",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-643,89",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8aqv86m6h",
+    "real_date": "25. 11. 2025",
+    "name": "CS EUROOIL -SL.U BRNA; Slavk. u Brna; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-500,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "s8ixyo2c4",
+    "real_date": "25. 11. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-65,80",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "fzkskm0f4",
+    "real_date": "25. 11. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-375,80",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "t7zuk8z8g",
+    "real_date": "25. 11. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-759,30",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "p31lny8z4",
+    "real_date": "26. 11. 2025",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-0,70",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "1obox1fhl",
+    "real_date": "26. 11. 2025",
+    "name": "TEMU.COM; DUBLIN 2; IRL",
+    "type": "Platba kartou",
+    "amount": "-29,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gnra9lxre",
+    "real_date": "26. 11. 2025",
+    "name": "246246/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-3 722,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "f3z6qukv0",
+    "real_date": "26. 11. 2025",
+    "name": "5200016309/5500 - ThePay, a.s. | PŮJČKA DLE SMLOUVY CEWERESO OD A VAFIN | CZECH S. R. O.",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+4 500,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "jwlpqxyvr",
+    "real_date": "27. 11. 2025",
+    "name": "Tabak Traficon; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-209,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "l1r5b9q5i",
+    "real_date": "27. 11. 2025",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-7,90",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dcsq29ibt",
+    "real_date": "27. 11. 2025",
+    "name": "5200016309/5500 - ThePay, a.s. | PŮJČKA DLE SMLOUVY CEWERESO OD A VAFIN | CZECH S. R. O.",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+3 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "h2r4nrrle",
+    "real_date": "27. 11. 2025",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 287,78",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8j6adseak",
+    "real_date": "28. 11. 2025",
+    "name": "Skip Pay *Tretina; Praha 5-Radli; CZE",
+    "type": "Platba kartou",
+    "amount": "-1 666,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "3ne6lcvit",
+    "real_date": "28. 11. 2025",
+    "name": "Skip Pay *Tretina; Praha 5-Radli; CZE",
+    "type": "Platba kartou",
+    "amount": "-1 666,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "jdpgmcd6v",
+    "real_date": "28. 11. 2025",
+    "name": "Mironet.cz, Brno; Brno; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-99,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "45l4shrp4",
+    "real_date": "28. 11. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "o4ererr3q",
+    "real_date": "29. 11. 2025",
+    "name": "Skip Pay *Tretina; Praha 5-Radli; CZE",
+    "type": "Jednorázová úhrada (Platba)",
+    "amount": "+1 666,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "1jbudlg4w",
+    "real_date": "29. 11. 2025",
+    "name": "Josef Bajko; Slavkov U Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-497,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dtwhshjtt",
+    "real_date": "29. 11. 2025",
+    "name": "TEMU.COM; DUBLIN 2; IRL",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-10,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "yeq27a8mb",
+    "real_date": "30. 11. 2025",
+    "name": "Ono-Brno Slatina; Brno 27; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-501,10",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "5l636c4bz",
+    "real_date": "30. 11. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-183,30",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "f86zkwqvp",
+    "real_date": "30. 11. 2025",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 287,78",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "15vwha2m3",
+    "real_date": "30. 11. 2025",
+    "name": "Souhrnná položka k účtu 1036437823.",
+    "type": "Vedení účtu (Poplatek)",
+    "amount": "-65,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "w2n4j2l9e",
+    "real_date": "3. 12. 2025",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-499,90",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "wm3wu4tws",
+    "real_date": "3. 12. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-156,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "eu14ahr58",
+    "real_date": "3. 12. 2025",
+    "name": "Lidl dekuje za nakup; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-9,90",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "52hyw2w8l",
+    "real_date": "4. 12. 2025",
+    "name": "Alza.cz; Prague; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-608,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8mbbarv0h",
+    "real_date": "4. 12. 2025",
+    "name": "195690557/0600 | Od Ježíška",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+12 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "y04bh2p36",
+    "real_date": "4. 12. 2025",
+    "name": "123-3634590237/0100",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "edcgpeeao",
+    "real_date": "4. 12. 2025",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 575,58",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "sii0qdbqk",
+    "real_date": "5. 12. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "sypozfkk6",
+    "real_date": "5. 12. 2025",
+    "name": "bankomatu | CSOB 1283 SLAVKOV U B; Slavkov u Brn; CZE",
+    "type": "Bezkontaktní výběr hotovosti z (Vklad/Výběr z bankomatu)",
+    "amount": "-200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dkkdkx2pq",
+    "real_date": "5. 12. 2025",
+    "name": "881506/0100 | iPhone",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+2 500,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "grjolb2o7",
+    "real_date": "6. 12. 2025",
+    "name": "KAUFLAND CZ 1950; BRNO SLATINA; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-168,80",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "li6hjek5t",
+    "real_date": "6. 12. 2025",
+    "name": "Klarna*Refurbed; Stockholm; SWE",
+    "type": "Platba kartou",
+    "amount": "-2 473,16",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8qz412qdq",
+    "real_date": "7. 12. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-215,30",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "mug0l9a6z",
+    "real_date": "7. 12. 2025",
+    "name": "Tabak Traficon; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-209,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "j0bbes8mh",
+    "real_date": "7. 12. 2025",
+    "name": "CSAD SVT Praha,s.r.o.; Praha 8; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-51,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ucy07mnzi",
+    "real_date": "7. 12. 2025",
+    "name": "www.cd.cz/eshop/; Praha 1; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-41,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "4r0hwejim",
+    "real_date": "8. 12. 2025",
+    "name": "22023/5500 - VIVO CONNECTION, spo | Internet VIVO Slavkov",
+    "type": "Trvalý příkaz (Trvalá platba)",
+    "amount": "-399,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "pnpzpuqqd",
+    "real_date": "8. 12. 2025",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 287,80",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "p8rocml1p",
+    "real_date": "9. 12. 2025",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-1 283,89",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "5zg25ufz5",
+    "real_date": "9. 12. 2025",
+    "name": "Lidl dekuje za nakup; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-149,80",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zhlj7er31",
+    "real_date": "9. 12. 2025",
+    "name": "CHEMIS ENGINE; SLAVKOV U BRN; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-638,32",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "snss0bjjc",
+    "real_date": "10. 12. 2025",
+    "name": "Pay | CSAS, Janska 446/6; Brno; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "uqt5bc9p6",
+    "real_date": "10. 12. 2025",
+    "name": "SPACESHIP.COM* LGDNOC; SPACESHIP.COM; | USA",
+    "type": "Platba kartou Google Pay",
+    "amount": "-17,67",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "0mx768a2d",
+    "real_date": "10. 12. 2025",
+    "name": "103700114/2250",
+    "type": "Jednorázová úhrada (Platba)",
+    "amount": "-643,89",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "l6upialto",
+    "real_date": "12. 12. 2025",
+    "name": "6995610217/0100 - FINAL TOOLS A.S. | Kocian Zbynek",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+38 182,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "li1agzlrb",
+    "real_date": "12. 12. 2025",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-20 200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ndzcf588h",
+    "real_date": "12. 12. 2025",
+    "name": "304991309/0300 - Skip pay s.r.o. | Zbyněk Kocián: Zbyněk Kocián QR | (AXZVQjc5dw)",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+20 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "074vzevqa",
+    "real_date": "12. 12. 2025",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 928,03",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "biumt6afz",
+    "real_date": "12. 12. 2025",
+    "name": "1101083110/5500",
+    "type": "Jednorázová úhrada (Platba)",
+    "amount": "-1 488,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "wvflfvy7y",
+    "real_date": "12. 12. 2025",
+    "name": "670100-2218441510/6210 | oprava auta",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-6 142,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "kqdk7b5mf",
+    "real_date": "13. 12. 2025",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-3,04",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6tlri9k9z",
+    "real_date": "13. 12. 2025",
+    "name": "Google One; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-59,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "uaazl1mbi",
+    "real_date": "13. 12. 2025",
+    "name": "TEMU.COM; DUBLIN 2; IRL",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-101,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "yzxordkln",
+    "real_date": "13. 12. 2025",
+    "name": "Klarna*Allegro.cz; Stockholm; SWE",
+    "type": "Platba kartou",
+    "amount": "-1 109,33",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2ftkdsqxe",
+    "real_date": "14. 12. 2025",
+    "name": "Splátka úvěru Minutová půjčka 2409408357",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-1 282,59",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "5m2q0kt3n",
+    "real_date": "14. 12. 2025",
+    "name": "Splátka úvěru",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-835,43",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8appx8vxl",
+    "real_date": "14. 12. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-164,41",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "q239zljl7",
+    "real_date": "14. 12. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-106,57",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8dazyu2cw",
+    "real_date": "14. 12. 2025",
+    "name": "ORLEN CS 539; BRNO; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-719,36",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "h2y62xh0n",
+    "real_date": "14. 12. 2025",
+    "name": "VINOTEKA LIVING 2005 S; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-223,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "g3p1bexxr",
+    "real_date": "14. 12. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-52,10",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "31qp6vex2",
+    "real_date": "14. 12. 2025",
+    "name": "1135765013/0800 | nájem prosinec 2025",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-18 928,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8f1r3tvgj",
+    "real_date": "15. 12. 2025",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-643,89",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8xvil3pym",
+    "real_date": "16. 12. 2025",
+    "name": "Splátka úvěru Minutová půjčka 2411614987",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-835,56",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "y4xa5yjq0",
+    "real_date": "16. 12. 2025",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-157,44",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "patwdx4vf",
+    "real_date": "16. 12. 2025",
+    "name": "Tabak Traficon; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-219,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "klfs6ye26",
+    "real_date": "16. 12. 2025",
+    "name": "Lidl dekuje za nakup; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-145,10",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "aw3un4ff1",
+    "real_date": "16. 12. 2025",
+    "name": "Allegro; Poznan; POL",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-2 023,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "00lhtr9g3",
+    "real_date": "16. 12. 2025",
+    "name": "SledovaniTV s.r.o; Brno; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-259,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ipy4riy4t",
+    "real_date": "16. 12. 2025",
+    "name": "Klarna*Allegro.cz; Stockholm; SWE",
+    "type": "Platba kartou",
+    "amount": "-343,66",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "pkbtmro3x",
+    "real_date": "17. 12. 2025",
+    "name": "KAUFLAND CZ 1950; BRNO SLATINA; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-492,41",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "9kydg19ii",
+    "real_date": "18. 12. 2025",
+    "name": "SLEDOVANITV S.R.O; BRNO; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6otb6fvux",
+    "real_date": "19. 12. 2025",
+    "name": "CHEMIS ENGINE; SLAVKOV U BRN; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-299,73",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2w8866pa9",
+    "real_date": "20. 12. 2025",
+    "name": "TEMU.COM; DUBLIN 2; IRL",
+    "type": "Jednorázová úhrada (Platba)",
+    "amount": "+181,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "dg3wqbg5s",
+    "real_date": "20. 12. 2025",
+    "name": "TEMU.COM; DUBLIN 2; IRL",
+    "type": "Jednorázová úhrada (Platba)",
+    "amount": "+60,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "ivy6r70k6",
+    "real_date": "21. 12. 2025",
+    "name": "CHEMIS ENGINE; SLAVKOV U BRN; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-300,12",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "wwfxs3p3l",
+    "real_date": "21. 12. 2025",
+    "name": "DELIKOMAT CZ 50217; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-20,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "e25f1yltv",
+    "real_date": "22. 12. 2025",
+    "name": "5200016309/5500 - ThePay, a.s.",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+20 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "n0husxfud",
+    "real_date": "22. 12. 2025",
+    "name": "1101083110/5500 - Splátka karty | CRED CARD REPAYMENT",
+    "type": "Inkaso",
+    "amount": "-3 765,35",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "tyxq1ichg",
+    "real_date": "23. 12. 2025",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-199,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "4wjem56vi",
+    "real_date": "23. 12. 2025",
+    "name": "304991309/0300 - Skip pay s.r.o. | Skip Pay Splatky (AXZkgxmQmA)",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+100 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "vsu1jvro1",
+    "real_date": "23. 12. 2025",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-12 893,48",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ad1168e6p",
+    "real_date": "23. 12. 2025",
+    "name": "2100204456/2010",
+    "type": "Jednorázová úhrada (Platba)",
+    "amount": "-10 175,36",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "xr4zx5yto",
+    "real_date": "24. 12. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-263,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qwucm65rq",
+    "real_date": "24. 12. 2025",
+    "name": "Google Play Apps; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-4,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "k57z0yld2",
+    "real_date": "24. 12. 2025",
+    "name": "272049801/0600",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-7 350,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2ts20qydv",
+    "real_date": "24. 12. 2025",
+    "name": "2011000005/6000",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-950,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2m348ru84",
+    "real_date": "25. 12. 2025",
+    "name": "OMV 2117; Tvarozna; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-300,40",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "h7s4glie8",
+    "real_date": "25. 12. 2025",
+    "name": "Tabak Traficon; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-219,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gtotxvvqk",
+    "real_date": "25. 12. 2025",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-189,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6xu95p46q",
+    "real_date": "25. 12. 2025",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-116,60",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "sty3073ns",
+    "real_date": "25. 12. 2025",
+    "name": "Pay | CSAS, 352; Tvarozna; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-4 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "wx27rurv4",
+    "real_date": "25. 12. 2025",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 667,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zyhxhax4j",
+    "real_date": "25. 12. 2025",
+    "name": "246246/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-3 535,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "xw8t3lwtw",
+    "real_date": "26. 12. 2025",
+    "name": "GOPAY *STUDENT-ESHOP.; KRASLICE; CZE",
+    "type": "Platba kartou",
+    "amount": "-258,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2f83bnxrd",
+    "real_date": "27. 12. 2025",
+    "name": "Alza.cz; Prague; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-207,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "apcpgrns0",
+    "real_date": "28. 12. 2025",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-500,30",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ajeelbrpb",
+    "real_date": "30. 12. 2025",
+    "name": "KAUFLAND CZ 1950; BRNO SLATINA; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-1 382,98",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "676pbs56o",
+    "real_date": "30. 12. 2025",
+    "name": "McDonalds 20300016; Tvarozna; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-369,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "yo1qikjme",
+    "real_date": "30. 12. 2025",
+    "name": "Neznámý obchodník",
+    "type": "Platba kartou",
+    "amount": "-242,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "9q1nd88hy",
+    "real_date": "31. 12. 2025",
+    "name": "VAPORISM.CZ; OSTRAVA; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-522,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "skw2gga2b",
+    "real_date": "31. 12. 2025",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-199,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "nw78eh68o",
+    "real_date": "31. 12. 2025",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ln09n3sb7",
+    "real_date": "31. 12. 2025",
+    "name": "Souhrnná položka k účtu 1036437823.",
+    "type": "Vedení účtu (Poplatek)",
+    "amount": "-65,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2x3tp1oa4",
+    "real_date": "6. 1. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-100,70",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ur34c2dpz",
+    "real_date": "6. 1. 2026",
+    "name": "Style Cafe; Slavkov U Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-383,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "w11vz0po6",
+    "real_date": "6. 1. 2026",
+    "name": "Klarna Refurbed; Stockholm; SWE",
+    "type": "Platba kartou",
+    "amount": "-2 473,16",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "yuvs3znsq",
+    "real_date": "7. 1. 2026",
+    "name": "Autopneu Brazda; Rousinov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-1 380,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "blanvdgfd",
+    "real_date": "7. 1. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-182,40",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ue5vfz5pi",
+    "real_date": "7. 1. 2026",
+    "name": "Pay | CSAS, Palackeho namesti; Slavkov u Brn; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-3 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gybmglxlv",
+    "real_date": "7. 1. 2026",
+    "name": "GOPAY *CDRMARKET.CZ; PLZEN; CZE",
+    "type": "Platba kartou",
+    "amount": "-412,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "cop0wmut9",
+    "real_date": "8. 1. 2026",
+    "name": "22023/5500 - VIVO CONNECTION, spo | Internet VIVO Slavkov",
+    "type": "Trvalý příkaz (Trvalá platba)",
+    "amount": "-399,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "wrfl0kxt1",
+    "real_date": "8. 1. 2026",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-5 762,11",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6b0wdkf6u",
+    "real_date": "8. 1. 2026",
+    "name": "2300592123/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 373,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "sb00zxiig",
+    "real_date": "9. 1. 2026",
+    "name": "288637309/0300 - MOBIL POHOTOVOST GSM | Xiaomi_Redmi_Note_11__4GB_128GB_Graphite | _Gray",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+1 500,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "eostbl8vf",
+    "real_date": "9. 1. 2026",
+    "name": "19-6017530267/0100",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 097,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "871lcgw8a",
+    "real_date": "10. 1. 2026",
+    "name": "Ono-Brno Slatina; Brno 27; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-1 246,20",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "f6zwfnupb",
+    "real_date": "10. 1. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-140,30",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "uildsg9pw",
+    "real_date": "10. 1. 2026",
+    "name": "Allegro; Poznan; POL",
+    "type": "Platba kartou",
+    "amount": "-338,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "kid8iwlvf",
+    "real_date": "11. 1. 2026",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-862,56",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "xhzbrx79w",
+    "real_date": "11. 1. 2026",
+    "name": "Tabak Traficon; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-219,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "v7izzs1r4",
+    "real_date": "11. 1. 2026",
+    "name": "Klarna*Project Pay i; Stockholm; SWE",
+    "type": "Platba kartou",
+    "amount": "-424,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "iklofxl2e",
+    "real_date": "13. 1. 2026",
+    "name": "6995610217/0100 - FINAL TOOLS A.S. | Kocian Zbynek",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+35 782,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "tn14v9pev",
+    "real_date": "13. 1. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-428,40",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zbixcxmqc",
+    "real_date": "13. 1. 2026",
+    "name": "Tabak Traficon; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-457,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "kjqazrefq",
+    "real_date": "13. 1. 2026",
+    "name": "Google One; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-59,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2e8jr1bt5",
+    "real_date": "13. 1. 2026",
+    "name": "Klarna*Allegro.cz; Stockholm; SWE",
+    "type": "Platba kartou",
+    "amount": "-1 109,33",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "fgxc1ar8m",
+    "real_date": "14. 1. 2026",
+    "name": "Splátka úvěru Minutová půjčka 2409408357",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-1 297,98",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "4f7patn8d",
+    "real_date": "14. 1. 2026",
+    "name": "Splátka úvěru",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-843,79",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "76vlpih1b",
+    "real_date": "14. 1. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-149,02",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "j0j3bafr4",
+    "real_date": "14. 1. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-98,21",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "oisgbf053",
+    "real_date": "14. 1. 2026",
+    "name": "Klarna*Allegro.cz; Stockholm; SWE",
+    "type": "Platba kartou",
+    "amount": "-343,67",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gesq1pbky",
+    "real_date": "15. 1. 2026",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-234,80",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "9enwccd3a",
+    "real_date": "15. 1. 2026",
+    "name": "SLEDOVANITV S.R.O; BRNO; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-259,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "5geimaf6d",
+    "real_date": "15. 1. 2026",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-5 121,87",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "agmt9o371",
+    "real_date": "15. 1. 2026",
+    "name": "272049801/0600",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-7 350,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "d141o8t3t",
+    "real_date": "15. 1. 2026",
+    "name": "1135765013/0800 | nájem leden 2026",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-18 928,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "w8c8a38t5",
+    "real_date": "16. 1. 2026",
+    "name": "Splátka úvěru Minutová půjčka 2411614987",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-847,68",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "mic0t075g",
+    "real_date": "16. 1. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-145,32",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "a2lnpqu0d",
+    "real_date": "16. 1. 2026",
+    "name": "Google One; Dublin; IRL",
+    "type": "Jednorázová úhrada (Platba)",
+    "amount": "+54,18",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "fe8ohhkjz",
+    "real_date": "16. 1. 2026",
+    "name": "Google One; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-46,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "xkj73b7yl",
+    "real_date": "16. 1. 2026",
+    "name": "2107047617/2700",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-581,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "x6aytxu3o",
+    "real_date": "17. 1. 2026",
+    "name": "Pay | CSAS, B. Nemcove 282; Slavkov u Brn; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-500,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "si59pebhp",
+    "real_date": "17. 1. 2026",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-20 200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qguvjikba",
+    "real_date": "17. 1. 2026",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 766,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "kmrv02dte",
+    "real_date": "17. 1. 2026",
+    "name": "304991309/0300 - Skip pay s.r.o. | Zbyněk Kocián: Zbyněk Kocián QR | (AXaGg0ABQQ)",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+20 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "a52dw35h3",
+    "real_date": "18. 1. 2026",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-542,10",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "iy4el77cu",
+    "real_date": "19. 1. 2026",
+    "name": "1101083110/5500 - Splátka karty | CRED CARD REPAYMENT",
+    "type": "Inkaso",
+    "amount": "-5 298,93",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "aanz73b7o",
+    "real_date": "20. 1. 2026",
+    "name": "Tabak Traficon; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-219,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6ikms9fod",
+    "real_date": "20. 1. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-117,60",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "aehzw13d3",
+    "real_date": "20. 1. 2026",
+    "name": "SledovaniTV s.r.o; Brno; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "to59xn08k",
+    "real_date": "20. 1. 2026",
+    "name": "SledovaniTV s.r.o; Brno; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "01adl8k59",
+    "real_date": "20. 1. 2026",
+    "name": "2100204456/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-12 376,06",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gzo88r43c",
+    "real_date": "20. 1. 2026",
+    "name": "2602868033/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-8 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "d6e4ge1en",
+    "real_date": "21. 1. 2026",
+    "name": "2011000005/6000",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-950,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "hvtit3295",
+    "real_date": "22. 1. 2026",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "nqdv5qipx",
+    "real_date": "23. 1. 2026",
+    "name": "ORLEN CS 539; BRNO; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-497,78",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "bofoht4ol",
+    "real_date": "23. 1. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-183,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "1icab3qc9",
+    "real_date": "23. 1. 2026",
+    "name": "2401886809/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "mxwmc1cmi",
+    "real_date": "24. 1. 2026",
+    "name": "Dekra Cz A.S., Slavkov; Slavkov U Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-1 550,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ahhef0rt0",
+    "real_date": "24. 1. 2026",
+    "name": "Dekra Cz A.S., Slavkov Sm; Slavkov U Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-1 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dh9l9ai38",
+    "real_date": "25. 1. 2026",
+    "name": "Billa Slavkov; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-311,10",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "4u7gu0rre",
+    "real_date": "25. 1. 2026",
+    "name": "Tabak Traficon; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-219,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ghww3k5o8",
+    "real_date": "27. 1. 2026",
+    "name": "272049801/0600",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+590,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "9ed1t10ds",
+    "real_date": "27. 1. 2026",
+    "name": "Pay | MMB RIPSKA 27 KAUF; Brno Slatin; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-5 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "4nlluo7wm",
+    "real_date": "27. 1. 2026",
+    "name": "5200016309/5500 - ThePay, a.s. | POSKYTNUTÍ SPOTŘEBITELSKÉHO ÚVĚR U | MOVINERO",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+2 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "u8rovnz9g",
+    "real_date": "27. 1. 2026",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-640,23",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "5x5i9nzsx",
+    "real_date": "27. 1. 2026",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 666,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "nbv9qdg8x",
+    "real_date": "27. 1. 2026",
+    "name": "2401886809/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "h6mauom6g",
+    "real_date": "27. 1. 2026",
+    "name": "123-7828580297/0100",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "iuxs35qcv",
+    "real_date": "28. 1. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-103,70",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zdx24vnfk",
+    "real_date": "28. 1. 2026",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "txfharqvy",
+    "real_date": "28. 1. 2026",
+    "name": "1613316133/0600 - THEPAY, A.S. | VYPLATA RYCHLE KACKY C. RK1260015502",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+7 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "7ccbv24d6",
+    "real_date": "29. 1. 2026",
+    "name": "103700114/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 287,79",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ei6r9sqy8",
+    "real_date": "30. 1. 2026",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-199,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "9f5d5mh9v",
+    "real_date": "30. 1. 2026",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "wrdx8ft3g",
+    "real_date": "31. 1. 2026",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-953,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "jb762dxem",
+    "real_date": "31. 1. 2026",
+    "name": "Souhrnná položka k účtu 1036437823.",
+    "type": "Vedení účtu (Poplatek)",
+    "amount": "-65,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "davyva1cy",
+    "real_date": "4. 2. 2026",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-483,30",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "c1c5irmlb",
+    "real_date": "4. 2. 2026",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-445,40",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "rtuakfrhd",
+    "real_date": "5. 2. 2026",
+    "name": "Tabak Traficon; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-235,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "sawoeactl",
+    "real_date": "6. 2. 2026",
+    "name": "MOJE DILNA,VODARSKA 126/; BRNO - HORNI; | CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-377,58",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qn9ycd1ui",
+    "real_date": "7. 2. 2026",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-324,10",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "misgxekmw",
+    "real_date": "7. 2. 2026",
+    "name": "2500494595/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "xr7bac2pf",
+    "real_date": "8. 2. 2026",
+    "name": "2011050045/6000 - HOME CREDIT A.S.",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+329,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "006npha3n",
+    "real_date": "8. 2. 2026",
+    "name": "22023/5500 - VIVO CONNECTION, spo | Internet VIVO Slavkov",
+    "type": "Trvalý příkaz (Trvalá platba)",
+    "amount": "-399,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "80ke698kr",
+    "real_date": "10. 2. 2026",
+    "name": "Ono-Brno Slatina; Brno 27; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-464,10",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "j2k888t8t",
+    "real_date": "13. 2. 2026",
+    "name": "6995610217/0100 - FINAL TOOLS A.S. | Kocian Zbynek",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+42 351,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "a7eiuzz6r",
+    "real_date": "13. 2. 2026",
+    "name": "246246/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-3 479,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "87v8smqi3",
+    "real_date": "14. 2. 2026",
+    "name": "Splátka úvěru Minutová půjčka 2409408357",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-1 313,55",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zrs8lmnpc",
+    "real_date": "14. 2. 2026",
+    "name": "Splátka úvěru",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-852,23",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "s9saq2r1c",
+    "real_date": "14. 2. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-133,45",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "mg3e4h829",
+    "real_date": "14. 2. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-89,77",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "1rw3xnhx5",
+    "real_date": "14. 2. 2026",
+    "name": "Klarna Allegro.cz; Stockholm; SWE",
+    "type": "Platba kartou",
+    "amount": "-1 109,34",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "vs7oiom0q",
+    "real_date": "15. 2. 2026",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-199,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "sbud5e3iy",
+    "real_date": "15. 2. 2026",
+    "name": "123-3634590237/0100",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 600,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "rpiyu64mt",
+    "real_date": "15. 2. 2026",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-20 200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "l2jph919j",
+    "real_date": "15. 2. 2026",
+    "name": "304991309/0300 - Skip pay s.r.o. | Zbyněk Kocián: Zbyněk Kocián QR | (AXcRckkQBw)",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+20 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "0gqd6w3g9",
+    "real_date": "16. 2. 2026",
+    "name": "Splátka úvěru Minutová půjčka 2411614987",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-859,97",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "sfcmdrngc",
+    "real_date": "16. 2. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-133,03",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "r3qj931bj",
+    "real_date": "16. 2. 2026",
+    "name": "1135765013/0800 | najem unor 26",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-18 928,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "hn5p4g1q8",
+    "real_date": "17. 2. 2026",
+    "name": "Google One; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-59,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "bidbs552i",
+    "real_date": "17. 2. 2026",
+    "name": "Klarna*Refurbed; Stockholm; SWE",
+    "type": "Platba kartou",
+    "amount": "-2 673,17",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "7jkrukcdb",
+    "real_date": "17. 2. 2026",
+    "name": "Klarna*Allegro.cz; Stockholm; SWE",
+    "type": "Platba kartou",
+    "amount": "-343,67",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "lv49aogsr",
+    "real_date": "18. 2. 2026",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "9tbvg3mdm",
+    "real_date": "19. 2. 2026",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-312,62",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "cpx3ila24",
+    "real_date": "19. 2. 2026",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-118,80",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ksym2t7bz",
+    "real_date": "19. 2. 2026",
+    "name": "1101083110/5500 - Splátka karty | CRED CARD REPAYMENT",
+    "type": "Inkaso",
+    "amount": "-4 757,44",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "me3f9ogsr",
+    "real_date": "20. 2. 2026",
+    "name": "SLEDOVANITV S.R.O; BRNO; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gzxw09jpy",
+    "real_date": "21. 2. 2026",
+    "name": "Ono-Brno Slatina; Brno 27; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-817,60",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "1k0an4oa2",
+    "real_date": "22. 2. 2026",
+    "name": "Lidl dekuje za nakup; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-96,35",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "obskltaob",
+    "real_date": "24. 2. 2026",
+    "name": "twisto.cz; Praha 1; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-237,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "hlah4g35z",
+    "real_date": "25. 2. 2026",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "b33zakrep",
+    "real_date": "26. 2. 2026",
+    "name": "6312685309/0800 - Eva Toušová | Od babi kladno",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+15 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "2hcxvad3s",
+    "real_date": "26. 2. 2026",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 879,98",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qi8sn2d22",
+    "real_date": "26. 2. 2026",
+    "name": "272049801/0600",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-3 500,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "5c0d630gt",
+    "real_date": "28. 2. 2026",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-400,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "th6lajadv",
+    "real_date": "28. 2. 2026",
+    "name": "Souhrnná položka k účtu 1036437823.",
+    "type": "Vedení účtu (Poplatek)",
+    "amount": "-65,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "g3x35h306",
+    "real_date": "6. 3. 2026",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou",
+    "amount": "-914,56",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "7ifjra1ya",
+    "real_date": "6. 3. 2026",
+    "name": "Makovec a.s. 032; Slavkov; CZE",
+    "type": "Platba kartou",
+    "amount": "-390,51",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "22pfuhzla",
+    "real_date": "7. 3. 2026",
+    "name": "Lidl dekuje za nakup; Slavkov u Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-368,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dgxbxnts6",
+    "real_date": "7. 3. 2026",
+    "name": "Zamecka Lekarna Slavko; Slavkov U Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-145,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "vjsaklw86",
+    "real_date": "8. 3. 2026",
+    "name": "22023/5500 - VIVO CONNECTION, spo | Internet VIVO Slavkov",
+    "type": "Trvalý příkaz (Trvalá platba)",
+    "amount": "-399,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "offyisiwh",
+    "real_date": "8. 3. 2026",
+    "name": "sledovanitv.cz; Brno; CZE",
+    "type": "Platba kartou",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "kwhuw4f4i",
+    "real_date": "11. 3. 2026",
+    "name": "6995610217/0100 - FINAL TOOLS A.S. | Kocian Zbynek",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+53 224,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "zjtovzid7",
+    "real_date": "12. 3. 2026",
+    "name": "2011000005/6000",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 900,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "m7ap4il1f",
+    "real_date": "12. 3. 2026",
+    "name": "272049801/0600",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-7 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "n7s1a0ufx",
+    "real_date": "12. 3. 2026",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-20 200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dfn4mejgj",
+    "real_date": "12. 3. 2026",
+    "name": "304991309/0300 - Skip pay s.r.o. | Zbyněk Kocián: Zbyněk Kocián QR | (AXczGEk2JA)",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+20 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "o0l5053ol",
+    "real_date": "12. 3. 2026",
+    "name": "123-3634590237/0100",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "aj9660wwa",
+    "real_date": "13. 3. 2026",
+    "name": "246246/2250",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-3 259,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "pc7r16tco",
+    "real_date": "13. 3. 2026",
+    "name": "1135765013/0800 | nájem březen 2026",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-18 928,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "xyvpefjh2",
+    "real_date": "14. 3. 2026",
+    "name": "Splátka úvěru Minutová půjčka 2409408357",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-1 329,32",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "vc3y2dhlm",
+    "real_date": "14. 3. 2026",
+    "name": "Splátka úvěru",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-860,75",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dw0fe054f",
+    "real_date": "14. 3. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-117,68",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "3ocxltv5a",
+    "real_date": "14. 3. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-81,25",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8m3yfsiiy",
+    "real_date": "14. 3. 2026",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-319,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "aeq7d4qoo",
+    "real_date": "14. 3. 2026",
+    "name": "2902700697/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-395,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "htb03qbus",
+    "real_date": "15. 3. 2026",
+    "name": "sledovanitv.cz; Brno; CZE",
+    "type": "Platba kartou",
+    "amount": "-259,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "te4cyp8ju",
+    "real_date": "15. 3. 2026",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ii6m8io8e",
+    "real_date": "16. 3. 2026",
+    "name": "Splátka úvěru Minutová půjčka 2411614987",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-872,44",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2xm9d1sff",
+    "real_date": "16. 3. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-120,56",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "jd2m4htdd",
+    "real_date": "17. 3. 2026",
+    "name": "twisto.cz; Praha 1; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-1 319,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "eusbb0cfp",
+    "real_date": "17. 3. 2026",
+    "name": "sledovanitv.cz; Brno; CZE",
+    "type": "Platba kartou",
+    "amount": "-1,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "3ed104p1e",
+    "real_date": "17. 3. 2026",
+    "name": "Google One; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-59,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "p4hawgzs7",
+    "real_date": "19. 3. 2026",
+    "name": "movinero.cz; Praha; CZE",
+    "type": "Platba kartou",
+    "amount": "-2 575,88",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "wtt85g170",
+    "real_date": "19. 3. 2026",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-398,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "0jaedwwac",
+    "real_date": "19. 3. 2026",
+    "name": "1101083110/5500 - Splátka karty | CRED CARD REPAYMENT",
+    "type": "Inkaso",
+    "amount": "-4 904,89",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "uen0jaioi",
+    "real_date": "20. 3. 2026",
+    "name": "Ono-Brno Slatina; Brno 27; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-719,40",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "a4pehwkk0",
+    "real_date": "20. 3. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-68,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qdd620br7",
+    "real_date": "20. 3. 2026",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dtttpltsu",
+    "real_date": "21. 3. 2026",
+    "name": "Tabak Traficon; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-124,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "18roern2j",
+    "real_date": "22. 3. 2026",
+    "name": "Pay | KB ATM LUZNA 559/3; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "n2f7upcoo",
+    "real_date": "26. 3. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-163,30",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "169qo6flc",
+    "real_date": "26. 3. 2026",
+    "name": "Google Play Apps; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-5,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "pxs6a78gi",
+    "real_date": "26. 3. 2026",
+    "name": "5200016309/5500 - ThePay, a.s. | POSKYTNUTÍ SPOTŘEBITELSKÉHO ÚVĚR U | MOVINERO",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+2 008,68",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "ilrpld4ov",
+    "real_date": "27. 3. 2026",
+    "name": "Lidl dekuje za nakup; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-209,84",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ycr9due9v",
+    "real_date": "27. 3. 2026",
+    "name": "1637859650/6363",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-50,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "rk6s9xaln",
+    "real_date": "28. 3. 2026",
+    "name": "Billa Slavkov; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-771,95",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "1uddvaxod",
+    "real_date": "31. 3. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-109,80",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ktm12p71f",
+    "real_date": "31. 3. 2026",
+    "name": "1,00 EUR;sweet.tv 1 53881054; Bratislava; SVK",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-25,54",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "a8m4uusqm",
+    "real_date": "31. 3. 2026",
+    "name": "Pivnice Bucanda; Slavkov U Brn; CZE",
+    "type": "Platba kartou",
+    "amount": "-210,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "hodncdqij",
+    "real_date": "31. 3. 2026",
+    "name": "Souhrnná položka k účtu 1036437823.",
+    "type": "Vedení účtu (Poplatek)",
+    "amount": "-65,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ja2uoto64",
+    "real_date": "8. 4. 2026",
+    "name": "grandwin.cz; Praha 5 Smich; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "yb4repcl8",
+    "real_date": "11. 4. 2026",
+    "name": "195690557/0600",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+2 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "gsl3wukve",
+    "real_date": "11. 4. 2026",
+    "name": "22023/5500 - VIVO TELCO, spol. s | Internet VIVO Slavkov",
+    "type": "Trvalý příkaz (Trvalá platba)",
+    "amount": "-399,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "rcw5e8a2g",
+    "real_date": "11. 4. 2026",
+    "name": "881506/0100",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+1 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "qxumkgbq1",
+    "real_date": "12. 4. 2026",
+    "name": "2300592123/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-138,15",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ldya53nv4",
+    "real_date": "13. 4. 2026",
+    "name": "6995610217/0100 - FINAL TOOLS A.S. | Kocian Zbynek",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+40 119,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "n9u2bs4fk",
+    "real_date": "14. 4. 2026",
+    "name": "Splátka úvěru Minutová půjčka 2409408357",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-1 345,27",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "d30knskzv",
+    "real_date": "14. 4. 2026",
+    "name": "Splátka úvěru",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-869,36",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ksn9ota23",
+    "real_date": "14. 4. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-101,73",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "010kxtmss",
+    "real_date": "14. 4. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-72,64",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "3lc0przuw",
+    "real_date": "14. 4. 2026",
+    "name": "Pay | RBCZ; Brno; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-2 600,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "repj9l4k7",
+    "real_date": "14. 4. 2026",
+    "name": "195690557/0600",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "bhxxi55jx",
+    "real_date": "15. 4. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-130,60",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "jk41tgjd3",
+    "real_date": "15. 4. 2026",
+    "name": "Auto-Moto; Slavkov U Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-700,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "lc3xw1z15",
+    "real_date": "15. 4. 2026",
+    "name": "GOPAY * O2 GOPAY *; Praha; CZE",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-500,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "0klob38ut",
+    "real_date": "15. 4. 2026",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 326,58",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "4a9pcs2rg",
+    "real_date": "15. 4. 2026",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-20 200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "caqxvqp2y",
+    "real_date": "15. 4. 2026",
+    "name": "304991309/0300 - Skip pay s.r.o. | Zbyněk Kocián: Zbyněk Kocián QR(AXdiVlgyaA)",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+20 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "rdhf5wiha",
+    "real_date": "16. 4. 2026",
+    "name": "Splátka úvěru Minutová půjčka 2411614987",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-885,09",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "hdbv1k8gp",
+    "real_date": "16. 4. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-107,91",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2s800yk6q",
+    "real_date": "16. 4. 2026",
+    "name": "272049801/0600",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-3 100,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "huzbu98pc",
+    "real_date": "16. 4. 2026",
+    "name": "2300592123/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 081,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "scg1jenk5",
+    "real_date": "16. 4. 2026",
+    "name": "Google One; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-549,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "bz8jcy6lx",
+    "real_date": "16. 4. 2026",
+    "name": "1135765013/0800 | najem duben 26",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-18 928,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "pufmkqmhr",
+    "real_date": "17. 4. 2026",
+    "name": "1101083110/5500 - Splátka karty | CRED CARD REPAYMENT",
+    "type": "Inkaso",
+    "amount": "-5 059,86",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2v3g8f4iy",
+    "real_date": "19. 4. 2026",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-57,16",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8rfg8v3rv",
+    "real_date": "24. 4. 2026",
+    "name": "Billa Slavkov; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-489,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zh9eqhyiv",
+    "real_date": "26. 4. 2026",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-213,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "2f2smaxcy",
+    "real_date": "28. 4. 2026",
+    "name": "2103475323/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-158,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "vi0pozken",
+    "real_date": "28. 4. 2026",
+    "name": "Google CLOUD 7SSWQB; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-136,89",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "78777o8xt",
+    "real_date": "30. 4. 2026",
+    "name": "Souhrnná položka k účtu 1036437823.",
+    "type": "Vedení účtu (Poplatek)",
+    "amount": "-65,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gaz9mosrc",
+    "real_date": "13. 5. 2026",
+    "name": "190-1036437823/5500 | Úrok 04/2026",
+    "type": "Splátka úroku po splatnosti (Pohledávky po splatnosti)",
+    "amount": "-372,28",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "cpl236e1s",
+    "real_date": "13. 5. 2026",
+    "name": "22023/5500 - VIVO TELCO, spol. s | Internet VIVO Slavkov",
+    "type": "Trvalý příkaz (Trvalá platba)",
+    "amount": "-399,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "y64yb5zqe",
+    "real_date": "14. 5. 2026",
+    "name": "Splátka úvěru Minutová půjčka 2409408357",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-1 361,41",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ol25wqqo1",
+    "real_date": "14. 5. 2026",
+    "name": "Splátka úvěru",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-878,05",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6i4qy18ga",
+    "real_date": "14. 5. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-85,59",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "yfjfz9l2c",
+    "real_date": "14. 5. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-63,95",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "t40j427zn",
+    "real_date": "15. 5. 2026",
+    "name": "D-Oil s.r.o.; Podoli u Brna; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-219,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "5b4hus56g",
+    "real_date": "15. 5. 2026",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-20 200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "7tosbr0iw",
+    "real_date": "15. 5. 2026",
+    "name": "272049801/0600",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-3 507,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "3xz6wug7x",
+    "real_date": "15. 5. 2026",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 324,25",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "bl9sswcjw",
+    "real_date": "15. 5. 2026",
+    "name": "304991309/0300 - Skip pay s.r.o. | Zbyněk Kocián: Zbyněk Kocián QR | (AXeIaVhSkw)",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+20 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "ngk8lvheg",
+    "real_date": "16. 5. 2026",
+    "name": "Splátka úvěru Minutová půjčka 2411614987",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-897,93",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "wnol7opyn",
+    "real_date": "16. 5. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-95,07",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "7r8r4wbp0",
+    "real_date": "16. 5. 2026",
+    "name": "Google One; Dublin; IRL",
+    "type": "Platba kartou",
+    "amount": "-549,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "l85eq244w",
+    "real_date": "18. 5. 2026",
+    "name": "1135765013/0800 | nájem duben 2026",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-18 928,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "p774ud2us",
+    "real_date": "18. 5. 2026",
+    "name": "Senk Na Kovarne; Vever.Bityska; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-160,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "k61hyll9h",
+    "real_date": "18. 5. 2026",
+    "name": "Senk Na Kovarne; Vever.Bityska; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-160,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "sihhgfccs",
+    "real_date": "18. 5. 2026",
+    "name": "Senk Na Kovarne; Vever.Bityska; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-45,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "1hc0p2sfh",
+    "real_date": "18. 5. 2026",
+    "name": "UBER *TRIP HELP.UBER.COM; Amsterdam; CZE",
+    "type": "Platba kartou",
+    "amount": "-786,64",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "g80y24xd6",
+    "real_date": "18. 5. 2026",
+    "name": "UBER *TRIP HELP.UBER.COM; Amsterdam; CZE",
+    "type": "Platba kartou",
+    "amount": "-10,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "anpvgqxyk",
+    "real_date": "18. 5. 2026",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 400,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "c3rcnotkw",
+    "real_date": "18. 5. 2026",
+    "name": "BOLT.EU/O/2605151504; Tallinn; EST",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-580,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "uw3004baa",
+    "real_date": "19. 5. 2026",
+    "name": "IDSJMK.CZ*263r025235; Brno; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-98,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "67zem6t66",
+    "real_date": "19. 5. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-256,60",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "we1nkh93d",
+    "real_date": "19. 5. 2026",
+    "name": "1101083110/5500 - Splátka karty | CRED CARD REPAYMENT",
+    "type": "Inkaso",
+    "amount": "-5 207,55",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "jvbe2aom3",
+    "real_date": "20. 5. 2026",
+    "name": "Penny Spitalska 754; Slavkov; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-178,50",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6l2f1o72f",
+    "real_date": "21. 5. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-239,40",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ozsknzj89",
+    "real_date": "21. 5. 2026",
+    "name": "1135765013/0800 | doplatek - nájem duben 2026",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "h0cgypkcn",
+    "real_date": "25. 5. 2026",
+    "name": "5200016309/5500 - ThePay, a.s.",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+6 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "i1xid7efe",
+    "real_date": "25. 5. 2026",
+    "name": "123-3634590237/0100",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "5j552f2f0",
+    "real_date": "25. 5. 2026",
+    "name": "2107047617/2700",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-281,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "3y3kct4f0",
+    "real_date": "25. 5. 2026",
+    "name": "2103475323/2010",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-395,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ub6fl3e9c",
+    "real_date": "25. 5. 2026",
+    "name": "CS EUROOIL; SLAVKOV U BR.; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-433,90",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "m86zsgdjp",
+    "real_date": "26. 5. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-75,90",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "m0dgavso6",
+    "real_date": "27. 5. 2026",
+    "name": "Tabak Traficon; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-398,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "4pplummg5",
+    "real_date": "27. 5. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-43,12",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "87ombquez",
+    "real_date": "29. 5. 2026",
+    "name": "SHELL 8143; BRNO-OLOMOUCK; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-500,40",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "tlvj6x8i0",
+    "real_date": "29. 5. 2026",
+    "name": "Potraviny Hruska; Slavkov u Brn; CZE",
+    "type": "Platba kartou Google Pay",
+    "amount": "-84,60",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gel948aj3",
+    "real_date": "29. 5. 2026",
+    "name": "Pay | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Výběr hotovosti z bankomatu Google (Vklad/Výběr z bankomatu)",
+    "amount": "-1 800,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "gc984zb3j",
+    "real_date": "31. 5. 2026",
+    "name": "Souhrnná položka k účtu 1036437823.",
+    "type": "Vedení účtu (Poplatek)",
+    "amount": "-65,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "u12tp8ems",
+    "real_date": "14. 6. 2026",
+    "name": "Splátka úvěru Minutová půjčka 2409408357",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-573,78",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "hjff1nhjh",
+    "real_date": "15. 6. 2026",
+    "name": "6995610217/0100 - FINAL TOOLS A.S. | Kocian Zbynek",
+    "type": "Příchozí úhrada (Platba)",
+    "amount": "+44 168,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "7im9gjixd",
+    "real_date": "15. 6. 2026",
+    "name": "254-1036437823/5500 | Splátka úvěru Minutová půjčka 2409408357",
+    "type": "Splátka jistiny po splatnosti (Pohledávky po splatnosti)",
+    "amount": "-776,04",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "bj6rys2ty",
+    "real_date": "15. 6. 2026",
+    "name": "238-1036437823/5500 | Splátka úvěru",
+    "type": "Splátka jistiny po splatnosti (Pohledávky po splatnosti)",
+    "amount": "-886,83",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "qr2thhhw1",
+    "real_date": "15. 6. 2026",
+    "name": "246-1036437823/5500",
+    "type": "Splátka úroku po splatnosti (Pohledávky po splatnosti)",
+    "amount": "-69,25",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6ycg32l52",
+    "real_date": "15. 6. 2026",
+    "name": "211-1036437823/5500",
+    "type": "Splátka úroku po splatnosti (Pohledávky po splatnosti)",
+    "amount": "-55,17",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dzmz6v8f2",
+    "real_date": "15. 6. 2026",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-2 326,58",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "ti4uz7kh4",
+    "real_date": "15. 6. 2026",
+    "name": "117962473/0300",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-20 200,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "q2e6t59n1",
+    "real_date": "15. 6. 2026",
+    "name": "304991309/0300 - Skip pay s.r.o. | Zbyněk Kocián: Zbyněk Kocián QR | (AXgVJAhZMg)",
+    "type": "Příchozí okamžitá úhrada (Platba)",
+    "amount": "+20 000,00",
+    "color": "text-emerald-400"
+  },
+  {
+    "id": "b6x1gnjgg",
+    "real_date": "16. 6. 2026",
+    "name": "Splátka úvěru Minutová půjčka 2411614987",
+    "type": "Splátka úvěru (Platba)",
+    "amount": "-910,95",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "j4366q0iq",
+    "real_date": "16. 6. 2026",
+    "name": "Splátka úvěru",
+    "type": "Úrok z úvěru",
+    "amount": "-82,05",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "49w0d41wy",
+    "real_date": "16. 6. 2026",
+    "name": "0,95 EUR;UPAPP; ZAGREB; HRV",
+    "type": "Platba na internetu Google Pay (Platba kartou)",
+    "amount": "-23,85",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "t44q8mq0g",
+    "real_date": "16. 6. 2026",
+    "name": "Google One; Dublin; IRL",
+    "type": "Platba na internetu (Platba kartou)",
+    "amount": "-549,99",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "8lqt2qrqv",
+    "real_date": "17. 6. 2026",
+    "name": "1135765013/0800 | nájem cerven 2026",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-19 928,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "lso1jcz7x",
+    "real_date": "17. 6. 2026",
+    "name": "1135765013/0800 | plyn - nedoplatek",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-1 607,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "r31fbjgb2",
+    "real_date": "17. 6. 2026",
+    "name": "5716803063/0800",
+    "type": "Odchozí okamžitá úhrada (Platba)",
+    "amount": "-10 000,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "6uipqgln1",
+    "real_date": "17. 6. 2026",
+    "name": "POTRAVINY KOLEJKA; Brno - Lisen; CZE",
+    "type": "Platba kartou",
+    "amount": "-240,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "0inzlebyd",
+    "real_date": "17. 6. 2026",
+    "name": "bankomatu | KB ATM MERHAUTOVA 1; BRNO; CZE",
+    "type": "Bezkontaktní výběr hotovosti z (Vklad/Výběr z bankomatu)",
+    "amount": "-3 600,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "k8zl89cc3",
+    "real_date": "22. 6. 2026",
+    "name": "bankomatu | RBCZ; Brno; CZE",
+    "type": "Bezkontaktní výběr hotovosti z (Vklad/Výběr z bankomatu)",
+    "amount": "-600,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "mg9yua5b0",
+    "real_date": "29. 6. 2026",
+    "name": "1101083110/5500 | Zápočet",
+    "type": "Jednorázová úhrada (Platba)",
+    "amount": "-2 012,29",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "dhcfkx8vw",
+    "real_date": "30. 6. 2026",
+    "name": "Souhrnná položka k účtu 1036437823.",
+    "type": "Vedení účtu (Poplatek)",
+    "amount": "-65,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "zgk1165ug",
+    "real_date": "Celkem",
+    "name": "188.74",
+    "type": "0.00",
+    "amount": "0,00",
+    "color": "text-slate-100"
+  },
+  {
+    "id": "t3j9z93mz",
+    "real_date": "",
+    "name": "Neznámý obchodník",
+    "type": "0.00",
+    "amount": "0,00",
+    "color": "text-slate-100"
+  }
+]

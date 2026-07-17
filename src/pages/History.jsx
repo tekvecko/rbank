@@ -7,17 +7,20 @@ export default function History() {
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
-  const scrollRef = useRef(null);
   
+  // Refs pro udržení aktuálního stavu uvnitř observeru (bez ohledu na re-rendery)
   const pageRef = useRef(1);
   const loadingRef = useRef(false);
+  const hasMoreRef = useRef(true); 
+  const observerTarget = useRef(null);
 
   const loadMore = async () => {
-    if (loadingRef.current || !hasMore) return;
+    if (loadingRef.current || !hasMoreRef.current) return;
+    
     loadingRef.current = true;
     setLoading(true);
+    
     try {
-      // Změna na zabezpečenou HTTPS doménu a přidání Basic Auth hlavičky
       const res = await fetch(`https://opravyslavkov.shop/api/transactions?page=${pageRef.current}&limit=15`, {
         method: 'GET',
         headers: {
@@ -25,15 +28,16 @@ export default function History() {
           'Accept': 'application/json'
         }
       });
-      
+
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);
       }
-      
+
       const newTx = await res.json();
 
       if (newTx.length === 0) {
         setHasMore(false);
+        hasMoreRef.current = false;
       } else {
         setTransactions(prev => {
           const existingIds = new Set(prev.map(t => t.id));
@@ -44,21 +48,36 @@ export default function History() {
       }
     } catch (err) {
       console.error("Chyba připojení k DB:", err);
+    } finally {
+      loadingRef.current = false;
+      setLoading(false);
     }
-    loadingRef.current = false;
-    setLoading(false);
   };
 
+  // Zavedení Intersection Observeru
   useEffect(() => {
+    // Načte hned při startu první dávku
     loadMore();
-  }, []);
 
-  const handleScroll = (e) => {
-    const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
-    if (scrollHeight - scrollTop <= clientHeight + 100) {
-      loadMore();
+    const observer = new IntersectionObserver((entries) => {
+      // Pokud je náš "neviditelný" prvek na obrazovce (nebo blízko)
+      if (entries[0].isIntersecting) {
+        loadMore();
+      }
+    }, { 
+      root: null,
+      rootMargin: '200px', // Spustí načítání už 200px předtím, než uživatel dojede úplně dolů (plynulejší zážitek)
+      threshold: 0 
+    });
+
+    if (observerTarget.current) {
+      observer.observe(observerTarget.current);
     }
-  };
+
+    return () => {
+      if (observerTarget.current) observer.unobserve(observerTarget.current);
+    };
+  }, []);
 
   const groupedTransactions = transactions.reduce((groups, tx) => {
     const dateObj = tx.created_at ? new Date(tx.created_at) : new Date();
@@ -110,7 +129,7 @@ export default function History() {
         <button className="bg-transparent text-gray-400 px-5 py-2 rounded-full text-[14px] font-medium whitespace-nowrap border border-gray-600">Platby</button>
       </div>
 
-      <div ref={scrollRef} onScroll={handleScroll} className="flex-1 bg-[#2c2f38] rounded-t-[32px] overflow-y-auto px-5 pt-6 pb-24 shadow-inner">
+      <div className="flex-1 bg-[#2c2f38] rounded-t-[32px] overflow-y-auto px-5 pt-6 pb-24 shadow-inner">
         <div className="flex justify-between items-center mb-5">
           <h2 className="text-[19px] font-bold">Poslední pohyby</h2>
         </div>
@@ -144,8 +163,12 @@ export default function History() {
           </div>
         ))}
 
+        {/* Informační zprávy */}
         {loading && <div className="text-center text-gray-400 text-sm py-4">Načítám transakce...</div>}
         {!hasMore && transactions.length > 0 && <div className="text-center text-gray-500 text-sm py-4">Konec historie</div>}
+        
+        {/* Sledovaný element (Observer Target) */}
+        <div ref={observerTarget} className="h-10 w-full"></div>
       </div>
       <BottomNav />
     </div>
