@@ -35,12 +35,14 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Čištění Gitu a povolení Gradle
+      - name: Povýšení Gradle a vyčištění Gitu
         run: |
           chmod +x android/gradlew
           rm -rf android/.gradle
           rm -rf android/app/build
           rm -rf android/capacitor-cordova-android-plugins/build
+          # Vynucený upgrade Gradle Wrapperu na verzi 8.7 kvůli podpoře Javy 21
+          sed -i 's/distributionUrl=.*/distributionUrl=https\:\/\/services.gradle.org\/distributions\/gradle-8.7-all.zip/g' android/gradle/wrapper/gradle-wrapper.properties
 
       - name: Sestavení APK (Debug)
         run: |
