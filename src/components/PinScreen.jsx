@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Preferences } from '@capacitor/preferences';
 
-// Importy obrázků
 import bioImg from '../assets/rbpic/bio.jpg';
 import logoLoadImg from '../assets/rbpic/logo-load.jpg';
 
@@ -77,7 +76,6 @@ export default function PinScreen({ onAuthenticated }) {
     return (
       <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-center text-white z-50 px-6">
         <div className="w-[72px] h-[72px] bg-[#3e424c] rounded-full flex items-center justify-center mb-8 overflow-hidden shadow-lg">
-          {/* Ikonka biometrie */}
           <img src={bioImg} alt="Biometrie" className="w-full h-full object-cover" />
         </div>
         <h2 className="text-2xl font-bold mb-4 text-center">Přihlášení otiskem</h2>
@@ -95,25 +93,31 @@ export default function PinScreen({ onAuthenticated }) {
   }
 
   return (
-    <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-start pt-20 text-white z-50 overflow-hidden font-sans">
+    <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-start pt-[60px] text-white z-50 overflow-hidden font-sans">
       
-      <div className="absolute top-0 right-0 w-[180px] h-[160px] bg-[#2c2f38] opacity-60" style={{ clipPath: 'polygon(100% 0, 100% 100%, 20% 0)' }}></div>
+      {/* OPRAVA 1: Plný horní panel s přesným oříznutím (clip-path) podle předlohy */}
+      <div 
+        className="absolute top-0 left-0 w-full h-[160px] bg-[#2c2f38]" 
+        style={{ clipPath: 'polygon(0 0, 100% 0, 100% 55%, calc(100% - 45px) 100%, 0 100%)' }}
+      ></div>
 
-      <div className="w-[70px] h-[70px] mb-12 z-10 rounded-full overflow-hidden flex items-center justify-center">
-        {/* Správně přiřazené hlavní logo */}
+      {/* OPRAVA 2: Čisté logo usazené přesně v panelu, bez kruhového orámování */}
+      <div className="w-[64px] h-[64px] mb-[70px] z-10 flex items-center justify-center">
         <img src={logoLoadImg} alt="Logo" className="w-full h-full object-contain" />
       </div>
 
-      <h2 className="text-[20px] font-semibold mb-10 z-10 text-white tracking-wide">
+      <h2 className="text-[20px] font-semibold mb-[50px] z-10 text-white tracking-wide">
         {isFirstSetup ? 'Vytvořte si nový S-PIN' : 'Zadejte S-PIN'}
       </h2>
       
+      {/* S-PIN body */}
       <div className="flex gap-[18px] mb-14 z-10 h-4">
         {[...Array(4)].map((_, i) => (
           <div key={i} className={`w-[14px] h-[14px] rounded-full transition-colors duration-200 ${pin.length > i ? 'bg-[#fcd535]' : 'bg-[#3e424c]'}`} />
         ))}
       </div>
       
+      {/* Číselník */}
       <div className="grid grid-cols-3 gap-x-8 gap-y-6 mb-12 z-10">
         {[1,2,3,4,5,6,7,8,9].map(d => (
           <button key={d} onClick={() => handleDigit(d)} className="w-[72px] h-[72px] rounded-full bg-[#2c2f38] text-[26px] font-normal active:bg-[#3e424c] transition-colors">{d}</button>
@@ -122,7 +126,6 @@ export default function PinScreen({ onAuthenticated }) {
         <div className="flex items-center justify-center">
           {isBiometricEnabled && !isFirstSetup ? (
             <button onClick={triggerBiometricAuth} className="w-[72px] h-[72px] flex items-center justify-center active:opacity-70 transition-opacity bg-transparent overflow-hidden">
-               {/* Správně přiřazená ikona biometrie */}
                <img src={bioImg} alt="Otisk prstu" className="w-[42px] h-[42px] object-contain opacity-80" />
             </button>
           ) : <div className="w-[72px] h-[72px]"></div>}
