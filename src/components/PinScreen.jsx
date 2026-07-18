@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Preferences } from '@capacitor/preferences';
 
-// Opravené přímé importy se správnými názvy souborů
+// Importy obrázků
 import bioImg from '../assets/rbpic/bio.jpg';
 import logoLoadImg from '../assets/rbpic/logo-load.jpg';
 
@@ -77,7 +77,8 @@ export default function PinScreen({ onAuthenticated }) {
     return (
       <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-center text-white z-50 px-6">
         <div className="w-[72px] h-[72px] bg-[#3e424c] rounded-full flex items-center justify-center mb-8 overflow-hidden shadow-lg">
-          <img src={logoLoadImg} alt="Biometrie" className="w-full h-full object-cover" />
+          {/* Ikonka biometrie */}
+          <img src={bioImg} alt="Biometrie" className="w-full h-full object-cover" />
         </div>
         <h2 className="text-2xl font-bold mb-4 text-center">Přihlášení otiskem</h2>
         <p className="text-gray-400 text-center text-[15px] mb-12 leading-relaxed max-w-sm">
@@ -99,8 +100,8 @@ export default function PinScreen({ onAuthenticated }) {
       <div className="absolute top-0 right-0 w-[180px] h-[160px] bg-[#2c2f38] opacity-60" style={{ clipPath: 'polygon(100% 0, 100% 100%, 20% 0)' }}></div>
 
       <div className="w-[70px] h-[70px] mb-12 z-10 rounded-full overflow-hidden flex items-center justify-center">
-        {/* Načtení horního loga */}
-        <img src={bioImg} alt="Logo" className="w-full h-full object-contain" />
+        {/* Správně přiřazené hlavní logo */}
+        <img src={logoLoadImg} alt="Logo" className="w-full h-full object-contain" />
       </div>
 
       <h2 className="text-[20px] font-semibold mb-10 z-10 text-white tracking-wide">
@@ -121,8 +122,8 @@ export default function PinScreen({ onAuthenticated }) {
         <div className="flex items-center justify-center">
           {isBiometricEnabled && !isFirstSetup ? (
             <button onClick={triggerBiometricAuth} className="w-[72px] h-[72px] flex items-center justify-center active:opacity-70 transition-opacity bg-transparent overflow-hidden">
-               {/* Načtení ikony biometrie */}
-               <img src={logoLoadImg} alt="Otisk prstu" className="w-[42px] h-[42px] object-contain opacity-80" />
+               {/* Správně přiřazená ikona biometrie */}
+               <img src={bioImg} alt="Otisk prstu" className="w-[42px] h-[42px] object-contain opacity-80" />
             </button>
           ) : <div className="w-[72px] h-[72px]"></div>}
         </div>
