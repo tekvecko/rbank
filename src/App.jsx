@@ -10,7 +10,7 @@ import { Payment, CardDetail, SavingsGoals, BuildingSavings } from './pages/Bank
 import { 
   Offers, InfoZone, Menu, Profile,
   TravelInsurance, MinuteLoan, SystemOutage,
-  ExchangeRates, BranchesATMs, AppSettings, Support
+  ExchangeRates, BranchesATMs, Settings, Support
 } from './pages/UserModules';
 
 function BackButtonHandler() {
@@ -80,7 +80,7 @@ export default function App() {
         <Route path="/system-outage" element={<SystemOutage />} />
         <Route path="/exchange-rates" element={<ExchangeRates />} />
         <Route path="/branches" element={<BranchesATMs />} />
-        <Route path="/settings" element={<AppSettings />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="/support" element={<Support />} />
       </Routes>
     </BrowserRouter>
