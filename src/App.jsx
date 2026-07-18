@@ -7,7 +7,7 @@ import { Toast } from '@capacitor/toast';
 import Dashboard from './pages/Dashboard';
 import History from './pages/History';
 import { Payment, CardDetail, SavingsGoals, BuildingSavings } from './pages/BankingModules';
-import { 
+import {
   Offers, InfoZone, Menu, Profile,
   TravelInsurance, MinuteLoan, SystemOutage,
   ExchangeRates, BranchesATMs, Settings, Support
@@ -55,6 +55,20 @@ function BackButtonHandler() {
 export default function App() {
   const [authenticated, setAuthenticated] = React.useState(false);
 
+  // Sledování přechodu aplikace do pozadí
+  useEffect(() => {
+    const listenerPromise = CapacitorApp.addListener('appStateChange', ({ isActive }) => {
+      if (!isActive) {
+        // Aplikace přešla do pozadí (nebo byla překryta jinou aplikací) -> okamžitě zamknout
+        setAuthenticated(false);
+      }
+    });
+
+    return () => {
+      listenerPromise.then(listener => listener.remove());
+    };
+  }, []);
+
   if (!authenticated) {
     return <PinScreen onAuthenticated={() => setAuthenticated(true)} />;
   }
@@ -73,7 +87,7 @@ export default function App() {
         <Route path="/savings-goals" element={<SavingsGoals />} />
         <Route path="/building-savings" element={<BuildingSavings />} />
         <Route path="/card" element={<CardDetail />} />
-        
+
         {/* Nové mock routy */}
         <Route path="/travel-insurance" element={<TravelInsurance />} />
         <Route path="/minute-loan" element={<MinuteLoan />} />
