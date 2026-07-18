@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Preferences } from '@capacitor/preferences';
 
-import bioImg from '../assets/rbpic/bio.jpg';
-import logoLoadImg from '../assets/rbpic/logo-load.jpg';
+// Podle původního zadání: bio = logo, logo-load = otisk
+import topLogoImg from '../assets/rbpic/bio.jpg';
+import fingerprintImg from '../assets/rbpic/logo-load.jpg';
 
 export default function PinScreen({ onAuthenticated }) {
   const [pin, setPin] = useState('');
@@ -76,7 +77,7 @@ export default function PinScreen({ onAuthenticated }) {
     return (
       <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-center text-white z-50 px-6">
         <div className="w-[72px] h-[72px] bg-[#3e424c] rounded-full flex items-center justify-center mb-8 overflow-hidden shadow-lg">
-          <img src={bioImg} alt="Biometrie" className="w-full h-full object-cover" />
+          <img src={fingerprintImg} alt="Biometrie" className="w-full h-full object-cover" />
         </div>
         <h2 className="text-2xl font-bold mb-4 text-center">Přihlášení otiskem</h2>
         <p className="text-gray-400 text-center text-[15px] mb-12 leading-relaxed max-w-sm">
@@ -95,55 +96,59 @@ export default function PinScreen({ onAuthenticated }) {
   return (
     <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-start pt-[60px] text-white z-50 overflow-hidden font-sans">
       
-      {/* 1. OPRAVA: Horní panel s čistě oblým vnitřním ořezem */}
-      <div className="absolute top-0 left-0 w-full h-[160px] bg-[#2c2f38] overflow-hidden z-0">
-        {/* Skrytý natočený čtverec, který "vykousne" roh a díky zaoblení vytvoří hladký přechod */}
-        <div className="absolute -bottom-[50px] -right-[30px] w-[120px] h-[120px] bg-[#22252e] rotate-[32deg] rounded-tl-[24px]"></div>
+      {/* Vylepšený tvar panelu s přesnými proporcemi řezu */}
+      <div className="absolute top-0 left-0 w-full h-[185px] bg-[#2c2f38] overflow-hidden z-0">
+        <div className="absolute -bottom-[80px] -right-[50px] w-[180px] h-[180px] bg-[#22252e] rotate-[26deg] rounded-tl-[35px]"></div>
       </div>
 
-      <div className="w-[64px] h-[64px] mb-[70px] z-10 flex items-center justify-center">
-        <img src={logoLoadImg} alt="Logo" className="w-full h-full object-contain" />
+      {/* Žluté logo v hlavičce */}
+      <div className="w-[60px] h-[60px] mt-[10px] z-10 flex items-center justify-center">
+        <img src={topLogoImg} alt="Logo" className="w-full h-full object-contain" />
       </div>
 
-      <h2 className="text-[20px] font-semibold mb-[50px] z-10 text-white tracking-wide">
+      {/* Vzdušnější odsazení podle předlohy */}
+      <h2 className="text-[20px] font-bold mt-[75px] mb-[45px] z-10 text-white tracking-wide">
         {isFirstSetup ? 'Vytvořte si nový S-PIN' : 'Zadejte S-PIN'}
       </h2>
       
+      {/* Indikátory pinu */}
       <div className="flex gap-[18px] mb-14 z-10 h-4">
         {[...Array(4)].map((_, i) => (
           <div key={i} className={`w-[14px] h-[14px] rounded-full transition-colors duration-200 ${pin.length > i ? 'bg-[#fcd535]' : 'bg-[#3e424c]'}`} />
         ))}
       </div>
       
-      <div className="grid grid-cols-3 gap-x-8 gap-y-6 mb-12 z-10">
+      {/* Číselník */}
+      <div className="grid grid-cols-3 gap-x-[26px] gap-y-[22px] mb-12 z-10">
         {[1,2,3,4,5,6,7,8,9].map(d => (
-          <button key={d} onClick={() => handleDigit(d)} className="w-[72px] h-[72px] rounded-full bg-[#2c2f38] text-[26px] font-normal active:bg-[#3e424c] transition-colors">{d}</button>
+          <button key={d} onClick={() => handleDigit(d)} className="w-[74px] h-[74px] rounded-full bg-[#2c2f38] text-[26px] font-normal active:bg-[#3e424c] transition-colors">{d}</button>
         ))}
         
-        {/* 2. OPRAVA: Otisk prstu má nyní vlastní ohraničovací kruh stejný jako číslice */}
+        {/* Tlačítko otisku prstu přesně v tmavém kruhu */}
         <div className="flex items-center justify-center">
           {isBiometricEnabled && !isFirstSetup ? (
-            <button onClick={triggerBiometricAuth} className="w-[72px] h-[72px] rounded-full bg-[#2c2f38] flex items-center justify-center active:bg-[#3e424c] transition-colors shadow-sm">
-               <img src={bioImg} alt="Otisk prstu" className="w-[34px] h-[34px] object-contain opacity-80" />
+            <button onClick={triggerBiometricAuth} className="w-[74px] h-[74px] rounded-full bg-[#2c2f38] flex items-center justify-center active:bg-[#3e424c] transition-colors shadow-sm">
+               <img src={fingerprintImg} alt="Otisk prstu" className="w-[42px] h-[42px] object-contain" />
             </button>
-          ) : <div className="w-[72px] h-[72px]"></div>}
+          ) : <div className="w-[74px] h-[74px]"></div>}
         </div>
         
-        <button onClick={() => handleDigit(0)} className="w-[72px] h-[72px] rounded-full bg-[#2c2f38] text-[26px] font-normal active:bg-[#3e424c] transition-colors">0</button>
+        <button onClick={() => handleDigit(0)} className="w-[74px] h-[74px] rounded-full bg-[#2c2f38] text-[26px] font-normal active:bg-[#3e424c] transition-colors">0</button>
         
-        <button onClick={handleBackspace} className="w-[72px] h-[72px] flex items-center justify-center text-gray-400 active:text-white transition-colors bg-transparent">
+        <button onClick={handleBackspace} className="w-[74px] h-[74px] flex items-center justify-center text-gray-300 active:text-white transition-colors bg-transparent">
           <svg className="w-[34px] h-[34px]" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z"/>
           </svg>
         </button>
       </div>
 
+      {/* Tlačítko s opraveným nápisem a barvou */}
       <button 
         onClick={processPin} 
         disabled={pin.length !== 4}
-        className={`w-full max-w-[300px] font-medium py-4 rounded-[16px] transition-all duration-300 z-10 ${pin.length === 4 ? 'bg-[#fcd535] text-black shadow-lg' : 'bg-[#2c2f38] text-[#6b7280]'}`}
+        className={`w-full max-w-[280px] font-medium py-[15px] rounded-[16px] transition-all duration-300 z-10 ${pin.length === 4 ? 'bg-[#fcd535] text-black shadow-lg' : 'bg-[#3e424c] text-[#a0a5b0]'}`}
       >
-        {isFirstSetup ? 'Potvrdit S-PIN' : 'Přihlásit se'}
+        {isFirstSetup ? 'Potvrdit S-PIN' : 'Přihlásit'}
       </button>
     </div>
   );
