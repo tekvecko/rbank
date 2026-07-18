@@ -394,24 +394,48 @@ export function Settings() {
     darkMode: true
   });
 
-  const toggle = (key) => setSettings(prev => ({ ...prev, [key]: !prev[key] }));
+  React.useEffect(() => {
+    async function load() {
+      try {
+        const { Preferences } = await import('@capacitor/preferences');
+        const saved = await Preferences.get({ key: 'user_settings' });
+        if (saved.value) setSettings(JSON.parse(saved.value));
+      } catch (e) {
+        console.warn('Preferences plugin not available');
+      }
+    }
+    load();
+  }, []);
+
+  const toggle = async (key) => {
+    try {
+      const { Preferences } = await import('@capacitor/preferences');
+      const newSettings = { ...settings, [key]: !settings[key] };
+      setSettings(newSettings);
+      await Preferences.set({ key: 'user_settings', value: JSON.stringify(newSettings) });
+    } catch (e) {
+      setSettings(prev => ({ ...prev, [key]: !prev[key] }));
+    }
+  };
 
   return (
     <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
-      <header className="flex items-center p-4 pt-8 pb-4 relative border-b border-[#2c2f38]">
-        <button onClick={() => navigate(-1)} className="text-[#fcd535] p-2 absolute left-4"><svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg></button>
-        <h1 className="text-[17px] font-semibold w-full text-center">Nastavení</h1>
+      <header className="flex items-center p-4 pt-8 pb-4">
+        <button onClick={() => navigate(-1)} className="text-[#3b82f6] p-2 mr-2 active:bg-[#2c2f38] rounded-full">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        </button>
+        <h1 className="text-[16px] font-semibold">Nastavení</h1>
       </header>
-      <main className="p-4 space-y-4">
+      <main className="p-4 space-y-4 mt-2">
         {[
           { id: 'push', label: 'Push notifikace' },
           { id: 'biometric', label: 'Přihlášení otiskem prstu' },
           { id: 'darkMode', label: 'Tmavý režim (Vynucený)' }
         ].map(s => (
-          <div key={s.id} className="bg-[#2c2f38] p-5 rounded-[20px] flex justify-between items-center">
-            <span className="font-medium">{s.label}</span>
-            <button onClick={() => toggle(s.id)} className={`w-12 h-7 rounded-full transition-colors relative ${settings[s.id] ? 'bg-[#3b82f6]' : 'bg-gray-600'}`}>
-              <div className={`w-5 h-5 bg-white rounded-full absolute top-1 transition-all ${settings[s.id] ? 'left-6' : 'left-1'}`}></div>
+          <div key={s.id} className="bg-[#2c2f38] p-5 rounded-[18px] flex justify-between items-center">
+            <span className="font-semibold text-[15px]">{s.label}</span>
+            <button onClick={() => toggle(s.id)} className={`w-12 h-[26px] rounded-full transition-colors relative ${settings[s.id] ? 'bg-[#3b82f6]' : 'bg-[#424651]'}`}>
+              <div className={`w-5 h-5 ${settings[s.id] ? 'bg-white' : 'bg-gray-400'} rounded-full absolute top-[3px] transition-all ${settings[s.id] ? 'left-[25px]' : 'left-[3px]'}`}></div>
             </button>
           </div>
         ))}
@@ -422,25 +446,29 @@ export function Settings() {
 
 export function BranchesATMs() {
   const navigate = useNavigate();
+  const rbUrl = "https://www.rb.cz/o-nas/kontakty/pobocky-a-bankomaty?atm=false&branchSegment=PERSONALFINANCE&openNow=false&openNonStop=false&openEveningsOrWeekend=false&barrierfree=false&cashDesk=false&depositAtm=false&depositRbAtm=false&contactlessAtm=false";
+  
   return (
-    <div className="min-h-screen bg-[#22252e] text-white pb-24 font-sans flex flex-col">
-      <header className="flex items-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
+      <header className="flex items-center p-4 pt-8 pb-4">
+        <button onClick={() => navigate(-1)} className="text-[#3b82f6] p-2 mr-2 active:bg-[#2c2f38] rounded-full">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         </button>
-        <h1 className="text-[17px] font-semibold">Nejbližší pobočky</h1>
+        <h1 className="text-[16px] font-semibold">Nejbližší pobočky</h1>
       </header>
-      <main className="flex-1 px-4 mt-6">
-        <div className="bg-[#2c2f38] rounded-[24px] p-5 shadow-lg relative overflow-hidden mb-4">
-          <div className="absolute top-0 right-0 w-16 h-16 bg-[#3e424c] rounded-bl-full opacity-50"></div>
-          <div className="flex items-center gap-3 mb-2">
-            <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-            <h2 className="text-lg font-bold">Slavkov u Brna</h2>
+      <main className="p-4 mt-2">
+        <div className="bg-[#2c2f38] p-5 rounded-[20px] relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-white/[0.03] rounded-full -mr-16 -mt-16 pointer-events-none"></div>
+          <div className="flex items-start gap-4 mb-6 relative z-10">
+            <svg className="w-5 h-5 text-gray-400 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <div>
+              <h2 className="text-[16px] font-bold text-white mb-1">Slavkov u Brna</h2>
+              <p className="text-[14px] text-gray-400 leading-tight">Palackého náměstí 77<br/>Otevřeno do 17:00</p>
+            </div>
           </div>
-          <p className="text-sm text-gray-400 mb-4 ml-8">Palackého náměstí 77<br />Otevřeno do 17:00</p>
-          <div className="flex gap-2">
-            <button className="flex-1 bg-[#3e424c] text-white text-sm font-semibold py-2 rounded-xl">Navigovat</button>
-            <button className="flex-1 border border-gray-600 text-white text-sm font-semibold py-2 rounded-xl">Detaily</button>
+          <div className="flex gap-3 relative z-10">
+            <button className="flex-1 bg-[#424651] text-white font-semibold py-[10px] rounded-[10px] active:bg-[#4b505c] transition-colors text-[14px]">Navigovat</button>
+            <button onClick={() => window.open(rbUrl, '_system')} className="flex-1 border border-[#424651] text-white font-semibold py-[10px] rounded-[10px] active:bg-[#424651] transition-colors text-[14px]">Detaily</button>
           </div>
         </div>
       </main>
@@ -479,23 +507,24 @@ export function AppSettings() {
 export function Support() {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-[#22252e] text-white pb-24 font-sans flex flex-col">
-      <header className="flex items-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
+      <header className="flex items-center p-4 pt-8 pb-4">
+        <button onClick={() => navigate(-1)} className="text-[#3b82f6] p-2 mr-2 active:bg-[#2c2f38] rounded-full">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         </button>
-        <h1 className="text-[17px] font-semibold">Podpora</h1>
+        <h1 className="text-[16px] font-semibold">Podpora</h1>
       </header>
-      <main className="flex-1 px-4 mt-6">
-        <div className="bg-[#2c2f38] rounded-[24px] p-6 text-center shadow-lg border border-[#3e424c] mb-6">
-          <div className="w-16 h-16 bg-[#3e424c] rounded-full flex items-center justify-center mx-auto mb-4 text-blue-400">
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+      <main className="p-4 mt-2">
+        <div className="bg-[#2c2f38] p-6 rounded-[20px] flex flex-col items-center text-center">
+          <div className="w-[60px] h-[60px] bg-[#3e424c] rounded-full flex items-center justify-center mb-5">
+            <svg className="w-7 h-7 text-[#3b82f6]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
           </div>
-          <h2 className="text-xl font-bold mb-2">Potřebujete poradit?</h2>
-          <p className="text-gray-400 text-sm mb-6">Jsme tu pro vás 24 hodin denně, 7 dní v týdnu.</p>
-          <button className="w-full bg-[#fcd535] text-black font-semibold py-4 rounded-xl active:bg-yellow-500 transition-colors text-lg">Zavolat rBank</button>
+          <h2 className="text-[17px] font-bold text-white mb-2">Potřebujete poradit?</h2>
+          <p className="text-[14px] text-gray-400 mb-6">Jsme tu pro vás 24 hodin denně, 7 dní v týdnu.</p>
+          <button className="w-full bg-[#fcd535] text-black font-bold py-[14px] rounded-xl active:bg-[#e5c02a] transition-colors text-[15px]">Zavolat rBank</button>
         </div>
       </main>
     </div>
   );
 }
+
