@@ -69,11 +69,11 @@ export default function PinScreen({ onAuthenticated }) {
     onAuthenticated();
   };
 
+  // Obrazovka žádosti o biometrii (při prvním nastavení)
   if (askBiometrics) {
     return (
       <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-center text-white z-50 px-6">
         <div className="w-[72px] h-[72px] bg-[#3e424c] rounded-full flex items-center justify-center mb-8 text-[#fcd535] shadow-lg">
-          {/* Ikonka pro biometrii (otisk prstu) na obrazovce souhlasu */}
           <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 2.75a9.75 9.75 0 016.748 16.591m-13.496 0A9.75 9.75 0 0110.5 2.75zm0 0v.001m0 3.749a6 6 0 014.15 10.207m-8.3 0A6 6 0 0110.5 6.5zm0 0v.001m0 3.749a2.25 2.25 0 011.556 3.827m-3.112 0A2.25 2.25 0 0110.5 10.25zm0 0v.001" />
           </svg>
@@ -92,59 +92,62 @@ export default function PinScreen({ onAuthenticated }) {
     );
   }
 
+  // Hlavní zamykací obrazovka S-PIN
   return (
-    <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-center text-white z-50 overflow-hidden font-sans">
+    <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-start pt-20 text-white z-50 overflow-hidden font-sans">
       
-      {/* 3. Detail pozadí - jemný šedý přesah v rohu podle předlohy */}
-      <div className="absolute top-[-70px] right-[-40px] w-[200px] h-[200px] bg-[#2c2f38] opacity-50 rotate-[35deg] rounded-3xl pointer-events-none"></div>
+      {/* Detail pozadí v pravém horním rohu podle předlohy (zkosený polygon) */}
+      <div className="absolute top-0 right-0 w-[180px] h-[160px] bg-[#2c2f38] opacity-60" style={{ clipPath: 'polygon(100% 0, 100% 100%, 20% 0)' }}></div>
 
-      {/* 2. Žluté logo Raiffeisenbank nahoře */}
-      <div className="relative w-16 h-16 flex items-center justify-center mb-10 z-10">
-        <svg className="absolute w-[50px] h-[50px] text-[#fcd535]" fill="none" stroke="currentColor" strokeWidth="6" strokeLinecap="butt" strokeLinejoin="miter" viewBox="0 0 40 40">
-          <path d="M 12 6 L 26 20 L 12 34" />
-        </svg>
-        <svg className="absolute w-[50px] h-[50px] text-[#fcd535]" fill="none" stroke="currentColor" strokeWidth="6" strokeLinecap="butt" strokeLinejoin="miter" viewBox="0 0 40 40">
-          <path d="M 28 6 L 14 20 L 28 34" />
-        </svg>
-      </div>
+      {/* Originální plné Raiffeisenbank Giebelkreuz logo */}
+      <svg className="w-[70px] h-[70px] mb-12 z-10" viewBox="0 0 100 100" fill="#fcd535">
+        <polygon points="43.5,47.8 22.9,25.8 17.5,26.5 17.1,20.8 25.8,18.9 28.3,13.2 33.6,15.3 33.5,21.5 50,38.9" />
+        <polygon points="56.5,47.8 77.1,25.8 82.5,26.5 82.9,20.8 74.2,18.9 71.7,13.2 66.4,15.3 66.5,21.5 50,38.9" />
+        <polygon points="45,55 25,76 32,83 52,62" />
+        <polygon points="55,55 75,76 68,83 48,62" />
+        <polygon points="50,44.5 42.5,52 50,59.5 57.5,52" />
+      </svg>
 
-      <h2 className="text-xl font-bold mb-10 z-10 text-white tracking-wide">{isFirstSetup ? 'Vytvořte si nový S-PIN' : 'Zadejte S-PIN'}</h2>
+      <h2 className="text-[20px] font-semibold mb-10 z-10 text-white tracking-wide">
+        {isFirstSetup ? 'Vytvořte si nový S-PIN' : 'Zadejte S-PIN'}
+      </h2>
       
-      {/* Ukazatele pinu (skryté pokud je pin prázdný, nebo čistší styl) */}
-      <div className="flex gap-4 mb-10 z-10 h-4">
+      {/* S-PIN body - plné tmavé kroužky */}
+      <div className="flex gap-[18px] mb-14 z-10 h-4">
         {[...Array(4)].map((_, i) => (
-          <div key={i} className={`w-3.5 h-3.5 rounded-full transition-colors duration-200 ${pin.length > i ? 'bg-[#fcd535]' : 'bg-transparent border border-gray-500'}`} />
+          <div key={i} className={`w-[14px] h-[14px] rounded-full transition-colors duration-200 ${pin.length > i ? 'bg-[#fcd535]' : 'bg-[#3e424c]'}`} />
         ))}
       </div>
       
-      {/* 4. Tvar a rozestupy tlačítek - číselník */}
-      <div className="grid grid-cols-3 gap-x-8 gap-y-6 mb-10 z-10">
+      {/* Číselník */}
+      <div className="grid grid-cols-3 gap-x-8 gap-y-6 mb-12 z-10">
         {[1,2,3,4,5,6,7,8,9].map(d => (
-          <button key={d} onClick={() => handleDigit(d)} className="w-[70px] h-[70px] rounded-full bg-[#2c2f38] text-2xl font-medium active:bg-[#3e424c] transition-colors shadow-sm">{d}</button>
+          <button key={d} onClick={() => handleDigit(d)} className="w-[72px] h-[72px] rounded-full bg-[#2c2f38] text-[26px] font-normal active:bg-[#3e424c] transition-colors">{d}</button>
         ))}
         
         <div className="flex items-center justify-center">
           {isBiometricEnabled && !isFirstSetup ? (
-            <button onClick={triggerBiometricAuth} className="w-[70px] h-[70px] flex items-center justify-center text-gray-400 active:text-[#fcd535] transition-colors bg-transparent">
-               {/* 1. Opravená ikona otisku prstu */}
-               <svg className="w-9 h-9" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+            <button onClick={triggerBiometricAuth} className="w-[72px] h-[72px] flex items-center justify-center text-gray-400 active:text-[#fcd535] transition-colors bg-transparent">
+               <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 2.75a9.75 9.75 0 016.748 16.591m-13.496 0A9.75 9.75 0 0110.5 2.75zm0 0v.001m0 3.749a6 6 0 014.15 10.207m-8.3 0A6 6 0 0110.5 6.5zm0 0v.001m0 3.749a2.25 2.25 0 011.556 3.827m-3.112 0A2.25 2.25 0 0110.5 10.25zm0 0v.001" />
                </svg>
             </button>
-          ) : <div className="w-[70px] h-[70px]"></div>}
+          ) : <div className="w-[72px] h-[72px]"></div>}
         </div>
         
-        <button onClick={() => handleDigit(0)} className="w-[70px] h-[70px] rounded-full bg-[#2c2f38] text-2xl font-medium active:bg-[#3e424c] transition-colors shadow-sm">0</button>
+        <button onClick={() => handleDigit(0)} className="w-[72px] h-[72px] rounded-full bg-[#2c2f38] text-[26px] font-normal active:bg-[#3e424c] transition-colors">0</button>
         
-        <button onClick={handleBackspace} className="w-[70px] h-[70px] flex items-center justify-center text-gray-400 active:text-white transition-colors bg-transparent">
-          <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z"/></svg>
+        <button onClick={handleBackspace} className="w-[72px] h-[72px] flex items-center justify-center text-gray-400 active:text-white transition-colors bg-transparent">
+          <svg className="w-[34px] h-[34px]" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z"/>
+          </svg>
         </button>
       </div>
 
       <button 
         onClick={processPin} 
         disabled={pin.length !== 4}
-        className={`w-full max-w-[280px] font-bold py-[14px] rounded-[14px] transition-all duration-300 z-10 ${pin.length === 4 ? 'bg-[#fcd535] text-black shadow-lg' : 'bg-[#2c2f38] text-gray-500'}`}
+        className={`w-full max-w-[300px] font-medium py-4 rounded-[16px] transition-all duration-300 z-10 ${pin.length === 4 ? 'bg-[#fcd535] text-black shadow-lg' : 'bg-[#2c2f38] text-[#6b7280]'}`}
       >
         {isFirstSetup ? 'Potvrdit S-PIN' : 'Přihlásit se'}
       </button>
