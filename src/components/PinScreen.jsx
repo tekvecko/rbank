@@ -73,10 +73,8 @@ export default function PinScreen({ onAuthenticated }) {
   if (askBiometrics) {
     return (
       <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-center text-white z-50 px-6">
-        <div className="w-[72px] h-[72px] bg-[#3e424c] rounded-full flex items-center justify-center mb-8 text-[#fcd535] shadow-lg">
-          <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 2.75a9.75 9.75 0 016.748 16.591m-13.496 0A9.75 9.75 0 0110.5 2.75zm0 0v.001m0 3.749a6 6 0 014.15 10.207m-8.3 0A6 6 0 0110.5 6.5zm0 0v.001m0 3.749a2.25 2.25 0 011.556 3.827m-3.112 0A2.25 2.25 0 0110.5 10.25zm0 0v.001" />
-          </svg>
+        <div className="w-[72px] h-[72px] bg-[#3e424c] rounded-full flex items-center justify-center mb-8 overflow-hidden shadow-lg">
+          <img src="/rbpic/logo-load.jpg" alt="Biometrie" className="w-full h-full object-cover" />
         </div>
         <h2 className="text-2xl font-bold mb-4 text-center">Přihlášení otiskem</h2>
         <p className="text-gray-400 text-center text-[15px] mb-12 leading-relaxed max-w-sm">
@@ -96,23 +94,19 @@ export default function PinScreen({ onAuthenticated }) {
   return (
     <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-start pt-20 text-white z-50 overflow-hidden font-sans">
       
-      {/* Detail pozadí v pravém horním rohu podle předlohy (zkosený polygon) */}
+      {/* Detail pozadí v pravém horním rohu */}
       <div className="absolute top-0 right-0 w-[180px] h-[160px] bg-[#2c2f38] opacity-60" style={{ clipPath: 'polygon(100% 0, 100% 100%, 20% 0)' }}></div>
 
-      {/* Originální plné Raiffeisenbank Giebelkreuz logo */}
-      <svg className="w-[70px] h-[70px] mb-12 z-10" viewBox="0 0 100 100" fill="#fcd535">
-        <polygon points="43.5,47.8 22.9,25.8 17.5,26.5 17.1,20.8 25.8,18.9 28.3,13.2 33.6,15.3 33.5,21.5 50,38.9" />
-        <polygon points="56.5,47.8 77.1,25.8 82.5,26.5 82.9,20.8 74.2,18.9 71.7,13.2 66.4,15.3 66.5,21.5 50,38.9" />
-        <polygon points="45,55 25,76 32,83 52,62" />
-        <polygon points="55,55 75,76 68,83 48,62" />
-        <polygon points="50,44.5 42.5,52 50,59.5 57.5,52" />
-      </svg>
+      {/* ZELENĚ ZAKROUŽKOVANÝ OBRÁZEK: Hlavní horní logo */}
+      <div className="w-[70px] h-[70px] mb-12 z-10 rounded-full overflow-hidden flex items-center justify-center">
+        <img src="/rbpic/gbio.jpg" alt="Logo" className="w-full h-full object-contain" />
+      </div>
 
       <h2 className="text-[20px] font-semibold mb-10 z-10 text-white tracking-wide">
         {isFirstSetup ? 'Vytvořte si nový S-PIN' : 'Zadejte S-PIN'}
       </h2>
       
-      {/* S-PIN body - plné tmavé kroužky */}
+      {/* S-PIN body */}
       <div className="flex gap-[18px] mb-14 z-10 h-4">
         {[...Array(4)].map((_, i) => (
           <div key={i} className={`w-[14px] h-[14px] rounded-full transition-colors duration-200 ${pin.length > i ? 'bg-[#fcd535]' : 'bg-[#3e424c]'}`} />
@@ -127,10 +121,9 @@ export default function PinScreen({ onAuthenticated }) {
         
         <div className="flex items-center justify-center">
           {isBiometricEnabled && !isFirstSetup ? (
-            <button onClick={triggerBiometricAuth} className="w-[72px] h-[72px] flex items-center justify-center text-gray-400 active:text-[#fcd535] transition-colors bg-transparent">
-               <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="1.2" viewBox="0 0 24 24">
-                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 2.75a9.75 9.75 0 016.748 16.591m-13.496 0A9.75 9.75 0 0110.5 2.75zm0 0v.001m0 3.749a6 6 0 014.15 10.207m-8.3 0A6 6 0 0110.5 6.5zm0 0v.001m0 3.749a2.25 2.25 0 011.556 3.827m-3.112 0A2.25 2.25 0 0110.5 10.25zm0 0v.001" />
-               </svg>
+            <button onClick={triggerBiometricAuth} className="w-[72px] h-[72px] flex items-center justify-center active:opacity-70 transition-opacity bg-transparent overflow-hidden">
+               {/* ČERVENĚ ZAKROUŽKOVANÝ OBRÁZEK: Tlačítko biometrie v číselníku */}
+               <img src="/rbpic/logo-load.jpg" alt="Otisk prstu" className="w-[42px] h-[42px] object-contain opacity-80" />
             </button>
           ) : <div className="w-[72px] h-[72px]"></div>}
         </div>
