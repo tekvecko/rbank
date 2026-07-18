@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Preferences } from '@capacitor/preferences';
 
 // Přímý import obrázků - Vite zajistí jejich správné vložení do Android buildu
-import gbioImg from '../assets/rbpic/gbio.jpg';
+import bioImg from '../assets/rbpic/bio.jpg';
 import logoLoadImg from '../assets/rbpic/logo-load.jpg';
 
 export default function PinScreen({ onAuthenticated }) {
