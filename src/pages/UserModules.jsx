@@ -19,67 +19,35 @@ export function Offers() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#22252e] text-white pb-24">
-      <header className="flex items-center justify-center p-4">
-        <h1 className="text-lg font-semibold">Nabídky</h1>
+    <div className="min-h-screen bg-[#22252e] text-white pb-24 font-sans flex flex-col">
+      <header className="flex items-center justify-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
+        <h1 className="text-[17px] font-semibold">Nabídky</h1>
       </header>
       
-      <main className="px-4 mt-2">
-        <h2 className="text-xl font-bold mb-6">Vyberte kategorii</h2>
+      <main className="px-4 mt-6">
+        <h2 className="text-xl font-bold mb-6 text-white">Vyberte kategorii</h2>
         
         <div className="grid grid-cols-2 gap-4">
           {categories.map((cat) => (
             <div 
               key={cat.id} 
-              className="bg-[#2c2f38] rounded-2xl p-4 flex flex-col items-center justify-center aspect-[5/4] relative active:bg-[#3e424c] transition-colors"
+              className="bg-[#2c2f38] rounded-[24px] p-4 flex flex-col items-center justify-center aspect-[5/4] relative active:bg-[#3e424c] transition-colors"
             >
               {cat.badge && (
-                <span className="absolute top-2 right-2 bg-green-700/80 border border-green-500 text-white text-[10px] px-2 py-0.5 rounded-full font-medium">
+                <span className="absolute top-3 right-3 bg-[#16a34a] text-white text-[10px] px-2 py-[2px] rounded-full font-medium shadow-md">
                   {cat.badge}
                 </span>
               )}
               <div className="w-14 h-14 mb-3 flex items-center justify-center">
-                <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-10 h-10 text-[#8b91a0]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.2" d={cat.icon} />
                 </svg>
               </div>
-              <span className="text-sm text-center font-medium text-gray-200">{cat.title}</span>
+              <span className="text-[13px] text-center font-medium text-gray-300">{cat.title}</span>
             </div>
           ))}
         </div>
       </main>
-    </div>
-  );
-}
-
-  const navigate = useNavigate();
-  return (
-    <div className="min-h-screen bg-[#22252e] text-white pb-24 font-sans flex flex-col">
-      <header className="flex items-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        </button>
-        <h1 className="text-[17px] font-semibold">Nabídky pro vás</h1>
-      </header>
-      <main className="flex-1 px-4 mt-6 space-y-4">
-        <div className="bg-[#2c2f38] rounded-[24px] p-5 shadow-lg border border-[#3e424c]">
-          <div className="w-10 h-10 bg-[#fcd535] rounded-xl flex items-center justify-center text-black mb-4">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          </div>
-          <h2 className="font-semibold text-[17px] mb-1">Cestovní pojištění</h2>
-          <p className="text-[13px] text-gray-400 mb-4">Sjednejte si pojištění do zahraničí na pár kliknutí s 20% slevou.</p>
-          <button onClick={() => navigate('/travel-insurance')} className="text-[#fcd535] font-semibold text-[15px] active:opacity-70">Spočítat cenu ›</button>
-        </div>
-        <div className="bg-[#2c2f38] rounded-[24px] p-5 shadow-lg border border-[#3e424c]">
-          <div className="w-10 h-10 bg-[#3b82f6] rounded-xl flex items-center justify-center text-white mb-4">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-          </div>
-          <h2 className="font-semibold text-[17px] mb-1">Minutová půjčka</h2>
-          <p className="text-[13px] text-gray-400 mb-4">Máme pro vás předschváleno až 150 000 CZK s úrokem od 4,9 % p.a.</p>
-          <button onClick={() => navigate('/minute-loan')} className="text-[#3b82f6] font-semibold text-[15px] active:opacity-70">Zobrazit nabídku ›</button>
-        </div>
-      </main>
-      <BottomNav />
     </div>
   );
 }
