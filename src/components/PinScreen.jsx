@@ -28,9 +28,15 @@ export default function PinScreen({ onAuthenticated }) {
     init();
   }, []);
 
-  const triggerBiometricAuth = () => {
-    // Zatím jen log, dokud neimplementujeme stabilní AndroidX knihovnu
-    console.log('Biometrie vyvolána (na základě předchozího souhlasu uživatele).');
+  const triggerBiometricAuth = async () => {
+    try {
+      const { registerPlugin } = await import('@capacitor/core');
+      const BiometricNative = registerPlugin('BiometricNative');
+      const result = await BiometricNative.authenticate();
+      if (result.success) onAuthenticated();
+    } catch (e) {
+      console.log('Biometrie zrušena nebo selhala:', e);
+    }
   };
 
   const handleDigit = (digit) => {
