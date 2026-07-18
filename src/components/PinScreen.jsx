@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Preferences } from '@capacitor/preferences';
 
-// Přímý import obrázků - Vite zajistí jejich správné vložení do Android buildu
+// Opravené přímé importy se správnými názvy souborů
 import bioImg from '../assets/rbpic/bio.jpg';
 import logoLoadImg from '../assets/rbpic/logo-load.jpg';
 
@@ -99,8 +99,8 @@ export default function PinScreen({ onAuthenticated }) {
       <div className="absolute top-0 right-0 w-[180px] h-[160px] bg-[#2c2f38] opacity-60" style={{ clipPath: 'polygon(100% 0, 100% 100%, 20% 0)' }}></div>
 
       <div className="w-[70px] h-[70px] mb-12 z-10 rounded-full overflow-hidden flex items-center justify-center">
-        {/* Dosazení importované proměnné namísto statické cesty */}
-        <img src={gbioImg} alt="Logo" className="w-full h-full object-contain" />
+        {/* Načtení horního loga */}
+        <img src={bioImg} alt="Logo" className="w-full h-full object-contain" />
       </div>
 
       <h2 className="text-[20px] font-semibold mb-10 z-10 text-white tracking-wide">
@@ -121,7 +121,7 @@ export default function PinScreen({ onAuthenticated }) {
         <div className="flex items-center justify-center">
           {isBiometricEnabled && !isFirstSetup ? (
             <button onClick={triggerBiometricAuth} className="w-[72px] h-[72px] flex items-center justify-center active:opacity-70 transition-opacity bg-transparent overflow-hidden">
-               {/* Dosazení importované proměnné */}
+               {/* Načtení ikony biometrie */}
                <img src={logoLoadImg} alt="Otisk prstu" className="w-[42px] h-[42px] object-contain opacity-80" />
             </button>
           ) : <div className="w-[72px] h-[72px]"></div>}
