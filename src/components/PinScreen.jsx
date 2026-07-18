@@ -95,13 +95,12 @@ export default function PinScreen({ onAuthenticated }) {
   return (
     <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-start pt-[60px] text-white z-50 overflow-hidden font-sans">
       
-      {/* OPRAVA 1: Plný horní panel s přesným oříznutím (clip-path) podle předlohy */}
-      <div 
-        className="absolute top-0 left-0 w-full h-[160px] bg-[#2c2f38]" 
-        style={{ clipPath: 'polygon(0 0, 100% 0, 100% 55%, calc(100% - 45px) 100%, 0 100%)' }}
-      ></div>
+      {/* 1. OPRAVA: Horní panel s čistě oblým vnitřním ořezem */}
+      <div className="absolute top-0 left-0 w-full h-[160px] bg-[#2c2f38] overflow-hidden z-0">
+        {/* Skrytý natočený čtverec, který "vykousne" roh a díky zaoblení vytvoří hladký přechod */}
+        <div className="absolute -bottom-[50px] -right-[30px] w-[120px] h-[120px] bg-[#22252e] rotate-[32deg] rounded-tl-[24px]"></div>
+      </div>
 
-      {/* OPRAVA 2: Čisté logo usazené přesně v panelu, bez kruhového orámování */}
       <div className="w-[64px] h-[64px] mb-[70px] z-10 flex items-center justify-center">
         <img src={logoLoadImg} alt="Logo" className="w-full h-full object-contain" />
       </div>
@@ -110,23 +109,22 @@ export default function PinScreen({ onAuthenticated }) {
         {isFirstSetup ? 'Vytvořte si nový S-PIN' : 'Zadejte S-PIN'}
       </h2>
       
-      {/* S-PIN body */}
       <div className="flex gap-[18px] mb-14 z-10 h-4">
         {[...Array(4)].map((_, i) => (
           <div key={i} className={`w-[14px] h-[14px] rounded-full transition-colors duration-200 ${pin.length > i ? 'bg-[#fcd535]' : 'bg-[#3e424c]'}`} />
         ))}
       </div>
       
-      {/* Číselník */}
       <div className="grid grid-cols-3 gap-x-8 gap-y-6 mb-12 z-10">
         {[1,2,3,4,5,6,7,8,9].map(d => (
           <button key={d} onClick={() => handleDigit(d)} className="w-[72px] h-[72px] rounded-full bg-[#2c2f38] text-[26px] font-normal active:bg-[#3e424c] transition-colors">{d}</button>
         ))}
         
+        {/* 2. OPRAVA: Otisk prstu má nyní vlastní ohraničovací kruh stejný jako číslice */}
         <div className="flex items-center justify-center">
           {isBiometricEnabled && !isFirstSetup ? (
-            <button onClick={triggerBiometricAuth} className="w-[72px] h-[72px] flex items-center justify-center active:opacity-70 transition-opacity bg-transparent overflow-hidden">
-               <img src={bioImg} alt="Otisk prstu" className="w-[42px] h-[42px] object-contain opacity-80" />
+            <button onClick={triggerBiometricAuth} className="w-[72px] h-[72px] rounded-full bg-[#2c2f38] flex items-center justify-center active:bg-[#3e424c] transition-colors shadow-sm">
+               <img src={bioImg} alt="Otisk prstu" className="w-[34px] h-[34px] object-contain opacity-80" />
             </button>
           ) : <div className="w-[72px] h-[72px]"></div>}
         </div>
