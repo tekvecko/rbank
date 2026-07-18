@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Preferences } from '@capacitor/preferences';
 
+// Přímý import obrázků - Vite zajistí jejich správné vložení do Android buildu
+import gbioImg from '../assets/rbpic/gbio.jpg';
+import logoLoadImg from '../assets/rbpic/logo-load.jpg';
+
 export default function PinScreen({ onAuthenticated }) {
   const [pin, setPin] = useState('');
   const [isFirstSetup, setIsFirstSetup] = useState(false);
@@ -69,12 +73,11 @@ export default function PinScreen({ onAuthenticated }) {
     onAuthenticated();
   };
 
-  // Obrazovka žádosti o biometrii (při prvním nastavení)
   if (askBiometrics) {
     return (
       <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-center text-white z-50 px-6">
         <div className="w-[72px] h-[72px] bg-[#3e424c] rounded-full flex items-center justify-center mb-8 overflow-hidden shadow-lg">
-          <img src="/rbpic/logo-load.jpg" alt="Biometrie" className="w-full h-full object-cover" />
+          <img src={logoLoadImg} alt="Biometrie" className="w-full h-full object-cover" />
         </div>
         <h2 className="text-2xl font-bold mb-4 text-center">Přihlášení otiskem</h2>
         <p className="text-gray-400 text-center text-[15px] mb-12 leading-relaxed max-w-sm">
@@ -90,30 +93,26 @@ export default function PinScreen({ onAuthenticated }) {
     );
   }
 
-  // Hlavní zamykací obrazovka S-PIN
   return (
     <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-start pt-20 text-white z-50 overflow-hidden font-sans">
       
-      {/* Detail pozadí v pravém horním rohu */}
       <div className="absolute top-0 right-0 w-[180px] h-[160px] bg-[#2c2f38] opacity-60" style={{ clipPath: 'polygon(100% 0, 100% 100%, 20% 0)' }}></div>
 
-      {/* ZELENĚ ZAKROUŽKOVANÝ OBRÁZEK: Hlavní horní logo */}
       <div className="w-[70px] h-[70px] mb-12 z-10 rounded-full overflow-hidden flex items-center justify-center">
-        <img src="/rbpic/gbio.jpg" alt="Logo" className="w-full h-full object-contain" />
+        {/* Dosazení importované proměnné namísto statické cesty */}
+        <img src={gbioImg} alt="Logo" className="w-full h-full object-contain" />
       </div>
 
       <h2 className="text-[20px] font-semibold mb-10 z-10 text-white tracking-wide">
         {isFirstSetup ? 'Vytvořte si nový S-PIN' : 'Zadejte S-PIN'}
       </h2>
       
-      {/* S-PIN body */}
       <div className="flex gap-[18px] mb-14 z-10 h-4">
         {[...Array(4)].map((_, i) => (
           <div key={i} className={`w-[14px] h-[14px] rounded-full transition-colors duration-200 ${pin.length > i ? 'bg-[#fcd535]' : 'bg-[#3e424c]'}`} />
         ))}
       </div>
       
-      {/* Číselník */}
       <div className="grid grid-cols-3 gap-x-8 gap-y-6 mb-12 z-10">
         {[1,2,3,4,5,6,7,8,9].map(d => (
           <button key={d} onClick={() => handleDigit(d)} className="w-[72px] h-[72px] rounded-full bg-[#2c2f38] text-[26px] font-normal active:bg-[#3e424c] transition-colors">{d}</button>
@@ -122,8 +121,8 @@ export default function PinScreen({ onAuthenticated }) {
         <div className="flex items-center justify-center">
           {isBiometricEnabled && !isFirstSetup ? (
             <button onClick={triggerBiometricAuth} className="w-[72px] h-[72px] flex items-center justify-center active:opacity-70 transition-opacity bg-transparent overflow-hidden">
-               {/* ČERVENĚ ZAKROUŽKOVANÝ OBRÁZEK: Tlačítko biometrie v číselníku */}
-               <img src="/rbpic/logo-load.jpg" alt="Otisk prstu" className="w-[42px] h-[42px] object-contain opacity-80" />
+               {/* Dosazení importované proměnné */}
+               <img src={logoLoadImg} alt="Otisk prstu" className="w-[42px] h-[42px] object-contain opacity-80" />
             </button>
           ) : <div className="w-[72px] h-[72px]"></div>}
         </div>
