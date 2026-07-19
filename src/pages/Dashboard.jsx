@@ -7,6 +7,7 @@ import { Toast } from '@capacitor/toast';
 export default function Dashboard() {
   const navigate = useNavigate();
   const [balance, setBalance] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     // Bezpečné volání HTTPS API s Basic Auth hlavičkou
@@ -22,7 +23,11 @@ export default function Dashboard() {
         return res.json();
       })
       .then(data => setBalance(data.balance))
-      .catch(err => console.error("Chyba načítání zůstatku:", err));
+      .catch(err => console.error("Chyba načítání zůstatku:", err))
+      .finally(() => {
+        // Zrušení načítací obrazovky po dokončení požadavku
+        setIsLoading(false);
+      });
   }, []);
 
   const handleCopy = async (text) => {
@@ -33,6 +38,15 @@ export default function Dashboard() {
       console.error('Kopírování selhalo', err);
     }
   };
+
+  // Pokud se data načítají, vracíme pouze žlutou obrazovku se světle šedým spinnerem
+  if (isLoading) {
+    return (
+      <div className="fixed inset-0 bg-[#fcd535] flex items-center justify-center z-[9999]">
+        <div className="w-10 h-10 border-[3px] border-black/10 border-t-[#f3f4f6] rounded-full animate-spin drop-shadow-sm"></div>
+      </div>
+    );
+  }
 
   const formattedBalance = balance !== null
     ? new Intl.NumberFormat('cs-CZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(balance)
