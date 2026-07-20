@@ -1,175 +1,203 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BottomNav from '../components/BottomNav';
 
 export default function History() {
   const navigate = useNavigate();
-  const [transactions, setTransactions] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
-  
-  // Refs pro udržení aktuálního stavu uvnitř observeru (bez ohledu na re-rendery)
-  const pageRef = useRef(1);
-  const loadingRef = useRef(false);
-  const hasMoreRef = useRef(true); 
-  const observerTarget = useRef(null);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  const loadMore = async () => {
-    if (loadingRef.current || !hasMoreRef.current) return;
-    
-    loadingRef.current = true;
-    setLoading(true);
-    
-    try {
-      const res = await fetch(`https://opravyslavkov.shop/api/transactions?page=${pageRef.current}&limit=15`, {
-        method: 'GET',
-        headers: {
-          'Authorization': 'Basic ' + btoa('rbank:TajneHeslo2026'),
-          'Accept': 'application/json'
-        }
-      });
+  // Mock data plateb rozdělená do sekcí tak, jak je na obrázku 1
+  const allTransactions = [
+    { id: 1, dateLabel: 'VČERA', name: 'TRAFICON', account: '408359XXXXXX2194', amount: '-239,00', isNegative: true, type: 'traficon' },
+    { id: 2, dateLabel: '17. ČERVENCE, PÁTEK', name: '881506/0100', account: 'Platba', amount: '-12 000,00', isNegative: true, type: 'transfer' },
+    { id: 3, dateLabel: '17. ČERVENCE, PÁTEK', name: 'Raiffeisenbank', account: '1101083110/5500', amount: '-1 225,38', isNegative: true, type: 'rb' },
+    { id: 4, dateLabel: '17. ČERVENCE, PÁTEK', name: '155462963/0600', account: 'Platba', amount: '+7 027,00', isNegative: false, type: 'incoming' }
+  ];
 
-      if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
-      }
+  // Logika pro vyhledávání v platbách
+  const filteredTransactions = useMemo(() => {
+    if (!searchQuery.trim()) return allTransactions;
+    const query = searchQuery.toLowerCase();
+    return allTransactions.filter(tx => 
+      tx.name.toLowerCase().includes(query) || 
+      tx.account.toLowerCase().includes(query) ||
+      tx.amount.includes(query)
+    );
+  }, [searchQuery]);
 
-      const newTx = await res.json();
-
-      if (newTx.length === 0) {
-        setHasMore(false);
-        hasMoreRef.current = false;
-      } else {
-        setTransactions(prev => {
-          const existingIds = new Set(prev.map(t => t.id));
-          const filtered = newTx.filter(t => !existingIds.has(t.id));
-          return [...prev, ...filtered];
-        });
-        pageRef.current += 1;
-      }
-    } catch (err) {
-      console.error("Chyba připojení k DB:", err);
-    } finally {
-      loadingRef.current = false;
-      setLoading(false);
-    }
-  };
-
-  // Zavedení Intersection Observeru
-  useEffect(() => {
-    // Načte hned při startu první dávku
-    loadMore();
-
-    const observer = new IntersectionObserver((entries) => {
-      // Pokud je náš "neviditelný" prvek na obrazovce (nebo blízko)
-      if (entries[0].isIntersecting) {
-        loadMore();
-      }
-    }, { 
-      root: null,
-      rootMargin: '200px', // Spustí načítání už 200px předtím, než uživatel dojede úplně dolů (plynulejší zážitek)
-      threshold: 0 
-    });
-
-    if (observerTarget.current) {
-      observer.observe(observerTarget.current);
-    }
-
-    return () => {
-      if (observerTarget.current) observer.unobserve(observerTarget.current);
-    };
-  }, []);
-
-  const groupedTransactions = transactions.reduce((groups, tx) => {
-    const dateObj = tx.created_at ? new Date(tx.created_at) : new Date();
-    const dateKey = dateObj.toLocaleDateString('en-CA');
-    if (!groups[dateKey]) {
-      groups[dateKey] = { dateObj, items: [] };
-    }
-    groups[dateKey].items.push(tx);
-    return groups;
+  // Seskupení plateb podle data pro renderování hlaviček (např. "VČERA")
+  const groupedTransactions = filteredTransactions.reduce((acc, tx) => {
+    if (!acc[tx.dateLabel]) acc[tx.dateLabel] = [];
+    acc[tx.dateLabel].push(tx);
+    return acc;
   }, {});
 
-  const formatDateHeader = (dateObj) => {
-    const today = new Date();
-    if (dateObj.toDateString() === today.toDateString()) return 'DNES';
-    const options = { day: 'numeric', month: 'long', weekday: 'long' };
-    return dateObj.toLocaleDateString('cs-CZ', options).toUpperCase();
-  };
-
-  const enhanceTransaction = (tx) => {
-    const amountNum = parseFloat(tx.amount) || 0;
-    const isIncome = amountNum > 0;
-    const initial = (tx.name && tx.name.length > 0) ? tx.name.charAt(0).toUpperCase() : '?';
-
-    return {
-      ...tx,
-      uiAmount: new Intl.NumberFormat('cs-CZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(Math.abs(amountNum)),
-      color: isIncome ? 'text-green-400' : 'text-white',
-      sign: isIncome ? '+' : '-',
-      iconBg: isIncome ? 'bg-[#3e424c]' : 'bg-gray-700',
-      iconText: isIncome ? 'text-[#ffe600]' : 'text-white',
-      icon: initial
-    };
-  };
-
   return (
-    <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
-      <header className="flex items-center justify-between p-4 pt-8">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] p-2 active:bg-[#2c2f38] rounded-full transition-colors">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col pb-20 relative">
+      
+      {/* Hlavička */}
+      <header className="flex items-center p-4 pt-8 relative">
+        <button onClick={() => navigate(-1)} className="text-[#ffe600] p-2 -ml-2 active:bg-[#2c2f38] rounded-full absolute left-4">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
         </button>
-        <h1 className="text-[17px] font-semibold">Běžný účet</h1>
-        <button className="text-[#3b82f6] p-2 active:bg-[#2c2f38] rounded-full transition-colors">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83M22 12A10 10 0 0 0 12 2v10z"/></svg>
-        </button>
+        <h1 className="text-[17px] font-semibold w-full text-center">Běžný účet</h1>
       </header>
 
-      <div className="px-4 mb-4 flex gap-2 overflow-x-auto no-scrollbar">
-        <button className="bg-[#ffe600] text-black px-5 py-2 rounded-full text-[14px] font-semibold whitespace-nowrap">Historie</button>
-        <button className="bg-transparent text-gray-400 px-5 py-2 rounded-full text-[14px] font-medium whitespace-nowrap border border-gray-600">Platby</button>
-      </div>
-
-      <div className="flex-1 bg-[#2c2f38] rounded-t-[32px] overflow-y-auto px-5 pt-6 pb-24 shadow-inner">
-        <div className="flex justify-between items-center mb-5">
-          <h2 className="text-[19px] font-bold">Poslední pohyby</h2>
+      <main className="flex-1 px-4 mt-2">
+        {/* Karta účtu */}
+        <div className="bg-[#2c2f38] rounded-[20px] p-5 mb-6">
+          <div className="flex justify-between items-center mb-4">
+            <span className="text-[15px] font-medium text-gray-200">Běžný účet</span>
+            <span className="bg-[#424651] text-gray-300 text-[12px] px-3 py-1 rounded-full font-mono">1036437823/5500</span>
+          </div>
+          <div className="flex items-baseline gap-2 mb-6">
+            <span className="text-[28px] font-bold tracking-tight">-32 256,04</span>
+            <span className="text-[16px] text-gray-300 font-medium">CZK <span className="text-[14px]">🇨🇿</span></span>
+          </div>
+          <button className="bg-[#ffe600] text-black font-semibold text-[14px] py-2 px-5 rounded-[12px] flex items-center gap-2 active:bg-[#e6cf00] transition-colors w-fit">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            Platba
+          </button>
         </div>
 
-        {Object.entries(groupedTransactions).map(([dateKey, group]) => (
-          <div key={dateKey} className="mb-6">
-            <h3 className="text-[13px] font-semibold text-gray-400 tracking-wider mb-4 uppercase">
-              {formatDateHeader(group.dateObj)}
-            </h3>
-            <div className="space-y-5">
-              {group.items.map((rawTx) => {
-                const tx = enhanceTransaction(rawTx);
-                return (
-                  <div key={tx.id || Math.random()} className="flex justify-between items-center border-b border-gray-700 pb-5 last:border-0">
+        {/* Vyhledávání a filtry */}
+        <div className="flex justify-between items-end mb-4 px-1">
+          <h2 className="text-[18px] font-bold">Poslední pohyby</h2>
+          <button onClick={() => setIsFilterOpen(true)} className="text-[#ffe600] text-[15px] font-medium active:opacity-70">
+            Filtrovat
+          </button>
+        </div>
+
+        {/* Search bar */}
+        <div className="bg-[#22252e] border border-[#4a4f5a] rounded-[12px] flex items-center px-4 py-3 mb-6 focus-within:border-[#ffe600] transition-colors">
+          <svg className="w-5 h-5 text-gray-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input 
+            type="text" 
+            placeholder="Číslo účtu, příjemce, nebo částka" 
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="bg-transparent border-none outline-none text-[15px] text-white w-full placeholder-gray-400 font-sans"
+          />
+        </div>
+
+        {/* Výpis plateb */}
+        <div className="space-y-6">
+          {Object.entries(groupedTransactions).map(([date, txs]) => (
+            <div key={date}>
+              <h3 className="text-[13px] font-bold text-gray-300 uppercase tracking-wider mb-3 px-1">{date}</h3>
+              <div className="bg-[#2c2f38] rounded-[20px] overflow-hidden">
+                {txs.map((tx, index) => (
+                  <div key={tx.id} className={`flex items-center justify-between p-4 ${index !== txs.length - 1 ? 'border-b border-[#3e424c]' : ''} active:bg-[#3e424c]/50 transition-colors`}>
                     <div className="flex items-center gap-4">
-                      <div className={`w-11 h-11 rounded-full ${tx.iconBg} flex items-center justify-center text-lg font-bold ${tx.iconText}`}>
-                        {tx.icon}
+                      {/* Generování ikony podle typu */}
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 relative ${tx.type === 'traficon' ? 'bg-white' : tx.type === 'rb' ? 'bg-[#ffe600]' : 'bg-[#1e40af]'}`}>
+                        {tx.type === 'traficon' && <span className="text-[#00a0e3] text-[9px] font-black">TRAFICON</span>}
+                        {tx.type === 'rb' && <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 22h5l5-10 5 10h5L12 2zm0 8l-2 4h4l-2-4z"/></svg>}
+                        {tx.type === 'transfer' && <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>}
+                        {tx.type === 'incoming' && <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>}
+                        
+                        {/* Malá informační ikonka hodin u některých plateb */}
+                        {tx.type !== 'traficon' && (
+                          <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#ffe600] rounded-full border-2 border-[#2c2f38] flex items-center justify-center text-black">
+                            <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                          </div>
+                        )}
                       </div>
                       <div>
-                        <p className="text-[15px] font-medium text-gray-100">{tx.name || 'Neznámá platba'}</p>
-                        <p className="text-[13px] text-gray-400">{tx.type || 'Převod'}</p>
+                        <div className="text-[15px] font-medium leading-tight mb-1">{tx.name}</div>
+                        <div className="text-[12px] text-gray-400 font-mono">{tx.account}</div>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className={`text-[15px] font-bold ${tx.color}`}>{tx.sign} {tx.uiAmount} CZK</p>
+                      <div className={`text-[15px] font-medium ${!tx.isNegative ? 'text-white' : 'text-gray-100'}`}>
+                        {tx.amount} {tx.currency}
+                      </div>
                     </div>
                   </div>
-                );
-              })}
+                ))}
+              </div>
+            </div>
+          ))}
+          {Object.keys(groupedTransactions).length === 0 && (
+            <div className="text-center text-gray-400 py-8 text-[15px]">Žádné platby nenalezeny.</div>
+          )}
+        </div>
+      </main>
+
+      {/* FILTER PANEL OVERLAY (Obrázek 2) */}
+      {isFilterOpen && (
+        <div className="fixed inset-0 z-50 flex flex-col justify-end">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsFilterOpen(false)}></div>
+          <div className="bg-[#353841] w-full rounded-t-[24px] pt-4 pb-6 px-4 relative z-10 flex flex-col max-h-[90vh] overflow-y-auto">
+            
+            {/* Táhlo a hlavička */}
+            <div className="w-10 h-1 bg-gray-500 rounded-full mx-auto mb-4"></div>
+            <div className="flex items-center justify-center relative mb-6">
+              <button onClick={() => setIsFilterOpen(false)} className="absolute left-0 text-[#ffe600] p-2 -ml-2 active:opacity-70">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+              </button>
+              <h2 className="text-[17px] font-semibold">Filtr</h2>
+            </div>
+
+            {/* Obsah filtru */}
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-[15px] font-semibold mb-3">Směr platby</h3>
+                <div className="flex flex-wrap gap-2">
+                  <button className="bg-[#424651] text-gray-200 px-4 py-2 rounded-full text-[14px] font-medium active:bg-[#4f5462]">Příchozí</button>
+                  <button className="bg-[#424651] text-gray-200 px-4 py-2 rounded-full text-[14px] font-medium active:bg-[#4f5462]">Odchozí</button>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-[15px] font-semibold mb-3">Období</h3>
+                <div className="flex flex-wrap gap-2">
+                  <button className="bg-[#424651] text-gray-200 px-4 py-2 rounded-full text-[14px] font-medium active:bg-[#4f5462]">Datum od-do</button>
+                  <button className="bg-[#424651] text-gray-200 px-4 py-2 rounded-full text-[14px] font-medium active:bg-[#4f5462]">Posledních 7 dní</button>
+                  <button className="bg-[#424651] text-gray-200 px-4 py-2 rounded-full text-[14px] font-medium active:bg-[#4f5462]">Posledních 30 dní</button>
+                  <button className="bg-[#424651] text-gray-200 px-4 py-2 rounded-full text-[14px] font-medium active:bg-[#4f5462]">Tento týden</button>
+                  <button className="bg-[#424651] text-gray-200 px-4 py-2 rounded-full text-[14px] font-medium active:bg-[#4f5462]">Tento měsíc</button>
+                  <button className="bg-[#424651] text-gray-200 px-4 py-2 rounded-full text-[14px] font-medium active:bg-[#4f5462]">Tento rok</button>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-[15px] font-semibold mb-3">Rozmezí částek</h3>
+                <div className="flex flex-wrap gap-2">
+                  <button className="bg-[#424651] text-gray-200 px-4 py-2 rounded-full text-[14px] font-medium active:bg-[#4f5462]">Rozmezí částek</button>
+                  <button className="bg-[#424651] text-gray-200 px-4 py-2 rounded-full text-[14px] font-medium active:bg-[#4f5462]">do 2000</button>
+                  <button className="bg-[#424651] text-gray-200 px-4 py-2 rounded-full text-[14px] font-medium active:bg-[#4f5462]">2000 - 5000</button>
+                  <button className="bg-[#424651] text-gray-200 px-4 py-2 rounded-full text-[14px] font-medium active:bg-[#4f5462]">nad 5000</button>
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center py-2 border-b border-[#424651]">
+                <h3 className="text-[15px] font-semibold">Typ platby</h3>
+                <svg className="w-5 h-5 text-[#ffe600]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+
+              <div className="flex justify-between items-center py-2">
+                <h3 className="text-[15px] font-semibold">Kategorie</h3>
+                <svg className="w-5 h-5 text-[#ffe600]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
+              </div>
+            </div>
+
+            {/* Tlačítka dole */}
+            <div className="flex gap-4 mt-8 pt-4">
+              <button onClick={() => setIsFilterOpen(false)} className="flex-1 bg-[#2c2f38] text-white font-semibold py-3.5 rounded-[16px] active:bg-[#3e424c] transition-colors border border-[#4a4f5a]">
+                Vyčistit filtr
+              </button>
+              <button onClick={() => setIsFilterOpen(false)} className="flex-1 bg-[#ffe600] text-black font-semibold py-3.5 rounded-[16px] active:bg-[#e6cf00] transition-colors shadow-md">
+                Filtrovat
+              </button>
             </div>
           </div>
-        ))}
+        </div>
+      )}
 
-        {/* Informační zprávy */}
-        {loading && <div className="text-center text-gray-400 text-sm py-4">Načítám transakce...</div>}
-        {!hasMore && transactions.length > 0 && <div className="text-center text-gray-500 text-sm py-4">Konec historie</div>}
-        
-        {/* Sledovaný element (Observer Target) */}
-        <div ref={observerTarget} className="h-10 w-full"></div>
-      </div>
       <BottomNav />
     </div>
   );
