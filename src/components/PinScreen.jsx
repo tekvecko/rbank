@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Preferences } from '@capacitor/preferences';
 
-// 1. OPRAVA: Správné přiřazení importů
 import logoLoadImg from '../assets/rbpic/logo-load.jpg';
 import bioImg from '../assets/rbpic/bio.jpg';
 
@@ -77,7 +76,8 @@ export default function PinScreen({ onAuthenticated }) {
     return (
       <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center justify-center text-white z-50 px-6">
         <div className="w-[72px] h-[72px] bg-[#3e424c] rounded-full flex items-center justify-center mb-8 overflow-hidden shadow-lg">
-          <img src={bioImg} alt="Biometrie" className="w-full h-full object-cover" />
+          {/* Aplikace mix-blend-screen pro odstranění černého pozadí i na nastavovací obrazovce */}
+          <img src={bioImg} alt="Biometrie" className="w-full h-full object-cover mix-blend-screen" />
         </div>
         <h2 className="text-2xl font-bold mb-4 text-center">Přihlášení otiskem</h2>
         <p className="text-gray-400 text-center text-[15px] mb-12 leading-relaxed max-w-sm">
@@ -96,10 +96,8 @@ export default function PinScreen({ onAuthenticated }) {
   return (
     <div className="fixed inset-0 bg-[#22252e] flex flex-col items-center pt-[50px] text-white z-50 overflow-hidden font-sans">
       
-      {/* 2. OPRAVA: Konvexní (ven vypouklý) oblouk vytvořený zaoblením hrany hlavičky */}
       <div className="absolute top-0 left-0 w-full h-[120px] bg-[#2c2f38] z-0 rounded-br-[80px]"></div>
 
-      {/* 3. OPRAVA: Nasazení loga logo-load.jpg nahoru */}
       <div className="w-[60px] h-[60px] mt-[5px] z-10 relative flex items-center justify-center overflow-hidden">
         <img src={logoLoadImg} alt="Logo" className="w-full h-full object-contain" />
       </div>
@@ -124,8 +122,8 @@ export default function PinScreen({ onAuthenticated }) {
           <div className="flex items-center justify-center">
             {isBiometricEnabled && !isFirstSetup ? (
               <button onClick={triggerBiometricAuth} className="w-[74px] h-[74px] rounded-full bg-transparent border border-[#4a4f5a] flex items-center justify-center active:bg-[#3e424c] transition-colors overflow-hidden">
-                 {/* 4. OPRAVA: Nasazení bio.jpg (otisku) vlevo dolů */}
-                 <img src={bioImg} alt="Otisk prstu" className="w-[44px] h-[44px] object-contain" />
+                 {/* ZDE JE OPRAVA: Třída mix-blend-screen vymaže černé pozadí a zachová jen samotný otisk */}
+                 <img src={bioImg} alt="Otisk prstu" className="w-[44px] h-[44px] object-contain mix-blend-screen opacity-90" />
               </button>
             ) : <div className="w-[74px] h-[74px]"></div>}
           </div>
