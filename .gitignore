@@ -36,3 +36,7 @@ map_all_src.sh
 map_src.sh
 project_files*.txt
 rbank-backend.tar.gz
+
+# Ignorování lokálních Termux záloh
+*.bak
+*.bak*
