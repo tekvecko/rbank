@@ -12,9 +12,9 @@ export default function ClientId({ onBack }) {
       </header>
 
       <main className="flex-1 px-6 mt-8 flex flex-col items-center text-center">
-        {/* Obrázek s aplikovaným mix-blend-screen pro potlačení černého pozadí z JPG */}
+        {/* Obrázek s aplikovaným  pro potlačení černého pozadí z JPG */}
         <div className="w-[180px] h-[180px] mb-8 flex items-center justify-center">
-          <img src={bidImg} alt="Ilustrace klientského čísla" className="w-full h-full object-contain mix-blend-screen" />
+          <img src={bidImg} alt="Ilustrace klientského čísla" className="w-full h-full object-contain " />
         </div>
 
         <p className="text-[15px] text-gray-200 mb-8 leading-relaxed max-w-sm">
