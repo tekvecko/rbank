@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import {  useNavigate , useLocation } from 'react-router-dom';
 import BottomNav from '../components/BottomNav';
 
 // ==========================================
@@ -7,6 +7,7 @@ import BottomNav from '../components/BottomNav';
 // ==========================================
 
 export function Offers() {
+  const navigate = useNavigate();
   const categories = [
     { id: 1, title: 'Úvěry a hypotéky', img: '/offers/01_oD_Úvěry_a_hypotéky.png' },
     { id: 2, title: 'Karty', img: '/offers/02_Karty.png' },
@@ -23,15 +24,16 @@ export function Offers() {
       <header className="flex items-center justify-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
         <h1 className="text-[17px] font-semibold">Nabídky</h1>
       </header>
-      
+
       <main className="px-4 mt-6">
         <h2 className="text-xl font-bold mb-6 text-white">Vyberte kategorii</h2>
-        
+
         <div className="grid grid-cols-2 gap-4">
           {categories.map((cat) => (
-            <div 
-              key={cat.id} 
-              className="bg-[#2c2f38] rounded-[24px] p-4 flex flex-col items-center justify-center aspect-[5/4] relative active:bg-[#3e424c] transition-colors"
+            <button
+              key={cat.id}
+              onClick={() => navigate('/offer-detail', { state: { title: cat.title } })}
+              className="bg-[#2c2f38] rounded-[24px] p-4 flex flex-col items-center justify-center aspect-[5/4] relative active:bg-[#3e424c] transition-colors w-full border-none outline-none"
             >
               {cat.badge && (
                 <span className="absolute top-3 right-3 bg-[#16a34a] text-white text-[10px] px-2 py-[2px] rounded-full font-medium shadow-md z-10">
@@ -42,10 +44,37 @@ export function Offers() {
                 <img src={cat.img} alt={cat.title} className="w-full h-full object-contain drop-shadow-md" />
               </div>
               <span className="text-[13px] text-center font-medium text-gray-300">{cat.title}</span>
-            </div>
+            </button>
           ))}
         </div>
       </main>
+      <BottomNav />
+    </div>
+  );
+}
+
+export function OfferDetail() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  // Dynamický nadpis podle toho, na jakou kartu uživatel kliknul
+  const title = location.state?.title || 'Tipy pro Vás';
+
+  return (
+    <div className="min-h-screen bg-[#22252e] text-white flex flex-col font-sans">
+      <header className="flex items-center p-4 pt-8">
+        <button onClick={() => navigate(-1)} className="text-[#fcd535] p-2 -ml-2 active:opacity-70">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+        </button>
+        <h1 className="flex-1 text-center text-[17px] font-semibold pr-8">{title}</h1>
+      </header>
+
+      <main className="flex-1 flex items-center justify-center -mt-20">
+        <p className="text-[15px] text-gray-200">Nemáte žádné nabídky.</p>
+      </main>
+
+      <BottomNav />
     </div>
   );
 }

@@ -9,7 +9,7 @@ import History from './pages/History';
 import BulkStatements from './pages/BulkStatements';
 import { Payment, CardDetail, SavingsGoals, BuildingSavings } from './pages/BankingModules';
 import {
-  Offers, InfoZone, Menu, Profile,
+  Offers, OfferDetail, InfoZone, Menu, Profile,
   TravelInsurance, MinuteLoan, SystemOutage,
   ExchangeRates, BranchesATMs, Settings, Support
 } from './pages/UserModules';
@@ -82,6 +82,7 @@ export default function App() {
         <Route path="/history" element={<History />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/offers" element={<Offers />} />
+        <Route path="/offer-detail" element={<OfferDetail />} />
         <Route path="/info" element={<InfoZone />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/profile" element={<Profile />} />
