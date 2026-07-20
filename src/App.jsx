@@ -6,6 +6,7 @@ import { Toast } from '@capacitor/toast';
 
 import Dashboard from './pages/Dashboard';
 import History from './pages/History';
+import BulkStatements from './pages/BulkStatements';
 import { Payment, CardDetail, SavingsGoals, BuildingSavings } from './pages/BankingModules';
 import {
   Offers, InfoZone, Menu, Profile,
@@ -84,6 +85,7 @@ export default function App() {
         <Route path="/info" element={<InfoZone />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/bulk-statements" element={<BulkStatements />} />
         <Route path="/savings-goals" element={<SavingsGoals />} />
         <Route path="/building-savings" element={<BuildingSavings />} />
         <Route path="/card" element={<CardDetail />} />
