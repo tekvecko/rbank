@@ -1,105 +1,109 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BottomNav from '../components/BottomNav';
-
-// Dynamické generování 60 položek pro ukázku
-const MOCK_TRANSACTIONS = Array.from({ length: 60 }).map((_, i) => {
-  const isIncoming = i % 5 === 0;
-  const isRb = i % 4 === 1;
-  const isTraficon = i % 6 === 2;
-  
-  let type = 'transfer';
-  let name = '881506/0100';
-  let account = 'Platba';
-  let amount = '-12 000,00';
-  let isNegative = true;
-  let dateLabel = 'STARŠÍ';
-
-  if (i < 3) dateLabel = 'VČERA';
-  else if (i < 10) dateLabel = '17. ČERVENCE, PÁTEK';
-  else if (i < 25) dateLabel = 'MINULÝ TÝDEN';
-  else dateLabel = 'ČERVEN';
-
-  if (isIncoming) {
-    type = 'incoming';
-    name = '155462963/0600';
-    amount = '+7 027,00';
-    isNegative = false;
-  } else if (isRb) {
-    type = 'rb';
-    name = 'Raiffeisenbank';
-    account = '1101083110/5500';
-    amount = '-1 225,38';
-  } else if (isTraficon) {
-    type = 'traficon';
-    name = 'TRAFICON';
-    account = '408359XXXXXX2194';
-    amount = '-239,00';
-  }
-
-  return { id: i, dateLabel, name, account, amount, isNegative, type };
-});
+// Import reálné funkce z tvé databázové vrstvy
+import { fetchMockTransactions } from '../data/mockDb';
 
 export default function History() {
   const navigate = useNavigate();
+  
+  // Datové stavy pro propojení s mockDb
+  const [transactions, setTransactions] = useState([]);
+  const [page, setPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+
+  // Stavy filtru
   const [searchQuery, setSearchQuery] = useState('');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  
-  // Stavy pro aktivní aplikované filtry a dočasné filtry (uvnitř modálu před potvrzením)
   const [activeFilter, setActiveFilter] = useState({ direction: null, amount: null, period: null });
   const [tempFilter, setTempFilter] = useState({ direction: null, amount: null, period: null });
 
-  // Stavy pro infinite scroll
-  const [visibleCount, setVisibleCount] = useState(10);
-  const [isLoadingMore, setIsLoadingMore] = useState(false);
   const loaderRef = useRef(null);
 
-  // Otevření filtru naklonuje aktuálně aktivní filtry do dočasného stavu
+  // Získávání dat z tvé databáze s podporou infinite scrollu
+  useEffect(() => {
+    let isMounted = true;
+    
+    const loadTransactions = async () => {
+      setIsLoading(true);
+      try {
+        const newData = await fetchMockTransactions(page);
+        if (isMounted) {
+          // Omezíme max počet stránek na 5, abychom simulovali konec historie
+          if (newData.length === 0 || page >= 5) {
+            setHasMore(false);
+          }
+          setTransactions(prev => [...prev, ...newData]);
+        }
+      } catch (error) {
+        console.error("Chyba při načítání historie:", error);
+      } finally {
+        if (isMounted) setIsLoading(false);
+      }
+    };
+
+    loadTransactions();
+    
+    return () => { isMounted = false; };
+  }, [page]);
+
+  // Infinite scroll observer
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const target = entries[0];
+      if (target.isIntersecting && hasMore && !isLoading) {
+        setPage(prev => prev + 1);
+      }
+    }, { root: null, rootMargin: '20px', threshold: 0.1 });
+
+    if (loaderRef.current) observer.observe(loaderRef.current);
+    return () => { if (loaderRef.current) observer.unobserve(loaderRef.current); };
+  }, [hasMore, isLoading]);
+
+  // Akce modálního okna filtrů
   const handleOpenFilter = () => {
     setTempFilter(activeFilter);
     setIsFilterOpen(true);
   };
 
-  // Potvrzení filtru
   const handleApplyFilter = () => {
     setActiveFilter(tempFilter);
     setIsFilterOpen(false);
-    setVisibleCount(10); // Reset zobrazených položek při novém filtru
   };
 
-  // Vyčištění filtru
   const handleClearFilter = () => {
     const empty = { direction: null, amount: null, period: null };
     setTempFilter(empty);
     setActiveFilter(empty);
     setIsFilterOpen(false);
-    setVisibleCount(10);
   };
 
-  // Pomocná funkce pro převod stringové částky (např. "-12 000,00") na čisté číslo
+  // Helper pro čištění částky (např. "-544,20" na číslo 544.20)
   const getNumericAmount = (amountStr) => {
-    return Math.abs(parseFloat(amountStr.replace(/\s/g, '').replace(',', '.')));
+    if (!amountStr) return 0;
+    return Math.abs(parseFloat(amountStr.replace(/\s/g, '').replace(',', '.').replace('+', '').replace('CZK', '')));
   };
 
   // Logika pro vyhledávání a aplikaci filtrů
   const filteredTransactions = useMemo(() => {
-    let result = MOCK_TRANSACTIONS;
+    let result = transactions;
 
-    // 1. Textové vyhledávání
+    // 1. Textové vyhledávání (např. 'Spotify', 'Platba')
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       result = result.filter(tx => 
-        tx.name.toLowerCase().includes(query) || 
-        tx.account.toLowerCase().includes(query) ||
-        tx.amount.includes(query)
+        (tx.name && tx.name.toLowerCase().includes(query)) || 
+        (tx.type && tx.type.toLowerCase().includes(query)) ||
+        (tx.amount && tx.amount.includes(query))
       );
     }
 
     // 2. Filtr směru platby
     if (activeFilter.direction === 'incoming') {
-      result = result.filter(tx => !tx.isNegative);
+      result = result.filter(tx => !tx.amount.startsWith('-'));
     } else if (activeFilter.direction === 'outgoing') {
-      result = result.filter(tx => tx.isNegative);
+      result = result.filter(tx => tx.amount.startsWith('-'));
     }
 
     // 3. Filtr rozmezí částek
@@ -112,41 +116,24 @@ export default function History() {
     }
 
     return result;
-  }, [searchQuery, activeFilter]);
+  }, [transactions, searchQuery, activeFilter]);
 
-  // Seskupení ZOBRAZENÝCH plateb (odříznutých podle visibleCount)
-  const displayedTransactions = useMemo(() => {
-    return filteredTransactions.slice(0, visibleCount);
-  }, [filteredTransactions, visibleCount]);
-
+  // Umělé přiřazení dat pro vizuální oddělovače podle pořadí, 
+  // jelikož mockDb nemá vlastní datové pole.
   const groupedTransactions = useMemo(() => {
-    return displayedTransactions.reduce((acc, tx) => {
-      if (!acc[tx.dateLabel]) acc[tx.dateLabel] = [];
-      acc[tx.dateLabel].push(tx);
+    return filteredTransactions.reduce((acc, tx, index) => {
+      let dateLabel = 'STARŠÍ';
+      if (index < 2) dateLabel = 'VČERA';
+      else if (index < 6) dateLabel = '17. ČERVENCE, PÁTEK';
+      else if (index < 12) dateLabel = 'MINULÝ TÝDEN';
+      else dateLabel = 'ČERVEN';
+
+      if (!acc[dateLabel]) acc[dateLabel] = [];
+      acc[dateLabel].push(tx);
       return acc;
     }, {});
-  }, [displayedTransactions]);
+  }, [filteredTransactions]);
 
-  const hasMore = visibleCount < filteredTransactions.length;
-
-  // Intersection Observer pro infinite scroll
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const target = entries[0];
-      if (target.isIntersecting && hasMore && !isLoadingMore) {
-        setIsLoadingMore(true);
-        setTimeout(() => {
-          setVisibleCount(prev => prev + 10);
-          setIsLoadingMore(false);
-        }, 500);
-      }
-    }, { root: null, rootMargin: '20px', threshold: 0.1 });
-
-    if (loaderRef.current) observer.observe(loaderRef.current);
-    return () => { if (loaderRef.current) observer.unobserve(loaderRef.current); };
-  }, [hasMore, isLoadingMore]);
-
-  // UI komponenta pro filtrovací tlačítko
   const FilterPill = ({ label, isActive, onClick }) => (
     <button 
       onClick={onClick}
@@ -195,7 +182,7 @@ export default function History() {
           <h2 className="text-[18px] font-bold">Poslední pohyby</h2>
           <button onClick={handleOpenFilter} className="text-[#ffe600] text-[15px] font-medium active:opacity-70 flex items-center gap-1">
             Filtrovat
-            {(activeFilter.direction || activeFilter.amount) && (
+            {(activeFilter.direction || activeFilter.amount || activeFilter.period) && (
               <span className="w-2 h-2 bg-red-500 rounded-full inline-block"></span>
             )}
           </button>
@@ -213,57 +200,56 @@ export default function History() {
           />
         </div>
 
-        {/* Výpis plateb */}
+        {/* Výpis plateb přímo propojený na mockDb strukturu */}
         <div className="space-y-6">
           {Object.entries(groupedTransactions).map(([date, txs]) => (
             <div key={date}>
               <h3 className="text-[13px] font-bold text-gray-300 uppercase tracking-wider mb-3 px-1">{date}</h3>
               <div className="bg-[#2c2f38] rounded-[20px] overflow-hidden shadow-sm">
-                {txs.map((tx, index) => (
-                  <div key={tx.id} className={`flex items-center justify-between p-4 ${index !== txs.length - 1 ? 'border-b border-[#3e424c]' : ''} active:bg-[#3e424c]/50 transition-colors`}>
-                    <div className="flex items-center gap-4">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 relative ${tx.type === 'traficon' ? 'bg-white' : tx.type === 'rb' ? 'bg-[#ffe600]' : 'bg-[#1e40af]'}`}>
-                        {tx.type === 'traficon' && <span className="text-[#00a0e3] text-[9px] font-black">TRAFICON</span>}
-                        {tx.type === 'rb' && <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 22h5l5-10 5 10h5L12 2zm0 8l-2 4h4l-2-4z"/></svg>}
-                        {tx.type === 'transfer' && <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>}
-                        {tx.type === 'incoming' && <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>}
-                        
-                        {tx.type !== 'traficon' && (
-                          <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#ffe600] rounded-full border-2 border-[#2c2f38] flex items-center justify-center text-black">
-                            <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                          </div>
-                        )}
+                {txs.map((tx, index) => {
+                  const isNegative = tx.amount.startsWith('-');
+                  return (
+                    <div key={tx.id} className={`flex items-center justify-between p-4 ${index !== txs.length - 1 ? 'border-b border-[#3e424c]' : ''} active:bg-[#3e424c]/50 transition-colors`}>
+                      <div className="flex items-center gap-4">
+                        <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 relative ${tx.iconBg}`}>
+                          <span className="text-[16px]">{tx.icon}</span>
+                          {tx.badge && tx.badge !== '🚫' && (
+                            <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#ffe600] rounded-full border border-[#2c2f38] flex items-center justify-center text-[8px]">
+                              {tx.badge}
+                            </div>
+                          )}
+                        </div>
+                        <div>
+                          <div className="text-[15px] font-medium leading-tight mb-1">{tx.name}</div>
+                          <div className="text-[12px] text-gray-400 font-mono">{tx.type}</div>
+                        </div>
                       </div>
-                      <div>
-                        <div className="text-[15px] font-medium leading-tight mb-1">{tx.name}</div>
-                        <div className="text-[12px] text-gray-400 font-mono">{tx.account}</div>
+                      <div className="text-right">
+                        <div className={`text-[15px] font-medium ${!isNegative ? 'text-[#4ade80]' : 'text-white'}`}>
+                          {tx.amount} CZK
+                        </div>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <div className={`text-[15px] font-medium ${!tx.isNegative ? 'text-white' : 'text-gray-100'}`}>
-                        {tx.amount} CZK
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ))}
           
-          {Object.keys(groupedTransactions).length === 0 && (
+          {Object.keys(groupedTransactions).length === 0 && !isLoading && (
             <div className="text-center text-gray-400 py-8 text-[15px]">Žádné platby nenalezeny.</div>
           )}
 
-          {/* Sledovaný element pro Infinite Scroll */}
+          {/* Načítání z DB */}
           {hasMore && (
             <div ref={loaderRef} className="py-6 flex justify-center items-center gap-3">
-              {isLoadingMore && (
+              {isLoading && (
                 <>
                   <svg className="animate-spin h-5 w-5 text-[#ffe600]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  <span className="text-[14px] text-gray-400 font-medium">Načítám další platby...</span>
+                  <span className="text-[14px] text-gray-400 font-medium">Načítám transakce...</span>
                 </>
               )}
             </div>
@@ -271,13 +257,12 @@ export default function History() {
         </div>
       </main>
 
-      {/* FILTER PANEL OVERLAY - Změna z-index na z-[100] zaručí překrytí spodní lišty */}
+      {/* FILTER PANEL */}
       {isFilterOpen && (
         <div className="fixed inset-0 z-[100] flex flex-col justify-end">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsFilterOpen(false)}></div>
           
           <div className="bg-[#353841] w-full rounded-t-[24px] flex flex-col max-h-[90vh] relative z-10 shadow-2xl">
-            {/* Táhlo a hlavička - Fixní nahoře */}
             <div className="shrink-0 pt-4 pb-4 px-4 border-b border-[#424651]">
               <div className="w-10 h-1 bg-gray-500 rounded-full mx-auto mb-4"></div>
               <div className="flex items-center justify-center relative">
@@ -288,21 +273,12 @@ export default function History() {
               </div>
             </div>
 
-            {/* Obsah filtru - Scrollovatelný */}
             <div className="flex-1 overflow-y-auto p-4 space-y-6">
               <div>
                 <h3 className="text-[15px] font-semibold mb-3">Směr platby</h3>
                 <div className="flex flex-wrap gap-2">
-                  <FilterPill 
-                    label="Příchozí" 
-                    isActive={tempFilter.direction === 'incoming'} 
-                    onClick={() => setTempFilter({...tempFilter, direction: tempFilter.direction === 'incoming' ? null : 'incoming'})} 
-                  />
-                  <FilterPill 
-                    label="Odchozí" 
-                    isActive={tempFilter.direction === 'outgoing'} 
-                    onClick={() => setTempFilter({...tempFilter, direction: tempFilter.direction === 'outgoing' ? null : 'outgoing'})} 
-                  />
+                  <FilterPill label="Příchozí" isActive={tempFilter.direction === 'incoming'} onClick={() => setTempFilter({...tempFilter, direction: tempFilter.direction === 'incoming' ? null : 'incoming'})} />
+                  <FilterPill label="Odchozí" isActive={tempFilter.direction === 'outgoing'} onClick={() => setTempFilter({...tempFilter, direction: tempFilter.direction === 'outgoing' ? null : 'outgoing'})} />
                 </div>
               </div>
 
@@ -321,36 +297,13 @@ export default function History() {
               <div>
                 <h3 className="text-[15px] font-semibold mb-3">Rozmezí částek</h3>
                 <div className="flex flex-wrap gap-2">
-                  <FilterPill 
-                    label="do 2000" 
-                    isActive={tempFilter.amount === 'do2000'} 
-                    onClick={() => setTempFilter({...tempFilter, amount: tempFilter.amount === 'do2000' ? null : 'do2000'})} 
-                  />
-                  <FilterPill 
-                    label="2000 - 5000" 
-                    isActive={tempFilter.amount === '2000-5000'} 
-                    onClick={() => setTempFilter({...tempFilter, amount: tempFilter.amount === '2000-5000' ? null : '2000-5000'})} 
-                  />
-                  <FilterPill 
-                    label="nad 5000" 
-                    isActive={tempFilter.amount === 'nad5000'} 
-                    onClick={() => setTempFilter({...tempFilter, amount: tempFilter.amount === 'nad5000' ? null : 'nad5000'})} 
-                  />
+                  <FilterPill label="do 2000" isActive={tempFilter.amount === 'do2000'} onClick={() => setTempFilter({...tempFilter, amount: tempFilter.amount === 'do2000' ? null : 'do2000'})} />
+                  <FilterPill label="2000 - 5000" isActive={tempFilter.amount === '2000-5000'} onClick={() => setTempFilter({...tempFilter, amount: tempFilter.amount === '2000-5000' ? null : '2000-5000'})} />
+                  <FilterPill label="nad 5000" isActive={tempFilter.amount === 'nad5000'} onClick={() => setTempFilter({...tempFilter, amount: tempFilter.amount === 'nad5000' ? null : 'nad5000'})} />
                 </div>
-              </div>
-
-              <div className="flex justify-between items-center py-2 border-b border-[#424651]">
-                <h3 className="text-[15px] font-semibold">Typ platby</h3>
-                <svg className="w-5 h-5 text-[#ffe600]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
-              </div>
-
-              <div className="flex justify-between items-center py-2">
-                <h3 className="text-[15px] font-semibold">Kategorie</h3>
-                <svg className="w-5 h-5 text-[#ffe600]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7"/></svg>
               </div>
             </div>
 
-            {/* Tlačítka dole - Sticky footer, zaručeně viditelná a s paddingem pro spodní část telefonu */}
             <div className="shrink-0 flex gap-4 px-4 pt-4 pb-8 bg-[#353841] border-t border-[#424651]">
               <button onClick={handleClearFilter} className="flex-1 bg-[#2c2f38] text-white font-semibold py-3.5 rounded-[16px] active:bg-[#3e424c] transition-colors border border-[#4a4f5a]">
                 Vyčistit filtr
