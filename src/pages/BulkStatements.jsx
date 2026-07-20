@@ -35,7 +35,7 @@ export default function BulkStatements() {
                 type="checkbox" 
                 checked={selectedIds.includes(s.id)}
                 onChange={() => toggleSelect(s.id)}
-                className="w-5 h-5 accent-[#fcd535]"
+                className="w-5 h-5 accent-[#ffe600]"
               />
               <div>
                 <p className="font-medium">{s.date}</p>
@@ -48,7 +48,7 @@ export default function BulkStatements() {
       <button 
         onClick={handleDownloadSelected}
         disabled={selectedIds.length === 0}
-        className="w-full mt-8 bg-[#fcd535] text-black py-4 rounded-xl font-bold disabled:opacity-50"
+        className="w-full mt-8 bg-[#ffe600] text-black py-4 rounded-xl font-bold disabled:opacity-50"
       >
         Stáhnout vybrané ({selectedIds.length})
       </button>

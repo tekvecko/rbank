@@ -69,7 +69,7 @@ export function OfferDetail() {
   return (
     <div className="min-h-screen bg-[#22252e] text-white flex flex-col font-sans">
       <header className="flex items-center p-4 pt-8">
-        <button onClick={() => navigate(-1)} className="text-[#fcd535] p-2 -ml-2 active:opacity-70">
+        <button onClick={() => navigate(-1)} className="text-[#ffe600] p-2 -ml-2 active:opacity-70">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -99,7 +99,7 @@ export function InfoZone() {
       <main className="flex-1 px-4 mt-6 space-y-3">
         <button onClick={() => navigate('/system-outage')} className="w-full bg-[#2c2f38] rounded-[20px] p-4 flex gap-4 items-start relative text-left active:bg-[#3e424c] transition-colors">
           <div className="w-2 h-2 bg-[#3b82f6] rounded-full mt-1.5 absolute right-4"></div>
-          <div className="w-10 h-10 bg-[#3e424c] rounded-full flex items-center justify-center shrink-0 text-[#fcd535]">
+          <div className="w-10 h-10 bg-[#3e424c] rounded-full flex items-center justify-center shrink-0 text-[#ffe600]">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
           </div>
           <div>
@@ -169,7 +169,7 @@ export function Profile() {
   return (
     <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col pb-6">
       <header className="flex items-center p-4 pt-8 pb-4 relative">
-        <button onClick={() => navigate(-1)} className="text-[#fcd535] p-2 active:bg-[#2c2f38] rounded-full absolute left-4">
+        <button onClick={() => navigate(-1)} className="text-[#ffe600] p-2 active:bg-[#2c2f38] rounded-full absolute left-4">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         </button>
         <h1 className="text-[17px] font-semibold w-full text-center">Profil</h1>
@@ -182,7 +182,7 @@ export function Profile() {
             <div className="w-[68px] h-[68px] bg-[#3e424c] rounded-full flex items-center justify-center">
               <svg className="w-8 h-8 text-gray-300" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
             </div>
-            <div className="absolute -bottom-1 -right-1 w-[26px] h-[26px] bg-[#fcd535] rounded-full flex items-center justify-center border-4 border-[#22252e] text-black">
+            <div className="absolute -bottom-1 -right-1 w-[26px] h-[26px] bg-[#ffe600] rounded-full flex items-center justify-center border-4 border-[#22252e] text-black">
               <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
             </div>
           </div>
@@ -194,27 +194,27 @@ export function Profile() {
           <button onClick={() => setView('contact')} className="w-full p-4 border-b border-[#3e424c] flex items-center gap-4 active:bg-[#3e424c]/50 transition-colors">
             <svg className="w-[22px] h-[22px] text-gray-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
             <span className="flex-1 text-left text-[15px] font-medium text-gray-200">Mé kontaktní údaje</span>
-            <span className="text-[#fcd535] font-bold">›</span>
+            <span className="text-[#ffe600] font-bold">›</span>
           </button>
           <button onClick={() => setView('personal')} className="w-full p-4 border-b border-[#3e424c] flex items-center gap-4 active:bg-[#3e424c]/50 transition-colors">
             <svg className="w-[22px] h-[22px] text-gray-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
             <span className="flex-1 text-left text-[15px] font-medium text-gray-200">Osobní a zákonné údaje</span>
-            <span className="text-[#fcd535] font-bold">›</span>
+            <span className="text-[#ffe600] font-bold">›</span>
           </button>
           <button onClick={() => setView('client_id')} className="w-full p-4 border-b border-[#3e424c] flex items-center gap-4 active:bg-[#3e424c]/50 transition-colors">
             <svg className="w-[22px] h-[22px] text-gray-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"/></svg>
             <span className="flex-1 text-left text-[15px] font-medium text-gray-200">Moje klientské číslo</span>
-            <span className="text-[#fcd535] font-bold">›</span>
+            <span className="text-[#ffe600] font-bold">›</span>
           </button>
           <button onClick={() => setView('documents')} className="w-full p-4 border-b border-[#3e424c] flex items-center gap-4 active:bg-[#3e424c]/50 transition-colors">
             <svg className="w-[22px] h-[22px] text-gray-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"/></svg>
             <span className="flex-1 text-left text-[15px] font-medium text-gray-200">Dokumenty</span>
-            <span className="text-[#fcd535] font-bold">›</span>
+            <span className="text-[#ffe600] font-bold">›</span>
           </button>
           <button onClick={() => setView('bank_id')} className="w-full p-4 flex items-center gap-4 active:bg-[#3e424c]/50 transition-colors">
             <svg className="w-[22px] h-[22px] text-gray-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
             <span className="flex-1 text-left text-[15px] font-medium text-gray-200">Bankovní identita RB</span>
-            <span className="text-[#fcd535] font-bold">›</span>
+            <span className="text-[#ffe600] font-bold">›</span>
           </button>
         </div>
 
@@ -223,19 +223,19 @@ export function Profile() {
           <h3 className="text-[17px] font-bold mb-5">Kontakty na banku</h3>
           <div className="grid grid-cols-3 gap-3 mb-6">
             <div className="flex flex-col items-center">
-              <button className="w-[52px] h-[52px] bg-[#fcd535] rounded-[18px] flex items-center justify-center text-black mb-2 active:opacity-80">
+              <button className="w-[52px] h-[52px] bg-[#ffe600] rounded-[18px] flex items-center justify-center text-black mb-2 active:opacity-80">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
               </button>
               <span className="text-[12px] font-medium text-gray-200">Chat</span>
             </div>
             <div className="flex flex-col items-center">
-              <button className="w-[52px] h-[52px] bg-[#fcd535] rounded-[18px] flex items-center justify-center text-black mb-2 active:opacity-80">
+              <button className="w-[52px] h-[52px] bg-[#ffe600] rounded-[18px] flex items-center justify-center text-black mb-2 active:opacity-80">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               </button>
               <span className="text-[12px] font-medium text-gray-200">Zavolat</span>
             </div>
             <div className="flex flex-col items-center">
-              <button className="w-[52px] h-[52px] bg-[#fcd535] rounded-[18px] flex items-center justify-center text-black mb-2 active:opacity-80">
+              <button className="w-[52px] h-[52px] bg-[#ffe600] rounded-[18px] flex items-center justify-center text-black mb-2 active:opacity-80">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg>
               </button>
               <span className="text-[12px] font-medium text-gray-200 text-center leading-tight">Nová<br/>schůzka</span>
@@ -244,7 +244,7 @@ export function Profile() {
           <button onClick={() => navigate('/branches')} className="w-full flex items-center gap-4 mb-6 active:opacity-70 transition-opacity">
             <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
             <span className="flex-1 text-left text-[14px] font-medium text-gray-200">Schůzky a výběry na pobočce</span>
-            <span className="text-[#fcd535] font-bold">›</span>
+            <span className="text-[#ffe600] font-bold">›</span>
           </button>
           <div className="flex justify-center gap-4">
             <button className="w-10 h-10 rounded-full bg-[#3e424c] flex items-center justify-center text-gray-300 font-bold font-serif active:opacity-70">f</button>
@@ -290,7 +290,7 @@ export function TravelInsurance() {
             <p className="text-sm text-gray-400 mb-1">Pojištěné osoby:</p>
             <p className="font-medium">Zbyněk, Marcela</p>
           </div>
-          <button className="w-full bg-[#fcd535] text-black font-semibold py-3 rounded-xl active:bg-yellow-500 transition-colors">Zobrazit asistenční kartu</button>
+          <button className="w-full bg-[#ffe600] text-black font-semibold py-3 rounded-xl active:bg-yellow-500 transition-colors">Zobrazit asistenční kartu</button>
         </div>
       </main>
     </div>
@@ -334,7 +334,7 @@ export function SystemOutage() {
         <h1 className="text-[17px] font-semibold">Detail odstávky</h1>
       </header>
       <main className="flex-1 px-4 mt-6">
-        <div className="bg-[#2c2f38] rounded-[24px] p-5 shadow-lg border-l-4 border-[#fcd535]">
+        <div className="bg-[#2c2f38] rounded-[24px] p-5 shadow-lg border-l-4 border-[#ffe600]">
           <h2 className="text-lg font-bold mb-3">Plánovaná údržba systémů</h2>
           <p className="text-gray-300 text-sm leading-relaxed mb-4">
             Vážený kliente, z důvodu vylepšování našich bankovních služeb proběhne o víkendu plánovaná technická odstávka.
@@ -520,7 +520,7 @@ export function Support() {
           </div>
           <h2 className="text-[17px] font-bold text-white mb-2">Potřebujete poradit?</h2>
           <p className="text-[14px] text-gray-400 mb-6">Jsme tu pro vás 24 hodin denně, 7 dní v týdnu.</p>
-          <button className="w-full bg-[#fcd535] text-black font-bold py-[14px] rounded-xl active:bg-[#e5c02a] transition-colors text-[15px]">Zavolat rBank</button>
+          <button className="w-full bg-[#ffe600] text-black font-bold py-[14px] rounded-xl active:bg-[#e6cf00] transition-colors text-[15px]">Zavolat rBank</button>
         </div>
       </main>
     </div>

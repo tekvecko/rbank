@@ -66,7 +66,7 @@ export function Payment() {
           <label className="text-[13px] text-gray-400 font-medium">Zpráva pro příjemce</label>
           <input value={message} onChange={(e) => setMessage(e.target.value)} type="text" placeholder="Volitelné" className="w-full bg-transparent border-b border-gray-600 text-white text-[15px] py-3 focus:outline-none focus:border-[#3b82f6] mb-8" />
 
-          <button onClick={handleSubmit} disabled={isSubmitting || !name || !amount} className="w-full bg-[#fcd535] text-black text-[15px] font-semibold py-4 rounded-xl active:bg-yellow-500 transition-colors disabled:opacity-50">
+          <button onClick={handleSubmit} disabled={isSubmitting || !name || !amount} className="w-full bg-[#ffe600] text-black text-[15px] font-semibold py-4 rounded-xl active:bg-yellow-500 transition-colors disabled:opacity-50">
             {isSubmitting ? 'Odesílám...' : 'Odeslat platbu'}
           </button>
         </div>
@@ -135,9 +135,9 @@ export function SavingsGoals() {
             <span className="font-semibold text-[17px]">Rezerva na horší časy</span>
             <span className="bg-[#3e424c] text-[11px] px-3 py-1.5 rounded-full text-gray-300">CÍL: 100 000 CZK</span>
           </div>
-          <div className="text-[32px] font-bold mb-4 text-[#fcd535] tracking-tight">45 000 <span className="text-[17px] text-[#fcd535]">CZK</span></div>
+          <div className="text-[32px] font-bold mb-4 text-[#ffe600] tracking-tight">45 000 <span className="text-[17px] text-[#ffe600]">CZK</span></div>
           <div className="w-full bg-[#22252e] h-3 rounded-full overflow-hidden border border-gray-700">
-            <div className="bg-[#fcd535] h-full w-[45%] rounded-full"></div>
+            <div className="bg-[#ffe600] h-full w-[45%] rounded-full"></div>
           </div>
           <p className="text-[13px] text-gray-400 mt-3 text-right">45 % splněno</p>
         </div>

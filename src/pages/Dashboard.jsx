@@ -42,7 +42,7 @@ export default function Dashboard() {
   // Pokud se data načítají, vracíme pouze žlutou obrazovku se světle šedým spinnerem
   if (isLoading) {
     return (
-      <div className="fixed inset-0 bg-[#fcd535] flex items-center justify-center z-[9999]">
+      <div className="fixed inset-0 bg-[#ffe600] flex items-center justify-center z-[9999]">
         <div className="w-10 h-10 border-[3px] border-black/10 border-t-[#f3f4f6] rounded-full animate-spin drop-shadow-sm"></div>
       </div>
     );
@@ -81,7 +81,7 @@ export default function Dashboard() {
             <span className="text-[13px] ml-1">🇨🇿 ˅</span>
           </div>
           <div className="flex gap-3">
-            <button onClick={() => navigate('/payment')} className="bg-[#fcd535] text-black text-[15px] font-semibold py-3 px-4 rounded-xl flex items-center gap-2 flex-1 justify-center active:bg-yellow-500 transition-colors">
+            <button onClick={() => navigate('/payment')} className="bg-[#ffe600] text-black text-[15px] font-semibold py-3 px-4 rounded-xl flex items-center gap-2 flex-1 justify-center active:bg-yellow-500 transition-colors">
               <span>→</span> Platba
             </button>
             <button onClick={() => navigate('/history')} className="bg-transparent text-gray-300 text-[15px] font-medium py-3 px-5 rounded-xl flex items-center gap-2 border border-gray-600 flex-1 justify-center active:bg-[#3e424c] transition-colors">
@@ -102,7 +102,7 @@ export default function Dashboard() {
             <span className="text-[17px] text-gray-100">CZK</span>
           </div>
           <div className="flex gap-3 mb-5">
-            <button onClick={() => navigate('/savings-goals')} className="bg-[#fcd535] text-black text-[15px] font-semibold py-3 px-4 rounded-xl flex items-center gap-2 flex-1 justify-center active:bg-yellow-500 transition-colors">
+            <button onClick={() => navigate('/savings-goals')} className="bg-[#ffe600] text-black text-[15px] font-semibold py-3 px-4 rounded-xl flex items-center gap-2 flex-1 justify-center active:bg-yellow-500 transition-colors">
               <span>⌖</span> Spořicí cíle
             </button>
             <button onClick={() => navigate('/history')} className="bg-transparent text-gray-300 text-[15px] font-medium py-3 px-5 rounded-xl flex items-center gap-2 border border-gray-600 flex-1 justify-center active:bg-[#3e424c] transition-colors">
@@ -111,7 +111,7 @@ export default function Dashboard() {
           </div>
           <button onClick={() => navigate('/building-savings')} className="w-full border-t border-gray-700 pt-5 flex justify-between items-center active:opacity-70 transition-opacity">
             <span className="text-[13px] text-gray-300">Stavebko s úrokem 3,3 % na šest let</span>
-            <span className="text-[#fcd535] font-bold text-xl leading-none">›</span>
+            <span className="text-[#ffe600] font-bold text-xl leading-none">›</span>
           </button>
         </div>
 

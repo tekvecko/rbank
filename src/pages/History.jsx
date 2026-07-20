@@ -107,7 +107,7 @@ export default function History() {
       color: isIncome ? 'text-green-400' : 'text-white',
       sign: isIncome ? '+' : '-',
       iconBg: isIncome ? 'bg-[#3e424c]' : 'bg-gray-700',
-      iconText: isIncome ? 'text-[#fcd535]' : 'text-white',
+      iconText: isIncome ? 'text-[#ffe600]' : 'text-white',
       icon: initial
     };
   };
@@ -125,7 +125,7 @@ export default function History() {
       </header>
 
       <div className="px-4 mb-4 flex gap-2 overflow-x-auto no-scrollbar">
-        <button className="bg-[#fcd535] text-black px-5 py-2 rounded-full text-[14px] font-semibold whitespace-nowrap">Historie</button>
+        <button className="bg-[#ffe600] text-black px-5 py-2 rounded-full text-[14px] font-semibold whitespace-nowrap">Historie</button>
         <button className="bg-transparent text-gray-400 px-5 py-2 rounded-full text-[14px] font-medium whitespace-nowrap border border-gray-600">Platby</button>
       </div>
 

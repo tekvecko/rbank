@@ -83,7 +83,7 @@ export default function PinScreen({ onAuthenticated }) {
         <p className="text-gray-400 text-center text-[15px] mb-12 leading-relaxed max-w-sm">
           Chcete si usnadnit přístup k financím a pro příští přihlášení používat otisk prstu místo S-PINu?
         </p>
-        <button onClick={() => handleBiometricChoice(true)} className="w-full max-w-sm bg-[#fcd535] text-black font-bold py-4 rounded-[16px] mb-4 active:bg-[#e5c02a] transition-colors">
+        <button onClick={() => handleBiometricChoice(true)} className="w-full max-w-sm bg-[#ffe600] text-black font-bold py-4 rounded-[16px] mb-4 active:bg-[#e6cf00] transition-colors">
           Ano, povolit otisk
         </button>
         <button onClick={() => handleBiometricChoice(false)} className="w-full max-w-sm bg-[#2c2f38] text-white font-bold py-4 rounded-[16px] active:bg-[#3e424c] transition-colors">
@@ -110,7 +110,7 @@ export default function PinScreen({ onAuthenticated }) {
         
         <div className="flex gap-[18px] mb-12 h-4">
           {[...Array(4)].map((_, i) => (
-            <div key={i} className={`w-[14px] h-[14px] rounded-full transition-colors duration-200 ${pin.length > i ? 'bg-[#fcd535]' : 'bg-[#3e424c]'}`} />
+            <div key={i} className={`w-[14px] h-[14px] rounded-full transition-colors duration-200 ${pin.length > i ? 'bg-[#ffe600]' : 'bg-[#3e424c]'}`} />
           ))}
         </div>
         
@@ -142,7 +142,7 @@ export default function PinScreen({ onAuthenticated }) {
         <button 
           onClick={processPin} 
           disabled={pin.length !== 4}
-          className={`w-full font-medium py-[15px] rounded-[16px] transition-all duration-300 ${pin.length === 4 ? 'bg-[#fcd535] text-black shadow-lg' : 'bg-[#3e424c] text-[#a0a5b0]'}`}
+          className={`w-full font-medium py-[15px] rounded-[16px] transition-all duration-300 ${pin.length === 4 ? 'bg-[#ffe600] text-black shadow-lg' : 'bg-[#3e424c] text-[#a0a5b0]'}`}
         >
           {isFirstSetup ? 'Potvrdit S-PIN' : 'Přihlásit'}
         </button>
