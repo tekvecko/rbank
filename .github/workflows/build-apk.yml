@@ -11,49 +11,49 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Získání zdrojových kódů
-        uses: actions/checkout@v4
+    - name: Získání zdrojových kódů
+      uses: actions/checkout@v4
 
-      - name: Nastavení Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
+    - name: Nastavení Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+        cache: 'npm'
 
-      - name: Instalace NPM závislostí
-        run: npm install
+    - name: Instalace NPM závislostí
+      run: npm install
 
-      - name: Build webové aplikace (Vite)
-        run: npm run build
+    - name: Build webové aplikace (Vite)
+      run: npm run build
 
-      - name: Synchronizace do Capacitoru
-        run: npx cap sync android
+    - name: Synchronizace do Capacitoru
+      run: npx cap sync android
 
-      - name: Generování Android ikon a splash screenů
-        run: npx -y @capacitor/assets@latest generate --android
+    - name: Generování Android ikon a splash screenů
+      run: npx -y @capacitor/assets@latest generate --android
 
-      - name: Nastavení Java JDK 21
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'zulu'
-          java-version: '21'
+    - name: Nastavení Java JDK 21
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'zulu'
+        java-version: '21'
 
-      - name: Povýšení Gradle a vyčištění Gitu
-        run: |
-          chmod +x android/gradlew
-          rm -rf android/.gradle
-          rm -rf android/app/build
-          rm -rf android/capacitor-cordova-android-plugins/build
-          sed -i 's/distributionUrl=.*/distributionUrl=https\:\/\/services.gradle.org\/distributions\/gradle-8.7-all.zip/g' android/gradle/wrapper/gradle-wrapper.properties
+    - name: Povýšení Gradle a vyčištění Gitu
+      run: |
+        chmod +x android/gradlew
+        rm -rf android/.gradle
+        rm -rf android/app/build
+        rm -rf android/capacitor-cordova-android-plugins/build
+        sed -i 's|distributionUrl=.*|distributionUrl=https://services.gradle.org/distributions/gradle-8.7-all.zip|' android/gradle/wrapper/gradle-wrapper.properties
 
-      - name: Sestavení APK (Debug)
-        run: |
-          cd android
-          ./gradlew clean assembleDebug --no-daemon --stacktrace
+    - name: Sestavení APK (Debug)
+      run: |
+        cd android
+        ./gradlew clean assembleDebug --no-daemon --stacktrace
 
-      - name: Nahrání hotového APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: rBank-app-debug
-          path: android/app/build/outputs/apk/debug/app-debug.apk
-          retention-days: 14
+    - name: Nahrání hotového APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: rBank-app-debug
+        path: android/app/build/outputs/apk/debug/app-debug.apk
+        retention-days: 14
