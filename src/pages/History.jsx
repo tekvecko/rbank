@@ -1,12 +1,13 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BottomNav from '../components/BottomNav';
-import { getTransactions } from '../services/api';
+import { getTransactions, getBalance } from '../services/api';
 
 export default function History() {
   const navigate = useNavigate();
   
   const [transactions, setTransactions] = useState([]);
+  const [balance, setBalance] = useState(0);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
@@ -19,10 +20,17 @@ export default function History() {
   const loaderRef = useRef(null);
   const loadingRef = useRef(false);
 
-  // Získávání dat z AWS backendu (opravyslavkov.shop)
+  // Načtení dat (zůstatek + historie)
   useEffect(() => {
     let isMounted = true;
     
+    // Zůstatek načteme jen jednou při prvním renderu
+    if (page === 1) {
+      getBalance().then(bal => {
+        if (isMounted) setBalance(bal);
+      });
+    }
+
     const loadTransactions = async () => {
       if (loadingRef.current || !hasMore) return;
       loadingRef.current = true;
@@ -54,7 +62,7 @@ export default function History() {
     return () => { isMounted = false; };
   }, [page]);
 
-  // Infinite scroll listener
+  // Infinite scroll
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const target = entries[0];
@@ -67,7 +75,6 @@ export default function History() {
     return () => { if (loaderRef.current) observer.unobserve(loaderRef.current); };
   }, [hasMore, isLoading]);
 
-  // Modals & Filters
   const handleOpenFilter = () => { setTempFilter(activeFilter); setIsFilterOpen(true); };
   const handleApplyFilter = () => { setActiveFilter(tempFilter); setIsFilterOpen(false); };
   const handleClearFilter = () => {
@@ -81,7 +88,6 @@ export default function History() {
     return Math.abs(parseFloat(String(tx.amount).replace(/\s/g, '').replace(',', '.').replace('+', '').replace('CZK', '')));
   };
 
-  // Zpracování dat a filtry
   const filteredTransactions = useMemo(() => {
     let result = transactions;
 
@@ -108,7 +114,6 @@ export default function History() {
     return result;
   }, [transactions, searchQuery, activeFilter]);
 
-  // Seskupování dat z backendu podle reálného data (vč. DNES / VČERA)
   const groupedTransactions = useMemo(() => {
     const groups = {};
     const today = new Date();
@@ -134,6 +139,12 @@ export default function History() {
     </button>
   );
 
+  // Formátování dynamického zůstatku
+  const formattedBalance = new Intl.NumberFormat('cs-CZ', { 
+    minimumFractionDigits: 2, 
+    maximumFractionDigits: 2 
+  }).format(balance);
+
   return (
     <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col pb-24 relative overflow-x-hidden">
       
@@ -145,13 +156,14 @@ export default function History() {
       </header>
 
       <main className="flex-1 px-4 mt-2">
+        {/* Karta účtu (Zůstatek propojen s AWS) */}
         <div className="bg-[#2c2f38] rounded-[20px] p-5 mb-6">
           <div className="flex justify-between items-center mb-4">
             <span className="text-[15px] font-medium text-gray-200">Běžný účet</span>
             <span className="bg-[#424651] text-gray-300 text-[12px] px-3 py-1 rounded-full font-mono">1036437823/5500</span>
           </div>
           <div className="flex items-baseline gap-2 mb-6">
-            <span className="text-[28px] font-bold tracking-tight">-32 256,04</span>
+            <span className="text-[28px] font-bold tracking-tight">{formattedBalance}</span>
             <span className="text-[16px] text-gray-300 font-medium">CZK <span className="text-[14px]">🇨🇿</span></span>
           </div>
           <button className="bg-[#ffe600] text-black font-semibold text-[14px] py-2 px-5 rounded-[12px] flex items-center gap-2 active:bg-[#e6cf00] transition-colors w-fit">
@@ -181,47 +193,36 @@ export default function History() {
           />
         </div>
 
-        {/* Výpis dynamických backendových dat */}
+        {/* Historie plateb (Styl podle Obrázku 2) */}
         <div className="space-y-6">
           {Object.entries(groupedTransactions).map(([date, txs]) => (
             <div key={date}>
               <h3 className="text-[13px] font-bold text-gray-300 uppercase tracking-wider mb-3 px-1">{date}</h3>
-              <div className="bg-[#2c2f38] rounded-[20px] overflow-hidden shadow-sm">
+              <div className="bg-[#2c2f38] rounded-[24px] overflow-hidden shadow-sm">
                 {txs.map((tx, index) => {
                   const txName = tx.name || (tx.col2 && tx.col2[0]) || 'Neznámý obchodník';
                   const txType = tx.type || (tx.col3 && tx.col3[0]) || 'Platba';
                   const isNegative = String(tx.amount).includes('-') || tx.val < 0;
+                  const initial = txName.charAt(0).toUpperCase();
                   
                   const amountNum = getNumericAmount(tx);
                   const uiAmount = new Intl.NumberFormat('cs-CZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(amountNum);
 
-                  let iconBg = 'bg-[#3e424c]';
-                  let iconContent = <span className="text-[18px] font-bold text-white">{txName.charAt(0).toUpperCase()}</span>;
-
-                  if (txName.toUpperCase().includes('TRAFICON')) {
-                    iconBg = 'bg-white';
-                    iconContent = <span className="text-[#00a0e3] text-[9px] font-black">TRAFICON</span>;
-                  } else if (txName.toUpperCase().includes('RAIFFEISEN')) {
-                    iconBg = 'bg-[#ffe600]';
-                    iconContent = <svg className="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 22h5l5-10 5 10h5L12 2zm0 8l-2 4h4l-2-4z"/></svg>;
-                  } else if (!isNegative) {
-                    iconContent = <svg className="w-5 h-5 text-[#ffe600]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>;
-                  }
-
                   return (
-                    <div key={tx.id || index} className={`flex items-center justify-between p-4 ${index !== txs.length - 1 ? 'border-b border-[#3e424c]' : ''} active:bg-[#3e424c]/50 transition-colors`}>
-                      <div className="flex items-center gap-4">
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 relative ${iconBg}`}>
-                          {iconContent}
+                    <div key={tx.id || index} className={`flex items-center justify-between p-4 px-5 ${index !== txs.length - 1 ? 'border-b border-[#3e424c]' : ''} active:bg-[#3e424c]/50 transition-colors`}>
+                      <div className="flex items-center gap-4 min-w-0">
+                        {/* Šedá ikona s iniciálou uprostřed (Obrázek 2) */}
+                        <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 bg-[#424651]">
+                          <span className="text-[20px] font-bold text-white">{initial}</span>
                         </div>
                         <div className="flex-1 overflow-hidden">
-                          <div className="text-[15px] font-medium leading-tight mb-1 truncate">{txName}</div>
-                          <div className="text-[12px] text-gray-400 font-mono truncate">{txType}</div>
+                          <div className="text-[15px] font-medium leading-tight mb-1 truncate text-gray-100">{txName}</div>
+                          <div className="text-[13px] text-gray-400 truncate">{txType}</div>
                         </div>
                       </div>
-                      <div className="text-right shrink-0 ml-2">
-                        <div className={`text-[15px] font-bold ${!isNegative ? 'text-[#4ade80]' : 'text-white'}`}>
-                          {!isNegative ? '+' : '-'} {uiAmount} CZK
+                      <div className="text-right shrink-0 ml-3">
+                        <div className={`text-[15px] font-bold ${!isNegative ? 'text-white' : 'text-gray-100'}`}>
+                          {!isNegative ? '' : '- '}{uiAmount} CZK
                         </div>
                       </div>
                     </div>
@@ -251,7 +252,7 @@ export default function History() {
         </div>
       </main>
 
-      {/* FILTER PANEL */}
+      {/* FILTER PANEL OVERLAY */}
       {isFilterOpen && (
         <div className="fixed inset-0 z-[100] flex flex-col justify-end">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsFilterOpen(false)}></div>
