@@ -11,7 +11,6 @@ export default function Dashboard() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Bezpečné volání HTTPS API s Basic Auth hlavičkou
     fetch('https://opravyslavkov.shop/api/balance', {
       method: 'GET',
       headers: {
@@ -116,25 +115,24 @@ export default function Dashboard() {
           </button>
         </div>
 
-        {/* Debetní karta s vizuálem */}
-        <div onClick={() => navigate('/card')} className="w-full bg-[#2c2f38] rounded-[24px] p-5 shadow-lg active:bg-[#3e424c] transition-colors cursor-pointer flex flex-col justify-between">
-          <div className="flex justify-between items-center w-full mb-6">
+        {/* Debetní karta s vizuálem (S absolutním pozicováním a ořezem) */}
+        <div onClick={() => navigate('/card')} className="w-full bg-[#2c2f38] rounded-[24px] p-5 shadow-lg active:bg-[#3e424c] transition-colors cursor-pointer relative overflow-hidden min-h-[170px] flex flex-col justify-between">
+          <div className="flex justify-between items-center w-full relative z-10">
             <h2 className="font-semibold text-[17px]">Debetní karta</h2>
             <span className="bg-[#3e424c] text-[11px] px-3 py-1.5 rounded-full text-gray-300 tracking-wider uppercase">ZBYNĚK KOCIÁN</span>
           </div>
           
-          <div className="flex justify-between items-end w-full">
-            <div className="flex flex-col gap-3 pb-1">
-              <span className="text-[15px] text-gray-200">Platby na internetu</span>
-              <div className="w-[48px] h-7 rounded-full bg-[#ffe600]/20 border-2 border-[#ffe600] flex items-center px-0.5 justify-end">
-                <div className="w-5 h-5 bg-[#ffe600] rounded-full"></div>
-              </div>
+          <div className="flex flex-col gap-3 relative z-10 pb-1 mt-6">
+            <span className="text-[15px] text-gray-200">Platby na internetu</span>
+            <div className="w-[48px] h-7 rounded-full bg-[#ffe600]/20 border-2 border-[#ffe600] flex items-center px-0.5 justify-end shadow-inner">
+              <div className="w-5 h-5 bg-[#ffe600] rounded-full"></div>
             </div>
+          </div>
             
-            <div className="w-[120px] h-[75px] rounded-lg overflow-hidden shadow-sm relative">
-              <img src={visaImg} alt="Visa Karta" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-black/10"></div>
-            </div>
+          {/* Oříznutý obrázek posunutý zcela doprava */}
+          <div className="absolute right-0 bottom-5 w-[165px] h-[95px] rounded-l-[12px] overflow-hidden">
+            <img src={visaImg} alt="Visa Karta" className="w-full h-full object-cover object-left" />
+            <div className="absolute inset-0 bg-black/10"></div>
           </div>
         </div>
       </main>
