@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import BottomNav from '../components/BottomNav';
 import { Clipboard } from '@capacitor/clipboard';
 import { Toast } from '@capacitor/toast';
+import visaImg from '../assets/rbpic/visa.png';
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -25,7 +26,6 @@ export default function Dashboard() {
       .then(data => setBalance(data.balance))
       .catch(err => console.error("Chyba načítání zůstatku:", err))
       .finally(() => {
-        // Zrušení načítací obrazovky po dokončení požadavku
         setIsLoading(false);
       });
   }, []);
@@ -39,7 +39,6 @@ export default function Dashboard() {
     }
   };
 
-  // Pokud se data načítají, vracíme pouze žlutou obrazovku se světle šedým spinnerem
   if (isLoading) {
     return (
       <div className="fixed inset-0 bg-[#ffe600] flex items-center justify-center z-[9999]">
@@ -68,6 +67,7 @@ export default function Dashboard() {
       </header>
 
       <main className="px-4 space-y-4">
+        {/* Běžný účet */}
         <div className="bg-[#2c2f38] rounded-[24px] p-5 shadow-lg">
           <div className="flex justify-between items-center mb-6">
             <h2 className="font-semibold text-[17px]">Běžný účet</h2>
@@ -90,6 +90,7 @@ export default function Dashboard() {
           </div>
         </div>
 
+        {/* Spořicí účet HIT */}
         <div className="bg-[#2c2f38] rounded-[24px] p-5 shadow-lg">
           <div className="flex justify-between items-center mb-6">
             <h2 className="font-semibold text-[17px]">Spořicí účet HIT</h2>
@@ -115,12 +116,27 @@ export default function Dashboard() {
           </button>
         </div>
 
-        <button onClick={() => navigate('/card')} className="w-full bg-[#2c2f38] rounded-[24px] p-5 shadow-lg min-h-[220px] active:bg-[#3e424c] transition-colors text-left flex flex-col justify-between">
-          <div className="flex justify-between items-center w-full">
+        {/* Debetní karta s vizuálem */}
+        <div onClick={() => navigate('/card')} className="w-full bg-[#2c2f38] rounded-[24px] p-5 shadow-lg active:bg-[#3e424c] transition-colors cursor-pointer flex flex-col justify-between">
+          <div className="flex justify-between items-center w-full mb-6">
             <h2 className="font-semibold text-[17px]">Debetní karta</h2>
             <span className="bg-[#3e424c] text-[11px] px-3 py-1.5 rounded-full text-gray-300 tracking-wider uppercase">ZBYNĚK KOCIÁN</span>
           </div>
-        </button>
+          
+          <div className="flex justify-between items-end w-full">
+            <div className="flex flex-col gap-3 pb-1">
+              <span className="text-[15px] text-gray-200">Platby na internetu</span>
+              <div className="w-[48px] h-7 rounded-full bg-[#ffe600]/20 border-2 border-[#ffe600] flex items-center px-0.5 justify-end">
+                <div className="w-5 h-5 bg-[#ffe600] rounded-full"></div>
+              </div>
+            </div>
+            
+            <div className="w-[120px] h-[75px] rounded-lg overflow-hidden shadow-sm relative">
+              <img src={visaImg} alt="Visa Karta" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/10"></div>
+            </div>
+          </div>
+        </div>
       </main>
       <BottomNav />
     </div>
