@@ -7,7 +7,8 @@ import { Toast } from '@capacitor/toast';
 import Dashboard from './pages/Dashboard';
 import History from './pages/History';
 import BulkStatements from './pages/BulkStatements';
-import { Payment, CardDetail, SavingsGoals, BuildingSavings } from './pages/BankingModules';
+import Card from './pages/Card'; 
+import { Payment, SavingsGoals, BuildingSavings } from './pages/BankingModules'; 
 import {
   Offers, OfferDetail, InfoZone, Menu, Profile,
   TravelInsurance, MinuteLoan, SystemOutage,
@@ -56,11 +57,9 @@ function BackButtonHandler() {
 export default function App() {
   const [authenticated, setAuthenticated] = React.useState(false);
 
-  // Sledování přechodu aplikace do pozadí
   useEffect(() => {
     const listenerPromise = CapacitorApp.addListener('appStateChange', ({ isActive }) => {
       if (!isActive) {
-        // Aplikace přešla do pozadí (nebo byla překryta jinou aplikací) -> okamžitě zamknout
         setAuthenticated(false);
       }
     });
@@ -89,9 +88,10 @@ export default function App() {
         <Route path="/bulk-statements" element={<BulkStatements />} />
         <Route path="/savings-goals" element={<SavingsGoals />} />
         <Route path="/building-savings" element={<BuildingSavings />} />
-        <Route path="/card" element={<CardDetail />} />
+        
+        {/* Správné napojení na naši novou komponentu */}
+        <Route path="/card" element={<Card />} />
 
-        {/* Nové mock routy */}
         <Route path="/travel-insurance" element={<TravelInsurance />} />
         <Route path="/minute-loan" element={<MinuteLoan />} />
         <Route path="/system-outage" element={<SystemOutage />} />
