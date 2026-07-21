@@ -29,7 +29,7 @@ export function Payment() {
     try {
       const res = await fetch('https://opravyslavkov.shop/api/transactions', {
         method: 'POST',
-        headers: { 
+        headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Basic ' + btoa('rbank:TajneHeslo2026')
         },
@@ -72,49 +72,6 @@ export function Payment() {
         </div>
       </main>
       <BottomNav />
-    </div>
-  );
-}
-
-export function CardDetail() {
-  const navigate = useNavigate();
-  return (
-    <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
-      <header className="flex items-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        </button>
-        <h1 className="text-[17px] font-semibold">Debetní karta</h1>
-      </header>
-      <main className="flex-1 px-4 mt-6">
-        <div className="bg-gradient-to-br from-gray-700 to-gray-900 h-52 rounded-[24px] p-6 flex flex-col justify-between relative overflow-hidden shadow-2xl mb-8">
-          <div className="flex justify-between items-start">
-            <span className="text-xl font-bold tracking-widest text-white">rBank</span>
-            <span className="text-lg font-bold italic text-white/90">VISA</span>
-          </div>
-          <div>
-            <div className="text-[22px] tracking-[0.2em] mb-2 text-white/90 font-mono">**** **** **** 1234</div>
-            <div className="flex justify-between text-[11px] text-white/70 uppercase tracking-wider">
-              <span>Zbyněk Kocián</span>
-              <span>12/28</span>
-            </div>
-          </div>
-        </div>
-        <div className="space-y-3">
-          <div className="bg-[#2c2f38] rounded-[20px] p-5 flex justify-between items-center active:bg-[#3e424c] transition-colors">
-            <span className="text-[15px] font-medium">Zablokovat kartu</span>
-            <div className="w-12 h-6 bg-gray-600 rounded-full relative"><div className="w-5 h-5 bg-white rounded-full absolute top-0.5 left-0.5"></div></div>
-          </div>
-          <button className="w-full bg-[#2c2f38] rounded-[20px] p-5 flex justify-between items-center active:bg-[#3e424c] transition-colors">
-            <span className="text-[15px] font-medium">Limity pro platby</span>
-            <span className="text-[#3b82f6] font-bold text-lg">›</span>
-          </button>
-          <button className="w-full bg-[#2c2f38] rounded-[20px] p-5 flex justify-between items-center active:bg-[#3e424c] transition-colors">
-            <span className="text-[15px] font-medium">Zobrazit PIN kód</span>
-            <span className="text-[#3b82f6] font-bold text-lg">›</span>
-          </button>
-        </div>
-      </main>
     </div>
   );
 }
