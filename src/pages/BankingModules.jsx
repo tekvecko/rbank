@@ -111,7 +111,7 @@ export function SavingsGoals() {
           onContextMenu={(e) => e.preventDefault()} // Zabránění zobrazení systémového menu
         >
           <div className="flex justify-between items-center mb-2">
-            <span className="font-semibold text-[17px]">Rezerva na horší časy</span>
+            <span className="font-semibold text-[17px]">Nastavený cíl</span>
             <span className="bg-[#3e424c] text-[11px] px-3 py-1.5 rounded-full text-gray-300">CÍL: 100 000 CZK</span>
           </div>
           
