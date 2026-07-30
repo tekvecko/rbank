@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import BottomNav from '../components/BottomNav';
 
@@ -66,19 +66,30 @@ export function Payment() {
   );
 }
 
-// --- DYNAMICKÉ SPOŘICÍ CÍLE S POSUVNÍKEM ---
+// --- DYNAMICKÉ SPOŘICÍ CÍLE S GESTEM DLOUHÉHO STISKU ---
 export function SavingsGoals() {
   const navigate = useNavigate();
-  // Stav pro naspořenou částku (výchozí 45 000 CZK) a editační mód
   const [currentAmount, setCurrentAmount] = useState(45000);
-  const [isEditing, setIsEditing] = useState(false);
+  const [isUnlocked, setIsUnlocked] = useState(false);
   const targetAmount = 100000;
-  
-  // Výpočet procenta splnění pro progress bar (max 100)
-  const percentage = Math.min(100, Math.round((currentAmount / targetAmount) * 100));
+  const pressTimer = useRef(null);
 
-  // Formátování pro hezký výpis s mezerami tisíců (např. 45 000)
+  const percentage = Math.min(100, Math.max(0, Math.round((currentAmount / targetAmount) * 100)));
   const formattedAmount = currentAmount.toLocaleString('cs-CZ');
+
+  // Logika pro detekci 1s podržení
+  const handlePointerDown = () => {
+    if (isUnlocked) return;
+    pressTimer.current = setTimeout(() => {
+      setIsUnlocked(true);
+      // Pokud telefon podporuje vibrace, dá jemnou odezvu o odemčení
+      if (navigator.vibrate) navigator.vibrate(50);
+    }, 1000);
+  };
+
+  const clearTimer = () => {
+    if (pressTimer.current) clearTimeout(pressTimer.current);
+  };
 
   return (
     <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
@@ -88,38 +99,36 @@ export function SavingsGoals() {
         </button>
         <h1 className="text-[17px] font-semibold">Spořicí cíle</h1>
       </header>
-      <main className="flex-1 px-4 mt-6">
+      <main className="flex-1 px-4 mt-6 select-none">
         
-        {/* Vizuální panel (reaguje na posuvník) */}
-        <div className="bg-[#2c2f38] rounded-[24px] p-5 shadow-lg mb-6">
+        {/* Hlavní karta - zachytává doteky */}
+        <div 
+          className={`bg-[#2c2f38] rounded-[24px] p-5 shadow-lg mb-6 transition-all duration-300 relative ${isUnlocked ? 'border border-[#ffe600] shadow-[#ffe600]/10' : 'border border-transparent'}`}
+          onPointerDown={handlePointerDown}
+          onPointerUp={clearTimer}
+          onPointerLeave={clearTimer}
+          onPointerCancel={clearTimer}
+          onContextMenu={(e) => e.preventDefault()} // Zabránění zobrazení systémového menu
+        >
           <div className="flex justify-between items-center mb-2">
             <span className="font-semibold text-[17px]">Rezerva na horší časy</span>
             <span className="bg-[#3e424c] text-[11px] px-3 py-1.5 rounded-full text-gray-300">CÍL: 100 000 CZK</span>
           </div>
+          
           <div className="text-[32px] font-bold mb-4 text-[#ffe600] tracking-tight">
             {formattedAmount} <span className="text-[17px] text-[#ffe600]">CZK</span>
           </div>
-          <div className="w-full bg-[#22252e] h-3 rounded-full overflow-hidden border border-gray-700">
+          
+          {/* Obal progres baru a neviditelného slideru */}
+          <div className="relative w-full h-4 bg-[#22252e] rounded-full overflow-hidden border border-gray-700 mt-2">
+            
+            {/* Vizuální plnící se pruh */}
             <div 
-              className="bg-[#ffe600] h-full rounded-full transition-all duration-300 ease-out" 
+              className="absolute top-0 left-0 h-full bg-[#ffe600] rounded-full pointer-events-none transition-all duration-100 ease-out" 
               style={{ width: `${percentage}%` }}
             ></div>
-          </div>
-          <p className="text-[13px] text-gray-400 mt-3 text-right">{percentage} % splněno</p>
-        </div>
 
-        {/* Přepínač editačního módu */}
-        {!isEditing ? (
-          <button 
-            onClick={() => setIsEditing(true)} 
-            className="w-full border-2 border-dashed border-gray-600 text-[#3b82f6] py-5 rounded-[24px] flex items-center justify-center gap-2 font-medium active:bg-[#2c2f38] transition-colors"
-          >
-            Upravit zůstatek (Lokální Demo)
-          </button>
-        ) : (
-          <div className="bg-[#2c2f38] rounded-[24px] p-6 shadow-lg border border-[#3e424c]">
-            <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-6 text-center">Nastavení lokálního zůstatku</h3>
-            
+            {/* Fyzický (skrytý) posuvník, který se zaktivuje až po odemčení */}
             <input 
               type="range" 
               min="0" 
@@ -127,16 +136,31 @@ export function SavingsGoals() {
               step="1000"
               value={currentAmount} 
               onChange={(e) => setCurrentAmount(Number(e.target.value))}
-              className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer mb-6 accent-[#ffe600]"
+              disabled={!isUnlocked}
+              className={`absolute inset-0 w-full h-full opacity-0 m-0 p-0 ${isUnlocked ? 'cursor-pointer' : 'pointer-events-none'}`}
             />
-            
-            <button 
-              onClick={() => setIsEditing(false)} 
-              className="w-full bg-[#3b82f6] hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition-colors shadow-lg shadow-blue-500/20"
-            >
-              Dokončit úpravy
-            </button>
           </div>
+
+          <div className="flex justify-between items-center mt-3">
+            <span className={`text-[12px] font-bold transition-opacity duration-300 ${isUnlocked ? 'text-[#ffe600] animate-pulse' : 'opacity-0'}`}>
+              Úprava aktivní
+            </span>
+            <p className="text-[13px] text-gray-400 text-right">{percentage} % splněno</p>
+          </div>
+        </div>
+
+        {/* Spodní tlačítko se mění podle stavu uzamčení */}
+        {!isUnlocked ? (
+          <button onClick={() => window.open('https://www.rb.cz/osobni/sporeni', '_system')} className="w-full border-2 border-dashed border-gray-600 text-[#3b82f6] py-5 rounded-[24px] flex items-center justify-center gap-2 font-medium active:bg-[#2c2f38] transition-colors">
+            <span className="text-2xl leading-none mb-1">+</span> Založit nový cíl na rb.cz
+          </button>
+        ) : (
+          <button 
+            onClick={() => setIsUnlocked(false)} 
+            className="w-full bg-[#ffe600] text-black py-4 rounded-[24px] font-semibold active:bg-[#e6cf00] transition-colors shadow-lg"
+          >
+            Uložit a uzamknout
+          </button>
         )}
 
       </main>
