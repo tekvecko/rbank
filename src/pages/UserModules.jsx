@@ -1,17 +1,11 @@
 import React from 'react';
-import {  useNavigate , useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import BottomNav from '../components/BottomNav';
 import ContactInfo from './profile/ContactInfo';
 import PersonalInfo from './profile/PersonalInfo';
 import ClientId from './profile/ClientId';
 import Documents from './profile/Documents';
 import BankId from './profile/BankId';
-
-
-
-// ==========================================
-// PŮVODNÍ KOMPONENTY (UPRAVENÉ IKONY A ODKAZY)
-// ==========================================
 
 export function Offers() {
   const navigate = useNavigate();
@@ -63,7 +57,6 @@ export function Offers() {
 export function OfferDetail() {
   const navigate = useNavigate();
   const location = useLocation();
-  // Dynamický nadpis podle toho, na jakou kartu uživatel kliknul
   const title = location.state?.title || 'Tipy pro Vás';
 
   return (
@@ -86,8 +79,31 @@ export function OfferDetail() {
   );
 }
 
+// --- DYNAMICKÁ INFOZÓNA NAPOJENÁ NA BACKEND ---
 export function InfoZone() {
   const navigate = useNavigate();
+  const [news, setNews] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    // Voláme náš vlastní backend s autorizací
+    fetch('https://opravyslavkov.shop/api/infozone', {
+      headers: {
+        'Authorization': 'Basic ' + btoa('rbank:TajneHeslo2026')
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        setNews(Array.isArray(data) ? data : []);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error('Chyba při načítání InfoZóny:', err);
+        setNews([{ title: 'Chyba připojení', text: 'Nepodařilo se navázat spojení se serverem.' }]);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#22252e] text-white pb-24 font-sans flex flex-col">
       <header className="flex items-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
@@ -97,25 +113,24 @@ export function InfoZone() {
         <h1 className="text-[17px] font-semibold">InfoZóna</h1>
       </header>
       <main className="flex-1 px-4 mt-6 space-y-3">
-        <button onClick={() => navigate('/system-outage')} className="w-full bg-[#2c2f38] rounded-[20px] p-4 flex gap-4 items-start relative text-left active:bg-[#3e424c] transition-colors">
-          <div className="w-2 h-2 bg-[#3b82f6] rounded-full mt-1.5 absolute right-4"></div>
-          <div className="w-10 h-10 bg-[#3e424c] rounded-full flex items-center justify-center shrink-0 text-[#ffe600]">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-          </div>
-          <div>
-            <h3 className="text-[15px] font-semibold mb-1 pr-4">Odstávka systémů</h3>
-            <p className="text-[13px] text-gray-400">Tento víkend proběhne plánovaná údržba. Platby kartou nebudou omezeny.</p>
-          </div>
-        </button>
-        <div className="bg-[#2c2f38] rounded-[20px] p-4 flex gap-4 items-start opacity-70">
-          <div className="w-10 h-10 bg-[#3e424c] rounded-full flex items-center justify-center shrink-0 text-gray-300">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
-          </div>
-          <div>
-            <h3 className="text-[15px] font-semibold mb-1">Nová verze aplikace</h3>
-            <p className="text-[13px] text-gray-400">Přidali jsme tmavý režim a vylepšili historii plateb.</p>
-          </div>
-        </div>
+        {loading ? (
+          <div className="text-center text-gray-400 mt-10 text-sm">Načítám aktuální zprávy...</div>
+        ) : (
+          news.map((item, index) => (
+            <div key={index} className={`bg-[#2c2f38] rounded-[20px] p-4 flex gap-4 items-start relative text-left ${index === 0 ? 'active:bg-[#3e424c] transition-colors' : 'opacity-70'}`}>
+              {index === 0 && (
+                <div className="w-2 h-2 bg-[#3b82f6] rounded-full mt-1.5 absolute right-4"></div>
+              )}
+              <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${index === 0 ? 'bg-[#3e424c] text-[#ffe600]' : 'bg-[#3e424c] text-gray-300'}`}>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+              </div>
+              <div>
+                <h3 className="text-[15px] font-semibold mb-1 pr-4">{item.title}</h3>
+                <p className="text-[13px] text-gray-400 leading-snug">{item.text}</p>
+              </div>
+            </div>
+          ))
+        )}
       </main>
       <BottomNav />
     </div>
@@ -176,7 +191,6 @@ export function Profile() {
       </header>
 
       <main className="flex-1 px-4 mt-2 flex flex-col">
-        {/* Avatar & Jméno */}
         <div className="flex items-center gap-4 mb-8 px-2">
           <div className="relative">
             <div className="w-[68px] h-[68px] bg-[#3e424c] rounded-full flex items-center justify-center">
@@ -189,7 +203,6 @@ export function Profile() {
           <h2 className="text-[22px] font-bold">Zbyněk Kocián</h2>
         </div>
 
-        {/* Hlavní navigace s původními ikonami */}
         <div className="w-full bg-[#2c2f38] rounded-[24px] mb-6 overflow-hidden">
           <button onClick={() => setView('contact')} className="w-full p-4 border-b border-[#3e424c] flex items-center gap-4 active:bg-[#3e424c]/50 transition-colors">
             <svg className="w-[22px] h-[22px] text-gray-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
@@ -218,7 +231,6 @@ export function Profile() {
           </button>
         </div>
 
-        {/* Sekce Kontakty na banku */}
         <div className="w-full bg-[#2c2f38] rounded-[24px] p-5 mb-6">
           <h3 className="text-[17px] font-bold mb-5">Kontakty na banku</h3>
           <div className="grid grid-cols-3 gap-3 mb-6">
@@ -246,19 +258,8 @@ export function Profile() {
             <span className="flex-1 text-left text-[14px] font-medium text-gray-200">Schůzky a výběry na pobočce</span>
             <span className="text-[#ffe600] font-bold">›</span>
           </button>
-          <div className="flex justify-center gap-4">
-            <button className="w-10 h-10 rounded-full bg-[#3e424c] flex items-center justify-center text-gray-300 font-bold font-serif active:opacity-70">f</button>
-            <button className="w-10 h-10 rounded-full bg-[#3e424c] flex items-center justify-center text-gray-300 font-bold active:opacity-70">X</button>
-            <button className="w-10 h-10 rounded-full bg-[#3e424c] flex items-center justify-center text-gray-300 active:opacity-70">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect width="16" height="16" x="4" y="4" rx="4"/><circle cx="12" cy="12" r="3"/><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 7.5v.001"/></svg>
-            </button>
-            <button className="w-10 h-10 rounded-full bg-[#3e424c] flex items-center justify-center text-gray-300 active:opacity-70">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path strokeLinecap="round" strokeLinejoin="round" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-            </button>
-          </div>
         </div>
 
-        {/* Odhlásit se */}
         <button className="w-full flex items-center justify-center gap-2 border border-[#3e424c] text-gray-300 font-semibold py-[14px] rounded-[14px] active:bg-[#3e424c]/50 transition-colors">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
           Odhlásit se
@@ -267,10 +268,6 @@ export function Profile() {
     </div>
   );
 }
-
-// ==========================================
-// NOVÉ MOCK KOMPONENTY PRO PROTOTYP
-// ==========================================
 
 export function TravelInsurance() {
   const navigate = useNavigate();
@@ -339,10 +336,6 @@ export function SystemOutage() {
           <p className="text-gray-300 text-sm leading-relaxed mb-4">
             Vážený kliente, z důvodu vylepšování našich bankovních služeb proběhne o víkendu plánovaná technická odstávka.
           </p>
-          <div className="bg-[#22252e] p-3 rounded-xl text-sm space-y-2">
-            <div className="flex justify-between"><span className="text-gray-400">Začátek:</span><span>So 18. 7. 2026, 23:00</span></div>
-            <div className="flex justify-between"><span className="text-gray-400">Konec:</span><span>Ne 19. 7. 2026, 04:00</span></div>
-          </div>
         </div>
       </main>
     </div>
@@ -384,14 +377,9 @@ export function ExchangeRates() {
   );
 }
 
-
 export function Settings() {
   const navigate = useNavigate();
-  const [settings, setSettings] = React.useState({
-    push: true,
-    biometric: true,
-    darkMode: true
-  });
+  const [settings, setSettings] = React.useState({ push: true, biometric: true, darkMode: true });
 
   React.useEffect(() => {
     async function load() {
@@ -446,7 +434,7 @@ export function Settings() {
 export function BranchesATMs() {
   const navigate = useNavigate();
   const rbUrl = "https://www.rb.cz/o-nas/kontakty/pobocky-a-bankomaty?atm=false&branchSegment=PERSONALFINANCE&openNow=false&openNonStop=false&openEveningsOrWeekend=false&barrierfree=false&cashDesk=false&depositAtm=false&depositRbAtm=false&contactlessAtm=false";
-  
+
   return (
     <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
       <header className="flex items-center p-4 pt-8 pb-4">
@@ -457,12 +445,11 @@ export function BranchesATMs() {
       </header>
       <main className="p-4 mt-2">
         <div className="bg-[#2c2f38] p-5 rounded-[20px] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white/[0.03] rounded-full -mr-16 -mt-16 pointer-events-none"></div>
           <div className="flex items-start gap-4 mb-6 relative z-10">
             <svg className="w-5 h-5 text-gray-400 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             <div>
               <h2 className="text-[16px] font-bold text-white mb-1">Brno - Olympia</h2>
-              <p className="text-[14px] text-gray-400 leading-tight">Olympia U Dálnice 777, 664 42 Brno<br/>Otevřeno do 21:00</p>
+              <p className="text-[14px] text-gray-400 leading-tight">Olympia U Dálnice 777, 664 42 Brno</p>
             </div>
           </div>
           <div className="flex gap-3 relative z-10">
@@ -486,18 +473,6 @@ export function AppSettings() {
         <h1 className="text-[17px] font-semibold">Nastavení</h1>
       </header>
       <main className="flex-1 px-4 mt-6 space-y-3">
-        <div className="bg-[#2c2f38] rounded-[20px] p-5 flex justify-between items-center">
-          <span className="text-[15px] font-medium">Push notifikace</span>
-          <div className="w-12 h-6 bg-[#3b82f6] rounded-full relative"><div className="w-5 h-5 bg-white rounded-full absolute top-0.5 right-0.5"></div></div>
-        </div>
-        <div className="bg-[#2c2f38] rounded-[20px] p-5 flex justify-between items-center">
-          <span className="text-[15px] font-medium">Přihlášení otiskem prstu</span>
-          <div className="w-12 h-6 bg-[#3b82f6] rounded-full relative"><div className="w-5 h-5 bg-white rounded-full absolute top-0.5 right-0.5"></div></div>
-        </div>
-        <div className="bg-[#2c2f38] rounded-[20px] p-5 flex justify-between items-center">
-          <span className="text-[15px] font-medium">Tmavý režim (Vynucený)</span>
-          <div className="w-12 h-6 bg-[#3b82f6] rounded-full relative opacity-50"><div className="w-5 h-5 bg-white rounded-full absolute top-0.5 right-0.5"></div></div>
-        </div>
       </main>
     </div>
   );
@@ -526,4 +501,3 @@ export function Support() {
     </div>
   );
 }
-
