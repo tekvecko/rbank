@@ -1,30 +1,47 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Preferences } from '@capacitor/preferences';
 import BottomNav from '../components/BottomNav';
 import { getTransactions, getBalance } from '../services/api';
 
 export default function History() {
   const navigate = useNavigate();
-  
+
   const [transactions, setTransactions] = useState([]);
   const [balance, setBalance] = useState(0);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
-
+  
+  // Uživatelské nastavení časového období z Preferences
+  const [historyPeriod, setHistoryPeriod] = useState('all');
+  
   const [searchQuery, setSearchQuery] = useState('');
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [activeFilter, setActiveFilter] = useState({ direction: null, amount: null, period: null });
-  const [tempFilter, setTempFilter] = useState({ direction: null, amount: null, period: null });
+  const [activeFilter, setActiveFilter] = useState({ direction: null, amount: null });
+  const [tempFilter, setTempFilter] = useState({ direction: null, amount: null });
 
   const loaderRef = useRef(null);
   const loadingRef = useRef(false);
 
+  // Načtení uživatelského nastavení z paměti telefonu
+  useEffect(() => {
+    const loadSettings = async () => {
+      try {
+        const saved = await Preferences.get({ key: 'user_settings' });
+        if (saved.value) {
+          const parsed = JSON.parse(saved.value);
+          if (parsed.historyPeriod) setHistoryPeriod(parsed.historyPeriod);
+        }
+      } catch (e) { console.warn('Nepodařilo se načíst preference', e); }
+    };
+    loadSettings();
+  }, []);
+
   // Načtení dat (zůstatek + historie)
   useEffect(() => {
     let isMounted = true;
-    
-    // Zůstatek načteme jen jednou při prvním renderu
+
     if (page === 1) {
       getBalance().then(bal => {
         if (isMounted) setBalance(bal);
@@ -35,7 +52,7 @@ export default function History() {
       if (loadingRef.current || !hasMore) return;
       loadingRef.current = true;
       setIsLoading(true);
-      
+
       try {
         const newData = await getTransactions(page, 15);
         if (isMounted) {
@@ -78,7 +95,7 @@ export default function History() {
   const handleOpenFilter = () => { setTempFilter(activeFilter); setIsFilterOpen(true); };
   const handleApplyFilter = () => { setActiveFilter(tempFilter); setIsFilterOpen(false); };
   const handleClearFilter = () => {
-    const empty = { direction: null, amount: null, period: null };
+    const empty = { direction: null, amount: null };
     setTempFilter(empty); setActiveFilter(empty); setIsFilterOpen(false);
   };
 
@@ -90,6 +107,22 @@ export default function History() {
 
   const filteredTransactions = useMemo(() => {
     let result = transactions;
+
+    // 1. ZÁKLADNÍ ČASOVÝ FILTR Z NASTAVENÍ (historyPeriod)
+    if (historyPeriod && historyPeriod !== 'all') {
+      const now = new Date();
+      let cutoff = new Date();
+      
+      if (historyPeriod === 'week') cutoff.setDate(now.getDate() - 7);
+      else if (historyPeriod === 'month') cutoff.setMonth(now.getMonth() - 1);
+      else if (historyPeriod === '2months') cutoff.setMonth(now.getMonth() - 2);
+      else if (historyPeriod === 'year') cutoff.setFullYear(now.getFullYear() - 1);
+
+      result = result.filter(tx => {
+        const txDate = tx.created_at ? new Date(tx.created_at) : new Date();
+        return txDate >= cutoff;
+      });
+    }
 
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
@@ -112,7 +145,7 @@ export default function History() {
     else if (activeFilter.amount === 'nad5000') result = result.filter(tx => getNumericAmount(tx) > 5000);
 
     return result;
-  }, [transactions, searchQuery, activeFilter]);
+  }, [transactions, searchQuery, activeFilter, historyPeriod]);
 
   const groupedTransactions = useMemo(() => {
     const groups = {};
@@ -123,7 +156,7 @@ export default function History() {
     filteredTransactions.forEach(tx => {
       let dateObj = tx.created_at ? new Date(tx.created_at) : new Date();
       let dateLabel = dateObj.toLocaleDateString('cs-CZ', { day: 'numeric', month: 'long', weekday: 'long' }).toUpperCase();
-      
+
       if (dateObj.toDateString() === today.toDateString()) dateLabel = 'DNES';
       else if (dateObj.toDateString() === yesterday.toDateString()) dateLabel = 'VČERA';
 
@@ -139,15 +172,14 @@ export default function History() {
     </button>
   );
 
-  // Formátování dynamického zůstatku
-  const formattedBalance = new Intl.NumberFormat('cs-CZ', { 
-    minimumFractionDigits: 2, 
-    maximumFractionDigits: 2 
+  const formattedBalance = new Intl.NumberFormat('cs-CZ', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
   }).format(balance);
 
   return (
     <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col pb-24 relative overflow-x-hidden">
-      
+
       <header className="flex items-center p-4 pt-8 relative">
         <button onClick={() => navigate(-1)} className="text-[#ffe600] p-2 -ml-2 active:bg-[#2c2f38] rounded-full absolute left-4">
           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
@@ -156,7 +188,6 @@ export default function History() {
       </header>
 
       <main className="flex-1 px-4 mt-2">
-        {/* Karta účtu (Zůstatek propojen s AWS) */}
         <div className="bg-[#2c2f38] rounded-[20px] p-5 mb-6">
           <div className="flex justify-between items-center mb-4">
             <span className="text-[15px] font-medium text-gray-200">Běžný účet</span>
@@ -176,24 +207,23 @@ export default function History() {
           <h2 className="text-[18px] font-bold">Poslední pohyby</h2>
           <button onClick={handleOpenFilter} className="text-[#ffe600] text-[15px] font-medium active:opacity-70 flex items-center gap-1">
             Filtrovat
-            {(activeFilter.direction || activeFilter.amount || activeFilter.period) && (
+            {(activeFilter.direction || activeFilter.amount) && (
               <span className="w-2 h-2 bg-red-500 rounded-full inline-block"></span>
             )}
           </button>
         </div>
 
         <div className="bg-[#22252e] border border-[#4a4f5a] rounded-[12px] flex items-center px-4 py-3 mb-6 focus-within:border-[#ffe600] transition-colors">
-          <svg className="w-5 h-5 text-gray-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-          <input 
-            type="text" 
-            placeholder="Číslo účtu, příjemce, nebo částka" 
+          <svg className="w-5 h-5 text-gray-400 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <input
+            type="text"
+            placeholder="Číslo účtu, příjemce, nebo částka"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="bg-transparent border-none outline-none text-[15px] text-white w-full placeholder-gray-400 font-sans"
           />
         </div>
 
-        {/* Historie plateb (Styl podle Obrázku 2) */}
         <div className="space-y-6">
           {Object.entries(groupedTransactions).map(([date, txs]) => (
             <div key={date}>
@@ -204,14 +234,12 @@ export default function History() {
                   const txType = tx.type || (tx.col3 && tx.col3[0]) || 'Platba';
                   const isNegative = String(tx.amount).includes('-') || tx.val < 0;
                   const initial = txName.charAt(0).toUpperCase();
-                  
                   const amountNum = getNumericAmount(tx);
                   const uiAmount = new Intl.NumberFormat('cs-CZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(amountNum);
 
                   return (
                     <div key={tx.id || index} className={`flex items-center justify-between p-4 px-5 ${index !== txs.length - 1 ? 'border-b border-[#3e424c]' : ''} active:bg-[#3e424c]/50 transition-colors`}>
                       <div className="flex items-center gap-4 min-w-0">
-                        {/* Šedá ikona s iniciálou uprostřed (Obrázek 2) */}
                         <div className="w-12 h-12 rounded-full flex items-center justify-center shrink-0 bg-[#424651]">
                           <span className="text-[20px] font-bold text-white">{initial}</span>
                         </div>
@@ -231,9 +259,9 @@ export default function History() {
               </div>
             </div>
           ))}
-          
+
           {Object.keys(groupedTransactions).length === 0 && !isLoading && (
-            <div className="text-center text-gray-400 py-8 text-[15px]">Žádné platby nenalezeny.</div>
+            <div className="text-center text-gray-400 py-8 text-[15px]">Žádné platby pro zvolené období nenalezeny.</div>
           )}
 
           {hasMore && (
@@ -252,7 +280,6 @@ export default function History() {
         </div>
       </main>
 
-      {/* FILTER PANEL OVERLAY */}
       {isFilterOpen && (
         <div className="fixed inset-0 z-[100] flex flex-col justify-end">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setIsFilterOpen(false)}></div>
@@ -263,7 +290,7 @@ export default function History() {
                 <button onClick={() => setIsFilterOpen(false)} className="absolute left-0 text-[#ffe600] p-2 -ml-2 active:opacity-70">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
-                <h2 className="text-[17px] font-semibold">Filtr</h2>
+                <h2 className="text-[17px] font-semibold">Ruční filtr</h2>
               </div>
             </div>
 

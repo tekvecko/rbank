@@ -25,10 +25,8 @@ export function Offers() {
       <header className="flex items-center justify-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
         <h1 className="text-[17px] font-semibold">Nabídky</h1>
       </header>
-
       <main className="px-4 mt-6">
         <h2 className="text-xl font-bold mb-6 text-white">Vyberte kategorii</h2>
-
         <div className="grid grid-cols-2 gap-4">
           {categories.map((cat) => (
             <button
@@ -69,28 +67,22 @@ export function OfferDetail() {
         </button>
         <h1 className="flex-1 text-center text-[17px] font-semibold pr-8">{title}</h1>
       </header>
-
       <main className="flex-1 flex items-center justify-center -mt-20">
         <p className="text-[15px] text-gray-200">Nemáte žádné nabídky.</p>
       </main>
-
       <BottomNav />
     </div>
   );
 }
 
-// --- DYNAMICKÁ INFOZÓNA NAPOJENÁ NA BACKEND ---
 export function InfoZone() {
   const navigate = useNavigate();
   const [news, setNews] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    // Voláme náš vlastní backend s autorizací
     fetch('https://opravyslavkov.shop/api/infozone', {
-      headers: {
-        'Authorization': 'Basic ' + btoa('rbank:TajneHeslo2026')
-      }
+      headers: { 'Authorization': 'Basic ' + btoa('rbank:TajneHeslo2026') }
     })
       .then(res => res.json())
       .then(data => {
@@ -118,9 +110,7 @@ export function InfoZone() {
         ) : (
           news.map((item, index) => (
             <div key={index} className={`bg-[#2c2f38] rounded-[20px] p-4 flex gap-4 items-start relative text-left ${index === 0 ? 'active:bg-[#3e424c] transition-colors' : 'opacity-70'}`}>
-              {index === 0 && (
-                <div className="w-2 h-2 bg-[#3b82f6] rounded-full mt-1.5 absolute right-4"></div>
-              )}
+              {index === 0 && <div className="w-2 h-2 bg-[#3b82f6] rounded-full mt-1.5 absolute right-4"></div>}
               <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${index === 0 ? 'bg-[#3e424c] text-[#ffe600]' : 'bg-[#3e424c] text-gray-300'}`}>
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
               </div>
@@ -202,7 +192,6 @@ export function Profile() {
           </div>
           <h2 className="text-[22px] font-bold">Zbyněk Kocián</h2>
         </div>
-
         <div className="w-full bg-[#2c2f38] rounded-[24px] mb-6 overflow-hidden">
           <button onClick={() => setView('contact')} className="w-full p-4 border-b border-[#3e424c] flex items-center gap-4 active:bg-[#3e424c]/50 transition-colors">
             <svg className="w-[22px] h-[22px] text-gray-400" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
@@ -230,7 +219,6 @@ export function Profile() {
             <span className="text-[#ffe600] font-bold">›</span>
           </button>
         </div>
-
         <div className="w-full bg-[#2c2f38] rounded-[24px] p-5 mb-6">
           <h3 className="text-[17px] font-bold mb-5">Kontakty na banku</h3>
           <div className="grid grid-cols-3 gap-3 mb-6">
@@ -259,12 +247,135 @@ export function Profile() {
             <span className="text-[#ffe600] font-bold">›</span>
           </button>
         </div>
-
         <button className="w-full flex items-center justify-center gap-2 border border-[#3e424c] text-gray-300 font-semibold py-[14px] rounded-[14px] active:bg-[#3e424c]/50 transition-colors">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
           Odhlásit se
         </button>
       </main>
+    </div>
+  );
+}
+
+// --- NOVÉ NASTAVENÍ S ROZŠÍŘENÝM MENU ---
+export function Settings() {
+  const navigate = useNavigate();
+  const [settings, setSettings] = React.useState({
+    push: true,
+    biometric: true,
+    darkMode: true,
+    historyPeriod: 'all', // Výchozí stav pro historii
+    foreignPayments: false // Výchozí stav pro zahraniční platby
+  });
+  const [activeDialog, setActiveDialog] = React.useState(null);
+
+  React.useEffect(() => {
+    async function load() {
+      try {
+        const { Preferences } = await import('@capacitor/preferences');
+        const saved = await Preferences.get({ key: 'user_settings' });
+        if (saved.value) setSettings(JSON.parse(saved.value));
+      } catch (e) {
+        console.warn('Preferences plugin not available');
+      }
+    }
+    load();
+  }, []);
+
+  const saveSettings = async (newSettings) => {
+    setSettings(newSettings);
+    try {
+      const { Preferences } = await import('@capacitor/preferences');
+      await Preferences.set({ key: 'user_settings', value: JSON.stringify(newSettings) });
+    } catch (e) {
+      console.warn('Preferences plugin not available', e);
+    }
+  };
+
+  const toggle = (key) => saveSettings({ ...settings, [key]: !settings[key] });
+  const setHistory = (val) => { saveSettings({ ...settings, historyPeriod: val }); setActiveDialog(null); };
+
+  return (
+    <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col relative">
+      <header className="flex items-center p-4 pt-8 pb-4 relative">
+        <button onClick={() => navigate(-1)} className="text-[#3b82f6] p-2 active:bg-[#2c2f38] rounded-full absolute left-4">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        </button>
+        <h1 className="text-[16px] font-semibold w-full text-center">Nastavení</h1>
+        
+        {/* Tlačítko 3 tečky */}
+        <button onClick={() => setActiveDialog('menu')} className="text-[#3b82f6] p-2 active:bg-[#2c2f38] rounded-full absolute right-4">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+          </svg>
+        </button>
+      </header>
+      
+      <main className="p-4 space-y-4 mt-2">
+        {[
+          { id: 'push', label: 'Push notifikace' },
+          { id: 'biometric', label: 'Přihlášení otiskem prstu' },
+          { id: 'darkMode', label: 'Tmavý režim (Vynucený)' }
+        ].map(s => (
+          <div key={s.id} className="bg-[#2c2f38] p-5 rounded-[18px] flex justify-between items-center">
+            <span className="font-semibold text-[15px]">{s.label}</span>
+            <button onClick={() => toggle(s.id)} className={`w-12 h-[26px] rounded-full transition-colors relative ${settings[s.id] ? 'bg-[#3b82f6]' : 'bg-[#424651]'}`}>
+              <div className={`w-5 h-5 ${settings[s.id] ? 'bg-white' : 'bg-gray-400'} rounded-full absolute top-[3px] transition-all ${settings[s.id] ? 'left-[25px]' : 'left-[3px]'}`}></div>
+            </button>
+          </div>
+        ))}
+      </main>
+
+      {/* OVERLAY DIALOGY (Menu, Historie, Platby) */}
+      {activeDialog && (
+        <div className="fixed inset-0 z-50 flex flex-col justify-end">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setActiveDialog(null)}></div>
+          <div className="bg-[#353841] w-full rounded-t-[24px] p-6 relative z-10 shadow-2xl space-y-4">
+            
+            {activeDialog === 'menu' && (
+              <>
+                <h3 className="font-bold text-lg mb-4 text-center">Další možnosti</h3>
+                <button onClick={() => setActiveDialog('history')} className="w-full bg-[#2c2f38] p-4 rounded-xl font-medium active:bg-[#3e424c] transition-colors border border-[#424651]">Nastavení Historie</button>
+                <button onClick={() => setActiveDialog('payments')} className="w-full bg-[#2c2f38] p-4 rounded-xl font-medium active:bg-[#3e424c] transition-colors border border-[#424651]">Rozšířené Platby</button>
+                <button onClick={() => setActiveDialog(null)} className="w-full mt-2 text-gray-400 py-3 font-medium active:text-white">Zrušit</button>
+              </>
+            )}
+
+            {activeDialog === 'history' && (
+              <>
+                <h3 className="font-bold text-lg mb-4 text-center">Zobrazit historii za</h3>
+                {[
+                  { id: 'week', label: 'Poslední týden' },
+                  { id: 'month', label: 'Poslední měsíc' },
+                  { id: '2months', label: 'Poslední 2 měsíce' },
+                  { id: 'year', label: 'Poslední rok' },
+                  { id: 'all', label: 'Všechny záznamy' }
+                ].map(opt => (
+                  <button key={opt.id} onClick={() => setHistory(opt.id)} className={`w-full p-4 rounded-xl font-medium text-left transition-colors border ${settings.historyPeriod === opt.id ? 'bg-[#3b82f6]/20 border-[#3b82f6] text-[#3b82f6]' : 'bg-[#2c2f38] border-[#424651] active:bg-[#3e424c]'}`}>
+                    {opt.label}
+                  </button>
+                ))}
+              </>
+            )}
+
+            {activeDialog === 'payments' && (
+              <>
+                <h3 className="font-bold text-lg mb-4 text-center">Nastavení plateb</h3>
+                <div className="bg-[#2c2f38] p-5 rounded-[18px] flex justify-between items-center border border-[#424651]">
+                  <div>
+                    <span className="block font-semibold text-[15px]">Platby do zahraničí</span>
+                    <span className="text-xs text-gray-400">Aktivuje možnost odesílat platby mimo ČR</span>
+                  </div>
+                  <button onClick={() => toggle('foreignPayments')} className={`w-12 h-[26px] rounded-full transition-colors relative shrink-0 ${settings.foreignPayments ? 'bg-[#3b82f6]' : 'bg-[#424651]'}`}>
+                    <div className={`w-5 h-5 ${settings.foreignPayments ? 'bg-white' : 'bg-gray-400'} rounded-full absolute top-[3px] transition-all ${settings.foreignPayments ? 'left-[25px]' : 'left-[3px]'}`}></div>
+                  </button>
+                </div>
+                <button onClick={() => setActiveDialog(null)} className="w-full mt-4 bg-[#3b82f6] text-white py-3 rounded-xl font-medium active:bg-blue-600">Hotovo</button>
+              </>
+            )}
+
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -377,60 +488,6 @@ export function ExchangeRates() {
   );
 }
 
-export function Settings() {
-  const navigate = useNavigate();
-  const [settings, setSettings] = React.useState({ push: true, biometric: true, darkMode: true });
-
-  React.useEffect(() => {
-    async function load() {
-      try {
-        const { Preferences } = await import('@capacitor/preferences');
-        const saved = await Preferences.get({ key: 'user_settings' });
-        if (saved.value) setSettings(JSON.parse(saved.value));
-      } catch (e) {
-        console.warn('Preferences plugin not available');
-      }
-    }
-    load();
-  }, []);
-
-  const toggle = async (key) => {
-    try {
-      const { Preferences } = await import('@capacitor/preferences');
-      const newSettings = { ...settings, [key]: !settings[key] };
-      setSettings(newSettings);
-      await Preferences.set({ key: 'user_settings', value: JSON.stringify(newSettings) });
-    } catch (e) {
-      setSettings(prev => ({ ...prev, [key]: !prev[key] }));
-    }
-  };
-
-  return (
-    <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
-      <header className="flex items-center p-4 pt-8 pb-4">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] p-2 mr-2 active:bg-[#2c2f38] rounded-full">
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
-        </button>
-        <h1 className="text-[16px] font-semibold">Nastavení</h1>
-      </header>
-      <main className="p-4 space-y-4 mt-2">
-        {[
-          { id: 'push', label: 'Push notifikace' },
-          { id: 'biometric', label: 'Přihlášení otiskem prstu' },
-          { id: 'darkMode', label: 'Tmavý režim (Vynucený)' }
-        ].map(s => (
-          <div key={s.id} className="bg-[#2c2f38] p-5 rounded-[18px] flex justify-between items-center">
-            <span className="font-semibold text-[15px]">{s.label}</span>
-            <button onClick={() => toggle(s.id)} className={`w-12 h-[26px] rounded-full transition-colors relative ${settings[s.id] ? 'bg-[#3b82f6]' : 'bg-[#424651]'}`}>
-              <div className={`w-5 h-5 ${settings[s.id] ? 'bg-white' : 'bg-gray-400'} rounded-full absolute top-[3px] transition-all ${settings[s.id] ? 'left-[25px]' : 'left-[3px]'}`}></div>
-            </button>
-          </div>
-        ))}
-      </main>
-    </div>
-  );
-}
-
 export function BranchesATMs() {
   const navigate = useNavigate();
   const rbUrl = "https://www.rb.cz/o-nas/kontakty/pobocky-a-bankomaty?atm=false&branchSegment=PERSONALFINANCE&openNow=false&openNonStop=false&openEveningsOrWeekend=false&barrierfree=false&cashDesk=false&depositAtm=false&depositRbAtm=false&contactlessAtm=false";
@@ -457,22 +514,6 @@ export function BranchesATMs() {
             <button onClick={() => window.open(rbUrl, '_system')} className="flex-1 border border-[#424651] text-white font-semibold py-[10px] rounded-[10px] active:bg-[#424651] transition-colors text-[14px]">Detaily</button>
           </div>
         </div>
-      </main>
-    </div>
-  );
-}
-
-export function AppSettings() {
-  const navigate = useNavigate();
-  return (
-    <div className="min-h-screen bg-[#22252e] text-white pb-24 font-sans flex flex-col">
-      <header className="flex items-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
-        <button onClick={() => navigate(-1)} className="text-[#3b82f6] mr-4 p-2 active:bg-[#2c2f38] rounded-full">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        </button>
-        <h1 className="text-[17px] font-semibold">Nastavení</h1>
-      </header>
-      <main className="flex-1 px-4 mt-6 space-y-3">
       </main>
     </div>
   );
