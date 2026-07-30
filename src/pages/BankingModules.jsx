@@ -13,15 +13,14 @@ export function Payment() {
     if (!name || !amount) return;
     setIsSubmitting(true);
     const formattedAmount = `-${parseFloat(amount).toLocaleString('cs-CZ', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-    
-    // Čistý datový payload bez vizuálních prvků a emotikonů
+
     const payload = {
       name: name,
       type: 'Odchozí úhrada',
       amount: formattedAmount,
       subAmount: message || ''
     };
-    
+
     try {
       const res = await fetch('https://opravyslavkov.shop/api/transactions', {
         method: 'POST',
@@ -67,8 +66,20 @@ export function Payment() {
   );
 }
 
+// --- DYNAMICKÉ SPOŘICÍ CÍLE S POSUVNÍKEM ---
 export function SavingsGoals() {
   const navigate = useNavigate();
+  // Stav pro naspořenou částku (výchozí 45 000 CZK) a editační mód
+  const [currentAmount, setCurrentAmount] = useState(45000);
+  const [isEditing, setIsEditing] = useState(false);
+  const targetAmount = 100000;
+  
+  // Výpočet procenta splnění pro progress bar (max 100)
+  const percentage = Math.min(100, Math.round((currentAmount / targetAmount) * 100));
+
+  // Formátování pro hezký výpis s mezerami tisíců (např. 45 000)
+  const formattedAmount = currentAmount.toLocaleString('cs-CZ');
+
   return (
     <div className="min-h-screen bg-[#22252e] text-white font-sans flex flex-col">
       <header className="flex items-center p-4 pt-8 border-b border-[#2c2f38] pb-4">
@@ -78,20 +89,56 @@ export function SavingsGoals() {
         <h1 className="text-[17px] font-semibold">Spořicí cíle</h1>
       </header>
       <main className="flex-1 px-4 mt-6">
+        
+        {/* Vizuální panel (reaguje na posuvník) */}
         <div className="bg-[#2c2f38] rounded-[24px] p-5 shadow-lg mb-6">
           <div className="flex justify-between items-center mb-2">
             <span className="font-semibold text-[17px]">Rezerva na horší časy</span>
             <span className="bg-[#3e424c] text-[11px] px-3 py-1.5 rounded-full text-gray-300">CÍL: 100 000 CZK</span>
           </div>
-          <div className="text-[32px] font-bold mb-4 text-[#ffe600] tracking-tight">45 000 <span className="text-[17px] text-[#ffe600]">CZK</span></div>
-          <div className="w-full bg-[#22252e] h-3 rounded-full overflow-hidden border border-gray-700">
-            <div className="bg-[#ffe600] h-full w-[45%] rounded-full"></div>
+          <div className="text-[32px] font-bold mb-4 text-[#ffe600] tracking-tight">
+            {formattedAmount} <span className="text-[17px] text-[#ffe600]">CZK</span>
           </div>
-          <p className="text-[13px] text-gray-400 mt-3 text-right">45 % splněno</p>
+          <div className="w-full bg-[#22252e] h-3 rounded-full overflow-hidden border border-gray-700">
+            <div 
+              className="bg-[#ffe600] h-full rounded-full transition-all duration-300 ease-out" 
+              style={{ width: `${percentage}%` }}
+            ></div>
+          </div>
+          <p className="text-[13px] text-gray-400 mt-3 text-right">{percentage} % splněno</p>
         </div>
-        <button onClick={() => window.open('https://www.rb.cz/osobni/sporeni', '_system')} className="w-full border-2 border-dashed border-gray-600 text-[#3b82f6] py-5 rounded-[24px] flex items-center justify-center gap-2 font-medium active:bg-[#2c2f38] transition-colors">
-          <span className="text-2xl leading-none mb-1">+</span> Založit nový cíl na rb.cz
-        </button>
+
+        {/* Přepínač editačního módu */}
+        {!isEditing ? (
+          <button 
+            onClick={() => setIsEditing(true)} 
+            className="w-full border-2 border-dashed border-gray-600 text-[#3b82f6] py-5 rounded-[24px] flex items-center justify-center gap-2 font-medium active:bg-[#2c2f38] transition-colors"
+          >
+            Upravit zůstatek (Lokální Demo)
+          </button>
+        ) : (
+          <div className="bg-[#2c2f38] rounded-[24px] p-6 shadow-lg border border-[#3e424c]">
+            <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-6 text-center">Nastavení lokálního zůstatku</h3>
+            
+            <input 
+              type="range" 
+              min="0" 
+              max="100000" 
+              step="1000"
+              value={currentAmount} 
+              onChange={(e) => setCurrentAmount(Number(e.target.value))}
+              className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer mb-6 accent-[#ffe600]"
+            />
+            
+            <button 
+              onClick={() => setIsEditing(false)} 
+              className="w-full bg-[#3b82f6] hover:bg-blue-500 text-white font-semibold py-3 rounded-xl transition-colors shadow-lg shadow-blue-500/20"
+            >
+              Dokončit úpravy
+            </button>
+          </div>
+        )}
+
       </main>
     </div>
   );
@@ -110,7 +157,6 @@ export function BuildingSavings() {
       <main className="flex-1 px-4 mt-6">
         <div className="bg-[#2c2f38] rounded-[24px] p-5 shadow-lg text-center py-10">
           <div className="w-16 h-16 bg-[#3e424c] rounded-full flex items-center justify-center mx-auto mb-4">
-            {/* Nahrazeno SVG ikonou */}
             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
             </svg>
