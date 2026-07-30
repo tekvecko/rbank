@@ -1,14 +1,16 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { App as CapacitorApp } from '@capacitor/app';
+import { Preferences } from '@capacitor/preferences';
 import PinScreen from './components/PinScreen';
+import UpdateScreen from './components/UpdateScreen';
 import { Toast } from '@capacitor/toast';
 
 import Dashboard from './pages/Dashboard';
 import History from './pages/History';
 import BulkStatements from './pages/BulkStatements';
-import Card from './pages/Card'; 
-import { Payment, SavingsGoals, BuildingSavings } from './pages/BankingModules'; 
+import Card from './pages/Card';
+import { Payment, SavingsGoals, BuildingSavings } from './pages/BankingModules';
 import {
   Offers, OfferDetail, InfoZone, Menu, Profile,
   TravelInsurance, MinuteLoan, SystemOutage,
@@ -55,7 +57,26 @@ function BackButtonHandler() {
 }
 
 export default function App() {
-  const [authenticated, setAuthenticated] = React.useState(false);
+  const [authenticated, setAuthenticated] = useState(false);
+  const [updateChecked, setUpdateChecked] = useState(false);
+  const [needsUpdate, setNeedsUpdate] = useState(false);
+
+  // --- KONTROLA SIMULOVANÉ AKTUALIZACE PŘI STARTU ---
+  useEffect(() => {
+    const checkSimulatedUpdate = async () => {
+      try {
+        const { value } = await Preferences.get({ key: 'simulated_update_done' });
+        if (!value) {
+          setNeedsUpdate(true);
+        }
+      } catch (e) {
+        console.warn('Preferences plugin not available', e);
+      } finally {
+        setUpdateChecked(true);
+      }
+    };
+    checkSimulatedUpdate();
+  }, []);
 
   useEffect(() => {
     const listenerPromise = CapacitorApp.addListener('appStateChange', ({ isActive }) => {
@@ -69,6 +90,17 @@ export default function App() {
     };
   }, []);
 
+  // Blokace obrazovky, dokud se nezjistí stav (zamezuje probliknutí PINu)
+  if (!updateChecked) {
+    return <div className="min-h-screen bg-[#22252e]"></div>;
+  }
+
+  // Zobrazení simulační obrazovky
+  if (needsUpdate) {
+    return <UpdateScreen onComplete={() => setNeedsUpdate(false)} />;
+  }
+
+  // Standardní tok aplikace
   if (!authenticated) {
     return <PinScreen onAuthenticated={() => setAuthenticated(true)} />;
   }
@@ -88,10 +120,7 @@ export default function App() {
         <Route path="/bulk-statements" element={<BulkStatements />} />
         <Route path="/savings-goals" element={<SavingsGoals />} />
         <Route path="/building-savings" element={<BuildingSavings />} />
-        
-        {/* Správné napojení na naši novou komponentu */}
         <Route path="/card" element={<Card />} />
-
         <Route path="/travel-insurance" element={<TravelInsurance />} />
         <Route path="/minute-loan" element={<MinuteLoan />} />
         <Route path="/system-outage" element={<SystemOutage />} />
